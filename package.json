@@ -1,0 +1,21 @@
+{
+  "name": "angularjs-sample",
+  "version": "1.0.0",
+  "description": "angularjs sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qw8880000/angularjs-sample.git"
+  },
+  "author": "qw8880000",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qw8880000/angularjs-sample/issues"
+  },
+  "homepage": "https://github.com/qw8880000/angularjs-sample#readme",
+  "dependencies": {
+  }
+}

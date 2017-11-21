@@ -1,0 +1,17 @@
+{
+  "name": "angularjs-sample",
+  "description": "angularjs sample",
+  "main": "index.js",
+  "authors": [
+    "qw8880000"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/qw8880000/angularjs-sample",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
