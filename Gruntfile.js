@@ -27,8 +27,21 @@ module.exports = function(grunt) {
   // so we don't need to excute 'grunt.loadNpmTasks('grunt-*')'
   require('load-grunt-tasks')(grunt);
 
+  // # 自动注入
+  // 1. wiredep: Inject Bower packages into your source code
+  // 1. ngAnnotate: Inject AngularJS dependency
+  // 1. compass: Compile Sass to CSS
+  // 1. autoprefixer: parses CSS and adds vendor-prefixed CSS properties for brower compatibility
+  grunt.registerTask('autoInject', [
+    'wiredep',
+    // 'ngAnnotate',
+    // 'sass',
+    // 'autoprefixer',
+  ]);
+
   // the default task can be run just by typing "grunt" on the command line
   grunt.registerTask('default', [
+    'wiredep',
     'watch'
   ]);
 };

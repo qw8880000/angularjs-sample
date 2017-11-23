@@ -26,6 +26,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-wiredep": "^3.0.1",
     "load-grunt-tasks": "^3.5.2"
   }
 }
