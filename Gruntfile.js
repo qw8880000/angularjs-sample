@@ -13,6 +13,10 @@ module.exports = function(grunt) {
   grunt.util._.extend(config, configLoader.load(__dirname + '/grunt-configs'));
   grunt.initConfig(config);
 
+  // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
+  // so we don't need to excute 'grunt.loadNpmTasks('grunt-*')'
+  require('load-grunt-tasks')(grunt);
+
   // output some log when watched files are modified
   grunt.event.on('watch', function(action, filepath, target) {
     grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
@@ -22,10 +26,6 @@ module.exports = function(grunt) {
   grunt.registerTask('grunt-keepalive', 'Keep grunt running', function() {
     this.async();
   });
-
-  // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
-  // so we don't need to excute 'grunt.loadNpmTasks('grunt-*')'
-  require('load-grunt-tasks')(grunt);
 
   // # 自动注入
   // 1. wiredep: Inject Bower packages into your source code
