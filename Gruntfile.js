@@ -42,6 +42,7 @@ module.exports = function(grunt) {
   // the default task can be run just by typing "grunt" on the command line
   grunt.registerTask('default', [
     'wiredep',
+    'eslint',
     'express:dev',
     'watch'
   ]);

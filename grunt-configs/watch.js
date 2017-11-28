@@ -11,6 +11,15 @@ module.exports = {
         spawn: false,
         event: ['all']
       }
+    },
+
+    JsCodeCheck: {
+      files: ['<%= pathConfig.client %>/app/**/*.js'],
+      tasks: ['eslint'],
+      options: {
+        spawn: false,
+        event: ['all']
+      }
     }
   }
 };
