@@ -1,0 +1,42 @@
+root: true
+
+globals:
+    angular: true
+
+extends:
+    - airbnb-base
+
+plugins:
+    - angular
+
+# override airbnb-base setting
+parserOptions:
+    ecmaVersion: 5
+    sourceType: script
+    ecmaFeatures:
+        impliedStrict: false
+        experimentalObjectRestSpread: false
+
+rules: 
+    # http://eslint.cn/docs/rules/#best-practices
+
+    # http://eslint.cn/docs/rules/#stylistic-issues
+    linebreak-style: 0
+
+    # http://eslint.cn/docs/rules/#strict-mode
+    strict: 
+        - 1
+        - function
+
+    #--------------------------------
+    # plugin:angualr
+    #--------------------------------
+    # Possible Errors
+    angular/module-getter: 2
+    angular/module-setter: 2
+    angular/no-private-call: 2
+
+    # Best Practices
+    angular/component-limit: 2
+    angular/file-name: 2
+    angular/foreach: 2

@@ -1,9 +1,9 @@
 module.exports = {
 
   eslint: {
-    client: {
+    angularjs: {
       options: {
-        configFile: "./.eslintrc.json",
+        // configFile: "<%= pathConfig.client %>/app/.eslintrc.json",
       },
       src: ['<%= pathConfig.client %>/app/**/*.js']
     }
