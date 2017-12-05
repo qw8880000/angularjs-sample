@@ -1,0 +1,19 @@
+
+.header {
+  background-color: #052d49;
+}
+.header__logo {
+  display: block;
+  float: left;
+  height: 60px;
+  width: 150px;
+
+  background: url(../img/AngularJS.png) center no-repeat;
+}
+.header__tips {
+  display: inline-block;
+  line-height: 60px;
+
+  color: #f9ab4f;
+  font-size: 24px;
+}
