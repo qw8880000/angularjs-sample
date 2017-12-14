@@ -34,6 +34,7 @@ module.exports = function(grunt) {
   // 1. autoprefixer: parses CSS and adds vendor-prefixed CSS properties for brower compatibility
   grunt.registerTask('autoInject', [
     'wiredep',
+    'angularFileLoader',
     // 'ngAnnotate',
     // 'sass',
     // 'autoprefixer',
@@ -41,7 +42,7 @@ module.exports = function(grunt) {
 
   // the default task can be run just by typing "grunt" on the command line
   grunt.registerTask('default', [
-    'wiredep',
+    'autoInject',
     'eslint',
     'express:dev',
     'watch'
