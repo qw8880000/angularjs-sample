@@ -1,23 +1,26 @@
 
-.header {
+.header,
+.footer {
   width: 100%;
   background-color: #052d49;
 }
 .header__logo {
   display: inline-block;
   vertical-align: middle;
-  width: 150px;
-  height: 60px;
   margin-left: 20px;
 }
 .header__tips {
-
   display: inline;
-  /* vertical-align: middle; */
+  vertical-align: middle;
   line-height: 60px;
+  margin-left: 40px;
 
   color: #f9ab4f;
   font-size: 24px;
 }
 
-
+.footer__copyright {
+  display: inline-block;
+  color: #fff;
+  margin: 20px;
+}
