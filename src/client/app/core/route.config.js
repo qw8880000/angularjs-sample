@@ -11,7 +11,7 @@
       .state({
         name: 'home',
         url: '/home',
-        template: '<div>test</div>',
+        component: 'home',
       })
       .state({
         name: 'template',
