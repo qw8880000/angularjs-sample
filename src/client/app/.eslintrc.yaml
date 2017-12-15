@@ -30,6 +30,9 @@ rules:
         - 1
         - function
 
+    # http://eslint.cn/docs/rules/#variables
+    no-use-before-define: 0
+
     #--------------------------------
     # plugin:angualr
     #--------------------------------
@@ -70,6 +73,7 @@ rules:
         - nameStyle: dash
           typeSeparator: dot
           ignoreTypeSuffix: true
+          ignorePrefix: 'app.'
           componentTypeMappings:
               factory: service
               provider: service
