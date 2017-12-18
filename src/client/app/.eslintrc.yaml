@@ -10,6 +10,9 @@ plugins:
     - angular
 
 # override airbnb-base setting
+env:
+    es6: false
+
 parserOptions:
     ecmaVersion: 5
     sourceType: script
@@ -24,6 +27,10 @@ rules:
     linebreak-style: 0
     padded-blocks: 0
     func-names: 0
+    spaced-comment:
+        - 2
+        - always
+        - {exceptions: ['/', '-', '+', '=']}
 
     # http://eslint.cn/docs/rules/#strict-mode
     strict: 
@@ -32,6 +39,9 @@ rules:
 
     # http://eslint.cn/docs/rules/#variables
     no-use-before-define: 0
+
+    # http://eslint.cn/docs/rules/#ecmascript-6
+    no-var: 0
 
     #--------------------------------
     # plugin:angualr
