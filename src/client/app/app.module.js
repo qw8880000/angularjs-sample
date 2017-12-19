@@ -13,6 +13,7 @@
        * feature area
        */
       'app.home',
+      'app.repeaters',
     ]);
 
 }());
