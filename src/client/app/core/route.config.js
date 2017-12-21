@@ -14,9 +14,9 @@
         component: 'home',
       })
       .state({
-        name: 'template',
-        url: '/template',
-        template: '<div>test</div>',
+        name: 'repeaters',
+        url: '/repeaters',
+        component: 'repeaters',
       });
   }
 
