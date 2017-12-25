@@ -23,6 +23,40 @@ server:
 * [Grunt]
 * [express]
 
+# 软件架构
+
+```
+     +--------+
+     |  app   |
+     +--------+
+        |
+        |
+        V
+     +------------------+
+     |   app.feature1   |
+     |   app.feature2   |
+     |   app.feature3   |
+     |   ...            |
+     +------------------+
+        |
+        +-------------------+
+        |                   |
+        V                   v
+     +-----------+     +---------------+
+     |  app.core |     |  app.widgets  |
+     +-----------+     +---------------+
+        |
+        +----------------+-------------------+
+        |                |                   |
+        V                v                   v
+     +-------------+   +-------------+    +------------------+
+     |  ngAnimate  |   |  ngPlus     |    | blocks.exception |
+     |  ngSanitize |   |  ui.Router  |    | blocks.logger    |
+     |  ...        |   |  ...        |    | ...              |
+     +-------------+   +-------------+    +------------------+
+
+```
+
 # more
 
 管理后台模板：[admin template themes | WrapBootstrap](https://wrapbootstrap.com/tag/admin-template)
