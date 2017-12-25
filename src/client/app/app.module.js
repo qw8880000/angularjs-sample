@@ -5,9 +5,25 @@
     .module('app', [
 
       /*
-       *  common area
+       * Angular modules
+       */
+      'ngResource', // 'ngAnimate', 'ngRoute', 'ngSanitize',
+
+      /*
+       * Our reusable cross app code modules
+       */
+      // 'blocks.exception', 'blocks.logger', 'blocks.router',
+
+      /*
+       * 3rd party modules
+       */
+      'ui.router',
+
+      /*
+       *  app common area
        */
       'app.core',
+      // 'app.widgets',
 
       /*
        * feature area
