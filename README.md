@@ -46,16 +46,20 @@ server:
      |  app.core |     |  app.widgets  |
      +-----------+     +---------------+
         |
-        +----------------+-------------------+
-        |                |                   |
-        V                v                   v
-     +-------------+   +-------------+    +------------------+
-     |  ngAnimate  |   |  ngPlus     |    | blocks.exception |
-     |  ngSanitize |   |  ui.Router  |    | blocks.logger    |
-     |  ...        |   |  ...        |    | ...              |
-     +-------------+   +-------------+    +------------------+
+        |
+        v
+     +------------------+
+     | blocks.exception |
+     | blocks.logger    |
+     | ...              |
+     +------------------+
 
 ```
+
+第一层：app启动模块。存放app启动逻辑和模块依赖。
+第二层：app的功能模块。
+第三层：此app的通用模块。如 常量，数据服务，控件等。
+第四层：跨app的通用模块。如 blocks.exception,blocks.logger。
 
 # more
 
