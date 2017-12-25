@@ -15,7 +15,11 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.5.8",
-    "angular-ui-router": "^1.0.11"
+    "angular": "1.6.6",
+    "angular-ui-router": "^1.0.12",
+    "angular-resource": "^1.6.8"
+  },
+  "resolutions": {
+    "angular": ">= 1.2.0"
   }
 }

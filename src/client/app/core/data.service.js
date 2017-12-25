@@ -8,13 +8,10 @@
   /* @ngInject */
   function dataService($resource) {
     var service = {
-      Phone: Phone,
+      Phone: $resource('resources/phones/:phoneId.json', { phoneId: 'phones' }),
     };
     return service;
 
     ////////////////
-
-    function Phone() {
-    }
   }
 }());

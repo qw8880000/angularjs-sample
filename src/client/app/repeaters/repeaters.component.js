@@ -6,11 +6,28 @@
     .component('repeaters', {
       templateUrl: 'app/repeaters/repeaters.html',
       controller: RepeatersController,
+      controllerAs: 'vm',
     });
 
-  function RepeatersController() {
+  /* @ngInject */
+  function RepeatersController($log, dataService) {
     var vm = this;
-    vm.phoneList = null;
+    vm.phones = null;
+
+    activate();
+
+    //////////////
+
+    function activate() {
+      getPhones();
+    }
+
+    function getPhones() {
+      dataService.Phone.query({ phoneId: 'phones' }, function (phones) {
+        $log.log(phones);
+        vm.phones = phones;
+      });
+    }
   }
 
 }());

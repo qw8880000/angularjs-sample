@@ -1,3 +1,14 @@
+/* ----------------------------------
+ * 此css使用BEM标准
+ *
+ * [BEM](https://en.bem.info/)
+ *
+ *
+ * 命令约定使用Two Dashes style:
+ *    block-name__elem-name--mod-name--mod-val
+ * 详见：https://en.bem.info/methodology/naming-convention/#two-dashes-style
+ *
+ * ---------------------------------- */
 
 .header,
 .footer {
@@ -39,4 +50,25 @@
   float: left;
   width: 80%;
   height: 100%;
+
+  overflow: scroll;
+}
+
+
+/* ----------------------------------
+ * phone-list block
+ * ---------------------------------- */
+.phone-list {
+  list-style-type: none;
+}
+.phone-list__item {
+  border: 1px solid red;
+}
+.phone-list__item-img {
+  width: 100px;
+  height: auto;
+}
+.phone-list__item-name {
+}
+.phone-list__item-description {
 }
