@@ -22,6 +22,11 @@
         name: 'customFilters',
         url: '/custom-filters',
         component: 'customFilters',
+      })
+      .state({
+        name: 'animations',
+        url: '/animations',
+        component: 'animations',
       });
   }
 

@@ -7,7 +7,7 @@
       /*
        * Angular modules
        */
-      'ngResource', // 'ngAnimate', 'ngRoute', 'ngSanitize',
+      'ngResource', 'ngAnimate', // 'ngSanitize',
 
       /*
        * Our reusable cross app code modules
@@ -31,6 +31,7 @@
       'app.home',
       'app.repeaters',
       'app.customFilters',
+      'app.animations',
     ]);
 
 }());
