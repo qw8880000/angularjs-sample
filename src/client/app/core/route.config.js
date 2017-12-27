@@ -17,6 +17,11 @@
         name: 'repeaters',
         url: '/repeaters',
         component: 'repeaters',
+      })
+      .state({
+        name: 'customFilters',
+        url: '/custom-filters',
+        component: 'customFilters',
       });
   }
 

@@ -30,6 +30,7 @@
        */
       'app.home',
       'app.repeaters',
+      'app.customFilters',
     ]);
 
 }());
