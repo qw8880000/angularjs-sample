@@ -10,9 +10,13 @@
  *
  * ---------------------------------- */
 
-.header,
-.footer {
+.header {
+  position: fixed;
+  /* top: 0; */
+  z-index: 1;
   width: 100%;
+  height: 60px;
+
   background-color: #052d49;
 }
 .header__logo {
@@ -30,28 +34,43 @@
   font-size: 24px;
 }
 
-.footer__copyright {
-  display: inline-block;
-  color: #fff;
-  margin: 20px;
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  z-index: 1;
+  width: 200px;
+  height: 100%;
+
+  background-color: #1c2b36;
+}
+.sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar__link {
+  display: block;
+  padding: 15px 20px;
+  background-color: #113956;
+  margin: 2px 0;
+  color: #b7b7b7;
+  font-weight: 500;
+  text-decoration-line: none;
+}
+.sidebar__link:hover {
+  background-color: #134f7b;
+  color: white;
 }
 
 .container {
-  height: 900px;
-}
-
-.sidebar {
-  float: left;
-  width: 20%;
-  height: 100%;
-  background-color: #063352;
+  position: absolute;
+  top: 60px;
+  margin-left: 200px;  
 }
 .content {
-  float: left;
-  width: 80%;
+  width: 100%;
   height: 100%;
-
-  overflow: scroll;
 }
 
 
