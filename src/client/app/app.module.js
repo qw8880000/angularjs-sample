@@ -28,6 +28,7 @@
       /*
        * feature area
        */
+      'app.layout',
       'app.home',
       'app.repeaters',
       'app.customFilters',
