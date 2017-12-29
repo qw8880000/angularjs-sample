@@ -10,6 +10,10 @@
  *
  * ---------------------------------- */
 
+
+/* ----------------------------------
+ * fixed header
+ * ---------------------------------- */
 .header {
   position: fixed;
   /* top: 0; */
@@ -35,6 +39,9 @@
 }
 
 
+/* ----------------------------------
+ * fixed sidebar
+ * ---------------------------------- */
 .sidebar {
   position: fixed;
   top: 60px;
@@ -59,10 +66,17 @@
   text-decoration-line: none;
 }
 .sidebar__link:hover {
-  background-color: #134f7b;
+  background-color: #146caa;
+  color: white;
+}
+.sidebar__link--active {
+  background-color: #146caa;
   color: white;
 }
 
+/* ----------------------------------
+ *  content
+ * ---------------------------------- */
 .container {
   position: absolute;
   top: 60px;
