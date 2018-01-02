@@ -5,18 +5,20 @@ Angular.js 1.x sample.
 # 技术
 
 前端：
-* [Angular.js]: javascript前端框架
-* [Airbnb JavaScript Style Guide]: javascript编码规范
-* [Angular.js code style]: angular.js编码规范
-* [eslint]: javascript 代码检查
+
+* javascript前端框架: [Angular.js]
+* javascript编码规范: [Airbnb JavaScript Style Guide] 
+* angular.js编码规范: [Angular.js code style]
+* javascript 代码检查: [eslint]
     - plugin: [eslint-plugin-angular](https://www.npmjs.com/package/eslint-plugin-angular)
     - config: [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
 
-* [BEM]: css 命名规范
-* [Normalize.css]: css 初始化
-* [stylelint]: css 代码检查
+* css 命名规范: [BEM]
+* css 初始化: [Normalize.css]
+* css 代码检查: [stylelint]
 
 后端：
+
 * [node.js]
 * [express]
 
