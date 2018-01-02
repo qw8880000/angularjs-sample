@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     pathConfig: {
       client: 'src/client',
       dist: 'dist',
+      tmp: '.tmp',
     },
   };
 
@@ -30,15 +31,26 @@ module.exports = function(grunt) {
 
   // # 自动注入
   // 1. wiredep: Inject Bower packages into your source code
-  // 1. ngAnnotate: Inject AngularJS dependency
   // 1. compass: Compile Sass to CSS
   // 1. autoprefixer: parses CSS and adds vendor-prefixed CSS properties for brower compatibility
   grunt.registerTask('autoInject', [
     'wiredep',
     'angularFileLoader',
-    // 'ngAnnotate',
     // 'sass',
     // 'autoprefixer',
+  ]);
+
+  // # js 与 css 合并与压缩
+  // Replaces references from non-optimized scripts, stylesheets and other assets to their optimized version within a set of HTML files (or any templates/views)
+  // 'useminprepare' is the first step, and the 'usemin' is the last step.
+  // See grunt-usemin for help
+  grunt.registerTask('replacesReferences', [
+    'useminPrepare',
+    'concat:generated',
+    'cssmin:generated',
+    // 'uglify:generated',
+    // 'filerev',
+    'usemin'
   ]);
 
   // the default task can be run just by typing "grunt" on the command line
@@ -49,5 +61,17 @@ module.exports = function(grunt) {
     'express:dev',
     'watch'
   ]);
+
+  grunt.registerTask('build', [
+    'autoInject',
+    'eslint',
+    'stylelint',
+
+    'clean:dist',
+    'copy:dist',
+    'ngAnnotate',
+    'replacesReferences',
+  ]);
+
 };
 

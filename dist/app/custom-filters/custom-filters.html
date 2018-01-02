@@ -1,0 +1,31 @@
+
+<div class="card card--theme-green">
+
+  <div class="card__header">
+    <h2>custom filters demo</h2>
+  </div>
+  
+  <div class="card__content">
+    <p> Angular.js filter 可以是过滤功能，也可以是转换功能</p>
+    
+    <ul>
+      <li>
+        <span>android: </span>
+        <span> {{vm.phoneDetail.android | checkmask}} </span>
+      </li>
+      <li>
+        <span>ios: </span>
+        <span> {{vm.phoneDetail.ios | checkmask}} </span>
+      </li>
+      <li>
+        <span>camera: </span>
+        <span> {{vm.phoneDetail.camera | checkmask}} </span>
+      </li>
+      <li>
+        <span>FM Radio: </span>
+        <span> {{vm.phoneDetail.fm | checkmask}} </span>
+      </li>
+    </ul>
+  </div>
+
+</div>
