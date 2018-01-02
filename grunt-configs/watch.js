@@ -13,6 +13,18 @@ module.exports = {
       }
     },
 
+    cssCheck: {
+      files: [
+        '<%= pathConfig.client %>/css/basic.css',
+        '<%= pathConfig.client %>/css/style.css'
+      ],
+      tasks: ['stylelint'],
+      options: {
+        spawn: false,
+        event: ['all']
+      }
+    },
+
     JsCodeCheck: {
       files: ['<%= pathConfig.client %>/app/**/*.js'],
       tasks: ['eslint'],

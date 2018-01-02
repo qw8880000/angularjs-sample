@@ -45,6 +45,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'autoInject',
     'eslint',
+    'stylelint',
     'express:dev',
     'watch'
   ]);
