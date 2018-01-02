@@ -1,21 +1,37 @@
 
-<h2>repeaters</h2>
+<div class="card card--theme-green">
 
-<div>
-  <label>Search: <input type="text" ng-model="vm.search.$"> </label>
-  <label>Search by name: <input type="text" ng-model="vm.search.name"> </label>
-  <label>Search by description: <input type="text" ng-model="vm.search.snippet"> </label>
+  <div class="card__header">
+    <h2>Repeaters demo</h2>
+  </div>
+  
+  <div class="card__content repeaters__content">
+    <div>
+
+      <div class="form-group">
+        <label class="form-group__label">Search: <input class="form-group__input repeaters__input" type="text" ng-model="vm.search.$" placeholder="all text"> </label>
+      </div>
+      <div class="form-group">
+        <label class="form-group__label">Search: <input class="form-group__input repeaters__input" type="text" ng-model="vm.search.name" placeholder="name"> </label>
+      </div>
+      <div class="form-group">
+        <label class="form-group__label">Search: <input class="form-group__input repeaters__input" type="text" ng-model="vm.search.snippet" placeholder="description"> </label>
+      </div>
+
+    </div>
+    
+    <div class="repeaters__order">
+      <button class="btn btn--cl-orange" ng-click="vm.order=null">Set to unsorted</button>
+      <button class="btn btn--cl-orange" ng-click="vm.order='name'">sort by name</button>
+    </div>
+    
+    <ul class="phone-list">
+      <li class="phone-list__item" ng-repeat="phone in vm.phones | filter:vm.search | orderBy:vm.order ">
+        <img class="phone-list__item-img" ng-src="{{phone.imageUrl}}" alt="{{phone.name}}">
+        <p class="phone-list__item-name">{{phone.name}}</p>
+        <p class="phone-list__item-description">{{phone.snippet}}</p>
+      </li>
+    </ul>
+  </div>
+
 </div>
-
-<div>
-  <button ng-click="vm.order=null">Set to unsorted</button>
-  <button ng-click="vm.order='name'">sort by name</button>
-</div>
-
-<ul class="phone-list">
-  <li class="phone-list__item" ng-repeat="phone in vm.phones | filter:vm.search | orderBy:vm.order ">
-    <img class="phone-list__item-img" ng-src="{{phone.imageUrl}}" alt="{{phone.name}}">
-    <p class="phone-list__item-name">{{phone.name}}</p>
-    <p class="phone-list__item-description">{{phone.snippet}}</p>
-  </li>
-</ul>
