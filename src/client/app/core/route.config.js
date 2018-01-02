@@ -6,7 +6,10 @@
     .config(routeConfig);
 
   /* @ngInject */
-  function routeConfig($stateProvider) {
+  function routeConfig($stateProvider, $urlServiceProvider) {
+
+    $urlServiceProvider.rules.otherwise('/home');
+
     $stateProvider
       .state({
         name: 'home',
