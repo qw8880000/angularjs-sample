@@ -2,26 +2,26 @@
 
 Angular.js 1.x sample.
 
-# Technologies
+# 技术
 
-javascript:
-* [Angular.js]
-* [Airbnb JavaScript Style Guide]
-* [angular.js code style]
-* [jQuery]
-
-css:
-* [BEM]
-* [Normalize.css]
-* [eslint]
+前端：
+* [Angular.js]: javascript前端框架
+* [Airbnb JavaScript Style Guide]: javascript编码规范
+* [Angular.js code style]: angular.js编码规范
+* [eslint]: javascript 代码检查
     - plugin: [eslint-plugin-angular](https://www.npmjs.com/package/eslint-plugin-angular)
     - config: [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
-* [Twitter Bootstrap]
 
-server:
+* [BEM]: css 命名规范
+* [Normalize.css]: css 初始化
+* [stylelint]: css 代码检查
+
+后端：
 * [node.js]
-* [Grunt]
 * [express]
+
+自动化工具：
+* [Grunt]
 
 # 软件架构
 
@@ -65,9 +65,6 @@ server:
 
 管理后台模板：[admin template themes | WrapBootstrap](https://wrapbootstrap.com/tag/admin-template)
 
-[slim](http://iarouse.com/dist-slim/v3/index.html#/dashboard)
-
-
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
@@ -75,11 +72,12 @@ server:
 [Airbnb JavaScript Style Guide]: <https://github.com/airbnb/javascript>
 [angular.js code style]: <https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md>
 [jQuery]: <http://jquery.com>
+[eslint]: <http://eslint.org/>
+[Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
 
 [BEM]: <https://en.bem.info/>
 [Normalize.css]: <http://necolas.github.io/normalize.css/>
-[eslint]: <http://eslint.org/>
-[Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+[stylelint]: <https://stylelint.io/>
 
 [node.js]: <http://nodejs.org>
 [Grunt]: <https://gruntjs.com/>
