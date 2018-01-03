@@ -47,9 +47,10 @@ module.exports = function(grunt) {
   grunt.registerTask('replacesReferences', [
     'useminPrepare',
     'concat:generated',
+    'ngAnnotate:app',
     'cssmin:generated',
     'uglify:generated',
-    // 'filerev',
+    'filerev',
     'usemin'
   ]);
 
@@ -58,18 +59,23 @@ module.exports = function(grunt) {
     'autoInject',
     'eslint',
     'stylelint',
+
     'express:dev',
     'watch'
   ]);
 
-  grunt.registerTask('build', [
+  grunt.registerTask('dist', [
     'autoInject',
     'eslint',
     'stylelint',
 
     'clean:dist',
     'copy:dist',
+    'image:dist',
     'replacesReferences',
+
+    'express:dist',
+    'grunt-keepalive'
   ]);
 
 };

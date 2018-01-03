@@ -13,7 +13,7 @@ module.exports = {
       },
       dist: {
         options: {
-          script: 'app.js',
+          script: './src/server/app.js',
           node_env: 'production'
         }
       },

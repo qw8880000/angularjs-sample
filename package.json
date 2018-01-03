@@ -39,6 +39,7 @@
     "grunt-express-server": "^0.5.3",
     "grunt-filerev": "^2.3.1",
     "grunt-htmllint": "^0.2.7",
+    "grunt-image": "^4.1.0",
     "grunt-ng-annotate": "^3.0.0",
     "grunt-stylelint": "^0.9.0",
     "grunt-usemin": "^3.1.1",

@@ -9,7 +9,9 @@ module.exports = {
       length: 8
     },
     js: {
-      src: '<%= pathConfig.dist %>/js/**/*.js',
+      src: [
+        '<%= pathConfig.dist %>/app/**/*.js'
+      ],
     },
     css: {
       src: '<%= pathConfig.dist %>/css/**/*.css',

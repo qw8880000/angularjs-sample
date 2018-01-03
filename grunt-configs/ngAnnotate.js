@@ -8,12 +8,17 @@ module.exports = {
     },
 
     app: {
+      // files: [{
+        // expand: true,
+        // cwd: '<%= pathConfig.dist %>/app',
+        // src: '**/*.js',
+        // dest: '<%= pathConfig.dist %>/app'
+      // }]
       files: [{
-        expand: true,
-        cwd: '<%= pathConfig.dist %>/app',
-        src: '**/*.js',
-        dest: '<%= pathConfig.dist %>/app'
+        src: '<%= pathConfig.tmp %>/concat/app/app.min.js',
+        dest: '<%= pathConfig.tmp %>/concat/app/app.min.js'
       }]
-    }
+    },
+
   }
 };
