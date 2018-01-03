@@ -63,6 +63,24 @@ Angular.js 1.x sample.
 第三层：此app的通用模块。如 常量，数据服务，控件等。
 第四层：跨app的通用模块。如 blocks.exception,blocks.logger。
 
+# 使用
+
+1. 克隆本代码仓库
+2. `npm install`
+3. `bower install`
+4. 普通开发使用`grunt`命令；发布使用`grunt dist`
+
+# grunt dist的流程
+
+- eslint
+- concat task to bundle css and js, separately
+- Angular dependency injection annotations using ngAnnotate
+- uglify to minify and mangle javascript
+- css autoprefixer for vendor prefixes
+- minify css
+- optimize images
+- index.html injection for scripts and links
+- deploying all js, css, images, fonts, and index.html
 
 # 更多
 
