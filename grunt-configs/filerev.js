@@ -14,11 +14,11 @@ module.exports = {
     css: {
       src: '<%= pathConfig.dist %>/css/**/*.css',
     },
-    resources: {
-      src:'<%= pathConfig.dist %>/resources/**/*.*',
-    },
-    img: {
-      src:'<%= pathConfig.dist %>/img/**/*.*',
-    },
+    // resources: {
+      // src:'<%= pathConfig.dist %>/resources/**/*.*',
+    // },
+    // img: {
+      // src:'<%= pathConfig.dist %>/img/**/*.*',
+    // },
   }
 };

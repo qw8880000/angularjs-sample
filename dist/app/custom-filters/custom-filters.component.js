@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  CustomFiltersController.$inject = ['$log', 'dataService'];
   angular
     .module('app.customFilters')
     .component('customFilters', {

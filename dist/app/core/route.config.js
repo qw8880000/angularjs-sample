@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  routeConfig.$inject = ['$stateProvider', '$urlServiceProvider'];
   angular
     .module('app.core')
     .config(routeConfig);

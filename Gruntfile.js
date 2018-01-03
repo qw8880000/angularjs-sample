@@ -35,7 +35,7 @@ module.exports = function(grunt) {
   // 1. autoprefixer: parses CSS and adds vendor-prefixed CSS properties for brower compatibility
   grunt.registerTask('autoInject', [
     'wiredep',
-    'angularFileLoader',
+    // 'angularFileLoader',
     // 'sass',
     // 'autoprefixer',
   ]);
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',
-    // 'uglify:generated',
+    'uglify:generated',
     // 'filerev',
     'usemin'
   ]);
@@ -69,7 +69,6 @@ module.exports = function(grunt) {
 
     'clean:dist',
     'copy:dist',
-    'ngAnnotate',
     'replacesReferences',
   ]);
 

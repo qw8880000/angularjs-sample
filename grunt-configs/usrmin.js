@@ -9,27 +9,27 @@ module.exports = {
     html: [
       '<%= pathConfig.dist %>/index.html'
     ],
-    js: [
-      '<%= pathConfig.dist %>/js/**/*.js'
-    ],
-    css: [
-      '<%= pathConfig.dist %>/css/**/*.css',
-    ], 
+    // js: [
+      // '<%= pathConfig.dist %>/js/**/*.js'
+    // ],
+    // css: [
+      // '<%= pathConfig.dist %>/css/**/*.css',
+    // ], 
     options: {
       // revmap:
       assetsDirs: [
         '<%= pathConfig.dist %>'
       ],
       patterns: {
-        html: [
-          [/(js\/bundle\.js)/g, 'replace bundle.js in html']
-        ],
-        js: [
-          [/(resources\/markdown\/[\/\w-]+\.(md))/g, 'replace markdown in js']
-        ],
-        css: [
-          [/(images\/[\/\w-]+\.(png|gif|jpg|jpeg))/g, 'replace images in css'],
-        ],
+        // html: [
+          // [/(js\/thirdParty\.js)/g, 'replace thirdParty.js in html']
+        // ],
+        // js: [
+          // [/(resources\/markdown\/[\/\w-]+\.(md))/g, 'replace markdown in js']
+        // ],
+        // css: [
+          // [/(images\/[\/\w-]+\.(png|gif|jpg|jpeg))/g, 'replace images in css'],
+        // ],
       }
     }
   }

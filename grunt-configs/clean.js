@@ -5,7 +5,10 @@ module.exports = {
 
   clean: {
     dist: {
-      src: [ '<%= pathConfig.dist %>' ]
+      src: [
+        '<%= pathConfig.dist %>',
+        '<%= pathConfig.tmp %>'
+      ]
     },
   }
 };

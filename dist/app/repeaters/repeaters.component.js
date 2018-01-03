@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  RepeatersController.$inject = ['$log', 'dataService'];
   angular
     .module('app.repeaters')
     .component('repeaters', {

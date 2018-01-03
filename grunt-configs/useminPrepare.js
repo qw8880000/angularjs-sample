@@ -7,7 +7,7 @@ module.exports = {
   // additional tasks can operate on them
   useminPrepare: {
     html: [
-      '<%= pathConfig.dist %>/index.html',
+      '<%= pathConfig.client %>/index.html',
     ],
     options: {
       // The root directory from which your files will be resolved.
@@ -20,7 +20,8 @@ module.exports = {
       flow: {
         steps: {
           css: ['concat', 'cssmin'],
-          js: ['concat', 'uglifyjs']
+          // js: ['concat', 'uglifyjs']
+          js: ['concat', 'uglify']
         }, 
         post: {}
       }

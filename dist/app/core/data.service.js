@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  dataService.$inject = ['$resource'];
   angular
     .module('app.core')
     .factory('dataService', dataService);

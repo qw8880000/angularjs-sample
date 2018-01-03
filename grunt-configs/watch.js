@@ -4,14 +4,14 @@ module.exports = {
   
   watch: {
 
-    angularjs: {
-      files: ['<%= pathConfig.client %>/app/**/*.js', '!<%= pathConfig.client %>/app/**/*.spec.js'],
-      tasks: ['angularFileLoader'],
-      options: {
-        spawn: false,
-        event: ['all']
-      }
-    },
+    // angularjs: {
+      // files: ['<%= pathConfig.client %>/app/**/*.js', '!<%= pathConfig.client %>/app/**/*.spec.js'],
+      // tasks: ['angularFileLoader'],
+      // options: {
+        // spawn: false,
+        // event: ['all']
+      // }
+    // },
 
     cssCheck: {
       files: [
