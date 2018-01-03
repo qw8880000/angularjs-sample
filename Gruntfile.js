@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     'ngAnnotate:app',
     'cssmin:generated',
     'uglify:generated',
-    'filerev',
+    // 'filerev',
     'usemin'
   ]);
 
