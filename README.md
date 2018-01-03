@@ -2,7 +2,7 @@
 
 Angular.js 1.x sample.
 
-# 技术
+# Technologies
 
 前端：
 
@@ -63,7 +63,8 @@ Angular.js 1.x sample.
 第三层：此app的通用模块。如 常量，数据服务，控件等。
 第四层：跨app的通用模块。如 blocks.exception,blocks.logger。
 
-# more
+
+# 更多
 
 管理后台模板：[admin template themes | WrapBootstrap](https://wrapbootstrap.com/tag/admin-template)
 
