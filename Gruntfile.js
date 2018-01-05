@@ -32,12 +32,9 @@ module.exports = function(grunt) {
   // # 自动注入
   // 1. wiredep: Inject Bower packages into your source code
   // 1. compass: Compile Sass to CSS
-  // 1. autoprefixer: parses CSS and adds vendor-prefixed CSS properties for brower compatibility
   grunt.registerTask('autoInject', [
     'wiredep',
-    // 'angularFileLoader',
     // 'sass',
-    // 'autoprefixer',
   ]);
 
   // # js 与 css 合并与压缩
