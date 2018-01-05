@@ -70,17 +70,17 @@ Angular.js 1.x sample.
 
 # Automation
 
-1. [grunt-wiredep]: 自动注入Bower文件
-1. [grunt-eslint]: javascript 代码检查 
-1. [grunt-stylelint]: css 代码检查
-1. [grunt-image]: 图片优化
-1. [grunt-angular-templates]: caching your HTML templates with $templateCache。
-1. [grunt-contrib-concat]: 合并css/javascript文件
-1. [grunt-ng-annotate]: angular自动注入依赖
-1. [grunt-postcss]: css后处理
-1. [grunt-contrib-cssmin]: css压缩
-1. [grunt-contrib-uglify]: javascript 压缩
-1. [grunt-usemin]: 组合concat/cssmin/uglify，为它们自动生成配置，并在最后替换index.html里的对应代码块为优化后的css/js文件
+1. 自动注入Bower文件：[grunt-wiredep]
+1. javascript 代码检查 ：[grunt-eslint]
+1. css 代码检查：[grunt-stylelint]
+1. 图片优化：[grunt-image]
+1. caching your HTML templates with $templateCache。：[grunt-angular-templates]
+1. 合并css/javascript文件：[grunt-contrib-concat]
+1. angular自动注入依赖：[grunt-ng-annotate]
+1. css后处理：[grunt-postcss]
+1. css压缩：[grunt-contrib-cssmin]
+1. javascript 压缩：[grunt-contrib-uglify]
+1. 组合concat/cssmin/uglify，为它们自动生成配置，并在最后替换index.html里的对应代码块为优化后的css/js文件：[grunt-usemin]
 
 # More
 
