@@ -12,22 +12,12 @@
   /* @ngInject */
   function CustomFiltersController($log, dataService) {
     var vm = this;
-    vm.phoneDetail = '';
-
-    activate();
-
-    //////////////////////////
-
-    function activate() {
-      getPhoneDetail('nexus-s');
-    }
-
-    function getPhoneDetail(phoneId) {
-      dataService.Phone.get({ phoneId: phoneId }, function (detail) {
-        vm.phoneDetail = detail;
-        $log.log(detail);
-      });
-    }
+    vm.phoneDetail = {
+      android: true,
+      ios: false,
+      camera: true,
+      fm: false,
+    };
 
   }
 

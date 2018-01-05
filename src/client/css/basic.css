@@ -189,3 +189,10 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* content wrapper */
+.content__wrapper {
+  border-left: solid 0.25em #0096D9;
+  background-color: #d9edf7;
+}
+

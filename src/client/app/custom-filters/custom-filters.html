@@ -2,13 +2,36 @@
 <div class="card card--theme-green">
 
   <div class="card__header">
-    <h2>custom filters demo</h2>
+    <h2>Custom filters demo</h2>
   </div>
   
   <div class="card__content">
-    <p> Angular.js filter 可以是过滤功能，也可以是转换功能</p>
+
+    <h3>angular.js 转换器</h3>
+    <p> Angular.js filter 可以是过滤功能，也可以是转换功能。以下例子使用Angular.js filter作为转换器，把'true'转换成 &#10003，把'false'转换成 &#10008 。</p>
     
-    <ul>
+    <p>转换前：</p>
+    <ul class="content__wrapper">
+      <li>
+        <span>android: </span>
+        <span> {{vm.phoneDetail.android}} </span>
+      </li>
+      <li>
+        <span>ios: </span>
+        <span> {{vm.phoneDetail.ios}} </span>
+      </li>
+      <li>
+        <span>camera: </span>
+        <span> {{vm.phoneDetail.camera}} </span>
+      </li>
+      <li>
+        <span>FM Radio: </span>
+        <span> {{vm.phoneDetail.fm}} </span>
+      </li>
+    </ul>
+
+    <p>转换后：</p>
+    <ul class="content__wrapper">
       <li>
         <span>android: </span>
         <span> {{vm.phoneDetail.android | checkmask}} </span>
@@ -26,6 +49,7 @@
         <span> {{vm.phoneDetail.fm | checkmask}} </span>
       </li>
     </ul>
+
   </div>
 
 </div>

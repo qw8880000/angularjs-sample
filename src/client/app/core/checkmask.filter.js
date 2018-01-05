@@ -11,7 +11,7 @@
     //--------------------------------
 
     function checkmaskFilter(input) {
-      return input ? '\u2713' : '\u2718';
+      return (input === true) ? '\u2713' : '\u2718';
     }
   }
 

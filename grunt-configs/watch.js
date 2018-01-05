@@ -4,15 +4,6 @@ module.exports = {
   
   watch: {
 
-    // angularjs: {
-      // files: ['<%= pathConfig.client %>/app/**/*.js', '!<%= pathConfig.client %>/app/**/*.spec.js'],
-      // tasks: ['angularFileLoader'],
-      // options: {
-        // spawn: false,
-        // event: ['all']
-      // }
-    // },
-
     cssCheck: {
       files: [
         '<%= pathConfig.client %>/css/basic.css',
@@ -25,7 +16,7 @@ module.exports = {
       }
     },
 
-    JsCodeCheck: {
+    jsCheck: {
       files: ['<%= pathConfig.client %>/app/**/*.js'],
       tasks: ['eslint'],
       options: {
