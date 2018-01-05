@@ -10,7 +10,7 @@
     });
 
   /* @ngInject */
-  function CustomFiltersController($log, dataService) {
+  function CustomFiltersController() {
     var vm = this;
     vm.phoneDetail = {
       android: true,

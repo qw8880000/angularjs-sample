@@ -30,6 +30,11 @@
         name: 'animations',
         url: '/animations',
         component: 'animations',
+      })
+      .state({
+        name: 'toastrs',
+        url: '/toastrs',
+        component: 'toastrs',
       });
   }
 
