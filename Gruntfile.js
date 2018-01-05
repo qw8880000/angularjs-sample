@@ -46,6 +46,7 @@ module.exports = function(grunt) {
   // See grunt-usemin for help
   grunt.registerTask('replacesReferences', [
     'useminPrepare',
+    'ngtemplates',
     'concat:generated',
     'ngAnnotate:app',
     'cssmin:generated',

@@ -13,22 +13,6 @@ module.exports = {
           dest: '<%= pathConfig.dist %>/index.html',
         },
 
-        // app
-        {
-          expand: true,
-          cwd: '<%= pathConfig.client %>/app',
-          src: '**/*.html',
-          dest: '<%= pathConfig.dist %>/app',
-        },
-
-        // images 
-        // {
-          // expand: true,
-          // cwd: '<%= pathConfig.client %>/img',
-          // src: '**',
-          // dest: '<%= pathConfig.dist %>/img',
-        // }, 
-
         // resources
         {
           expand: true,
