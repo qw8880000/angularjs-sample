@@ -48,6 +48,7 @@ module.exports = function(grunt) {
     'useminPrepare',
     'ngtemplates',
     'concat:generated',
+    'postcss:dist',
     'ngAnnotate:app',
     'cssmin:generated',
     'uglify:generated',
