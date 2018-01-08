@@ -4,9 +4,10 @@
 
   angular
     .module('app.core')
-    .config(toastrConfig);
+    .config(toastrConfiger);
 
-  function toastrConfig(toastrConfig) {
+  /* @ngInject */
+  function toastrConfiger(toastrConfig) {
     angular.extend(toastrConfig, {
       positionClass: 'toast-bottom-right',
     });

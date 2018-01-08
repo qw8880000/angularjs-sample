@@ -23,40 +23,40 @@
     }
 
     function openToastr() {
-      var a = arguments;
-      if (a.length === 2) {
-        var type = a[0];
-        var content = a[1];
 
-        if(type === 'success') {
+      var a = arguments;
+      var type;
+      var content;
+      var title;
+
+      if (a.length === 2) {
+
+        type = a[0];
+        content = a[1];
+
+        if (type === 'success') {
           toastr.success(content);
-        }
-        else if (type === 'info') {
+        } else if (type === 'info') {
           toastr.info(content);
-        }
-        else if (type === 'warning') {
+        } else if (type === 'warning') {
           toastr.warning(content);
-        }
-        else {
+        } else {
           toastr.error(content);
         }
 
-      } 
-      else if (a.length === 3) {
-        var type = a[0];
-        var content = a[1];
-        var title = a[2];
+      } else if (a.length === 3) {
 
-        if(type === 'success') {
+        type = a[0];
+        content = a[1];
+        title = a[2];
+
+        if (type === 'success') {
           toastr.success(content, title);
-        }
-        else if (type === 'info') {
+        } else if (type === 'info') {
           toastr.info(content, title);
-        }
-        else if (type === 'warning') {
+        } else if (type === 'warning') {
           toastr.warning(content, title);
-        }
-        else {
+        } else {
           toastr.error(content, title);
         }
 
