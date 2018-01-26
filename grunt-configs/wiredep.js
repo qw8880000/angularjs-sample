@@ -6,7 +6,10 @@ module.exports = {
   wiredep: {
     app: {
       src: ['<%= pathConfig.client %>/index.html'],
-      ignorePath: '../'
+      ignorePath: '../',
+      exclude: [
+        '/angularjs-unstable/'
+      ],
     }
   }
 };

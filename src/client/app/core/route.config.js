@@ -35,6 +35,11 @@
         name: 'toastrs',
         url: '/toastrs',
         component: 'toastrs',
+      })
+      .state({
+        name: 'fileUpload',
+        url: '/fileUpload',
+        component: 'fileUpload',
       });
   }
 

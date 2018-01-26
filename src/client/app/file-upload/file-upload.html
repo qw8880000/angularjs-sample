@@ -1,0 +1,28 @@
+<div class="card card--theme-green">
+
+  <div class="card__header">
+    <h2>File Upload demo</h2>
+  </div>
+  
+  <div class="card__content">
+
+    <h3>image upload demo from: <a href="https://angular-js.in/image-upload/">image-upload</a></h3>
+    <input type="file" accept="image/*" image="image"
+      resize-max-height="300"
+      resize-max-width="250"
+      resize-quality="0.7" />
+
+
+    <div>
+      原图：
+      <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" />
+    </div>
+
+    <div>
+      缩放：
+      <img ng-show="image" ng-src="{{image.resized.dataURL}}" />
+    </div>
+
+  </div>
+
+</div>
