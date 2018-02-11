@@ -23,6 +23,10 @@ Angular.js 1.x sample.
 自动化工具：
 * [Grunt]
 
+自动化测试：
+* [karma](https://karma-runner.github.io/2.0/index.html) + [jasmine](https://jasmine.github.io/) : 单元测试
+* [Protractor](http://www.protractortest.org/#/) : 端到端测试(end-to-end test)
+
 # Architecture
 
 ```
