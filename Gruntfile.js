@@ -76,6 +76,10 @@ module.exports = function(grunt) {
     'express:dist',
     'grunt-keepalive'
   ]);
+  
+  grunt.registerTask('test', [
+    'karma',
+  ]);
 
 };
 
