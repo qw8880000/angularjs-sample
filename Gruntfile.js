@@ -5,9 +5,10 @@ module.exports = function(grunt) {
   var config = {
     pkg: grunt.file.readJSON('package.json'),
     pathConfig: {
-      client: 'src/client',
-      dist: 'dist',
-      tmp: '.tmp',
+      client: 'src/client/',
+      dist: 'dist/',
+      tmp: '.tmp/',
+      gruntKarma: 'grunt-configs/karma.js',
     },
   };
 
@@ -33,7 +34,7 @@ module.exports = function(grunt) {
   // 1. wiredep: Inject Bower packages into your source code
   // 1. compass: Compile Sass to CSS
   grunt.registerTask('autoInject', [
-    'wiredep',
+    'wiredep:app',
     // 'sass',
   ]);
 
@@ -78,6 +79,7 @@ module.exports = function(grunt) {
   ]);
   
   grunt.registerTask('test', [
+    'wiredep:test',
     'karma',
   ]);
 
