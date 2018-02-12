@@ -110,6 +110,44 @@ module.exports = function(grunt) {
     },
 
     // ---------------------------------- 
+    // Inject references to files into other files 
+    // ---------------------------------- 
+    injector: {
+      angular2html: {
+        options: {
+          template: '<%= pathConfig.client %>/index.html',
+          starttag: '<!-- injector:angular -->',
+          endtag: '<!-- endinjector -->',
+          transform: function (file) {
+            var content = '<script src="file" type="text/javascript"></script>';
+            return content.replace(/file/i, file);
+          },
+          ignorePath: 'src/client/',
+          addRootSlash: false
+        },
+        src: ['<%= pathConfig.client %>/app/**/*.js'],
+        dest: '<%= pathConfig.client %>/index.html'
+      },
+
+      angular2karma: {
+        options: {
+          template: '<%= pathConfig.test %>/karma.conf.js',
+          starttag: '/*-- injector:angular --*/',
+          endtag: '/*-- endinjector --*/',
+          transform: function (file) {
+            var content = '\'file\',';
+            return content.replace(/file/i, file);
+          },
+          // ignorePath: 'src/client/',
+          addRootSlash: false
+        },
+        src: ['<%= pathConfig.client %>/app/**/*.js'],
+        dest: '<%= pathConfig.test %>/karma.conf.js'
+      },
+
+    },
+
+    // ---------------------------------- 
     // Optimize PNG, JPEG, GIF, SVG images with grunt task.
     // ---------------------------------- 
     // 图片优化 
