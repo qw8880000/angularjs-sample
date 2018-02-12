@@ -14,6 +14,9 @@ module.exports = function(grunt) {
 
   var pluginsConfig = {
 
+    // ---------------------------------- 
+    // Clean files and folders
+    // ---------------------------------- 
     clean: {
       dist: {
         src: [
@@ -23,7 +26,9 @@ module.exports = function(grunt) {
       },
     },
 
-
+    // ---------------------------------- 
+    // Copy files and folders 
+    // ---------------------------------- 
     copy: {
       dist: {
         files: [
@@ -43,7 +48,9 @@ module.exports = function(grunt) {
       }
     },
 
-
+    // ---------------------------------- 
+    // Validate files with [ESLint](https://eslint.org)
+    // ---------------------------------- 
     eslint: {
       angularjs: {
         options: {
@@ -65,8 +72,9 @@ module.exports = function(grunt) {
       }
     },
 
-
-    // 启动express server
+    // ---------------------------------- 
+    // Simple grunt task for running an Express server that works great with LiveReload + Watch/Regarde
+    // ---------------------------------- 
     express: {
       options: {
       },
@@ -84,30 +92,26 @@ module.exports = function(grunt) {
       },
     },
 
-
-    // 给文件改名，避免升级新版本浏览器缓存旧的文件
+    // ---------------------------------- 
+    // Static asset revisioning through file content hash
+    // ---------------------------------- 
     filerev: {
       options: {
         algorithm: 'md5',
         length: 8
       },
-      js: {
+      dist: {
         src: [
-          '<%= pathConfig.dist %>/app/**/*.js'
-        ],
-      },
-      css: {
-        src: '<%= pathConfig.dist %>/css/**/*.css',
-      },
-      // resources: {
-      // src:'<%= pathConfig.dist %>/resources/**/*.*',
-      // },
-      // img: {
-      // src:'<%= pathConfig.dist %>/img/**/*.*',
-      // },
+          '<%= pathConfig.dist %>/app/**/*.js',
+          '<%= pathConfig.dist %>/css/**/*.css',
+          // '<%= pathConfig.dist %>/img/**/*.{png,jpg,jpeg,gif,webp,svg}',
+        ]
+      }
     },
 
-
+    // ---------------------------------- 
+    // Optimize PNG, JPEG, GIF, SVG images with grunt task.
+    // ---------------------------------- 
     // 图片优化 
     image: {
       options: {
@@ -120,7 +124,6 @@ module.exports = function(grunt) {
         gifsicle: true,
         svgo: true
       },
-
       dist: {
         files: [{
           expand: true,
@@ -142,15 +145,16 @@ module.exports = function(grunt) {
       },
     },
 
-
+    // ---------------------------------- 
+    // Add, remove and rebuild AngularJS dependency injection annotations.
+    // ---------------------------------- 
     ngAnnotate: {
       options: {
         add: true,
         remove: true,
         singleQuotes: true,
       },
-
-      app: {
+      dist: {
         // files: [{
         // expand: true,
         // cwd: '<%= pathConfig.dist %>/app',
@@ -162,11 +166,12 @@ module.exports = function(grunt) {
           dest: '<%= pathConfig.tmp %>/concat/app/app.min.js'
         }]
       },
-
     },
 
 
-    // Caching your HTML templates with $templateCache 
+    // ---------------------------------- 
+    // caching your HTML templates with `$templateCache`.
+    // ---------------------------------- 
     ngtemplates: {
       options: {
         htmlmin: {
@@ -181,7 +186,7 @@ module.exports = function(grunt) {
         },
       },
 
-      app: {
+      dist: {
         options: {
           module: 'app',            // This came from the angular.module('app');
           standalone: false,
@@ -193,6 +198,9 @@ module.exports = function(grunt) {
       }
     },
 
+    // ---------------------------------- 
+    // Apply several post-processors to your CSS using [PostCSS](https://github.com/postcss/postcss).
+    // ---------------------------------- 
     postcss: {
       options: {
         // map: true, // inline sourcemaps
@@ -208,8 +216,9 @@ module.exports = function(grunt) {
       },
     },
 
-
-    // css 检查
+    // ---------------------------------- 
+    // Grunt plugin for running [stylelint](http://stylelint.io/)
+    // ---------------------------------- 
     stylelint: {
       css: {
         options: {
@@ -255,41 +264,34 @@ module.exports = function(grunt) {
       }
     },
 
-
     // usemin replaces the blocks by the file they reference, and replaces all references to assets by their revisioned version if it is found on the disk. 
     // This target modifies the files it is working on.
     usemin: {
-      html: [
-        '<%= pathConfig.dist %>/index.html'
-      ],
-      // js: [
-      // '<%= pathConfig.dist %>/js/**/*.js'
-      // ],
-      // css: [
-      // '<%= pathConfig.dist %>/css/**/*.css',
-      // ], 
+      html: ['<%= pathConfig.dist %>/index.html'],
+      // js: ['<%= pathConfig.dist %>/app/**/*.js'],
+      // css: ['<%= pathConfig.dist %>/css/**/*.css',], 
+      // resources: ['<%= pathConfig.dist %>/resources/**/*.json'],
+
       options: {
         // revmap:
         assetsDirs: [
-          '<%= pathConfig.dist %>'
+          '<%= pathConfig.dist %>',
         ],
         patterns: {
-          // html: [
-          // [/(js\/thirdParty\.js)/g, 'replace thirdParty.js in html']
-          // ],
           // js: [
-          // [/(resources\/markdown\/[\/\w-]+\.(md))/g, 'replace markdown in js']
+            // [/(img\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
           // ],
-          // css: [
-          // [/(images\/[\/\w-]+\.(png|gif|jpg|jpeg))/g, 'replace images in css'],
+          // resources: [
+            // [/(img\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
           // ],
         }
       }
     },
 
-
+    // ---------------------------------- 
+    // Run predefined tasks whenever watched file patterns are added, changed or deleted
+    // ---------------------------------- 
     watch: {
-
       css: {
         files: [
           '<%= pathConfig.client %>/css/**/*.css',
@@ -300,7 +302,6 @@ module.exports = function(grunt) {
           event: ['all']
         }
       },
-
       js: {
         files: [
           '<%= pathConfig.client %>/app/**/*.js',
@@ -314,7 +315,9 @@ module.exports = function(grunt) {
       }
     },
 
-
+    // ---------------------------------- 
+    // Inject Bower packages into your source code with Grunt.
+    // ---------------------------------- 
     wiredep: {
       options: {
         exclude: [
@@ -379,13 +382,13 @@ module.exports = function(grunt) {
   // See grunt-usemin for help
   grunt.registerTask('replacesReferences', [
     'useminPrepare',
-    'ngtemplates',
+    'ngtemplates:dist',
     'concat:generated',
     'postcss:dist',
-    'ngAnnotate:app',
+    'ngAnnotate:dist',
     'cssmin:generated',
     'uglify:generated',
-    // 'filerev',
+    'filerev',
     'usemin'
   ]);
 
@@ -415,7 +418,8 @@ module.exports = function(grunt) {
   
   grunt.registerTask('test', [
     'wiredep:test',
-    'karma',
+    'eslint:test',
+    'karma:dev',
   ]);
 
 };
