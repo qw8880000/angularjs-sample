@@ -1,19 +1,354 @@
 // see: https://gruntjs.com/sample-gruntfile
 module.exports = function(grunt) {
   
-  var configLoader = require('./grunt-configsloader.js');
   var config = {
     pkg: grunt.file.readJSON('package.json'),
     pathConfig: {
       client: 'src/client/',
+      server: 'src/server/',
       dist: 'dist/',
       tmp: '.tmp/',
-      gruntKarma: 'grunt-configs/karma.js',
+      test: 'test/',
     },
   };
 
-  // get config from Gruntconfigs folder
-  grunt.util._.extend(config, configLoader.load(__dirname + '/grunt-configs'));
+  var pluginsConfig = {
+
+    clean: {
+      dist: {
+        src: [
+          '<%= pathConfig.dist %>',
+          '<%= pathConfig.tmp %>'
+        ]
+      },
+    },
+
+
+    copy: {
+      dist: {
+        files: [
+          // index.html
+          {
+            src: '<%= pathConfig.client %>/index.html',
+            dest: '<%= pathConfig.dist %>/index.html',
+          },
+          // resources
+          {
+            expand: true,
+            cwd: '<%= pathConfig.client %>/resources',
+            src: '**',
+            dest: '<%= pathConfig.dist %>/resources',
+          },
+        ]
+      }
+    },
+
+
+    eslint: {
+      angularjs: {
+        options: {
+          // configFile: "<%= pathConfig.client %>/app/.eslintrc.json",
+        },
+        src: [
+          '<%= pathConfig.client %>/app/**/*.js',
+        ]
+      },
+
+      test: {
+        options: {
+          // configFile: "<%= pathConfig.client %>/app/.eslintrc.json",
+        },
+        src: [
+          '<%= pathConfig.test %>/**/*.js',
+          '!<%= pathConfig.test %>/karma.conf.js',
+        ]
+      }
+    },
+
+
+    // 启动express server
+    express: {
+      options: {
+      },
+      dev: {
+        options: {
+          script: '<%= pathConfig.server %>/app.js',
+          debug: true
+        }
+      },
+      dist: {
+        options: {
+          script: '<%= pathConfig.server %>/app.js',
+          node_env: 'production'
+        }
+      },
+    },
+
+
+    // 给文件改名，避免升级新版本浏览器缓存旧的文件
+    filerev: {
+      options: {
+        algorithm: 'md5',
+        length: 8
+      },
+      js: {
+        src: [
+          '<%= pathConfig.dist %>/app/**/*.js'
+        ],
+      },
+      css: {
+        src: '<%= pathConfig.dist %>/css/**/*.css',
+      },
+      // resources: {
+      // src:'<%= pathConfig.dist %>/resources/**/*.*',
+      // },
+      // img: {
+      // src:'<%= pathConfig.dist %>/img/**/*.*',
+      // },
+    },
+
+
+    // 图片优化 
+    image: {
+      options: {
+        optipng: false,
+        pngquant: true,
+        zopflipng: true,
+        jpegRecompress: false,
+        mozjpeg: true,
+        guetzli: false,
+        gifsicle: true,
+        svgo: true
+      },
+
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= pathConfig.client %>/img',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: '<%= pathConfig.dist %>/img'
+        }]
+      }
+    },
+
+    // ---------------------------------- 
+    // Grunt plugin for Karma
+    // ---------------------------------- 
+    karma: {
+      dev: {
+        configFile: '<%= pathConfig.test %>/karma.conf.js',
+        singleRun: true,
+        reporters: 'dots',
+      },
+    },
+
+
+    ngAnnotate: {
+      options: {
+        add: true,
+        remove: true,
+        singleQuotes: true,
+      },
+
+      app: {
+        // files: [{
+        // expand: true,
+        // cwd: '<%= pathConfig.dist %>/app',
+        // src: '**/*.js',
+        // dest: '<%= pathConfig.dist %>/app'
+        // }]
+        files: [{
+          src: '<%= pathConfig.tmp %>/concat/app/app.min.js',
+          dest: '<%= pathConfig.tmp %>/concat/app/app.min.js'
+        }]
+      },
+
+    },
+
+
+    // Caching your HTML templates with $templateCache 
+    ngtemplates: {
+      options: {
+        htmlmin: {
+          collapseBooleanAttributes:      true,
+          collapseWhitespace:             true,
+          removeAttributeQuotes:          true,
+          removeComments:                 true, // Only if you don't use comment directives! 
+          removeEmptyAttributes:          true,
+          removeRedundantAttributes:      true,
+          removeScriptTypeAttributes:     true,
+          removeStyleLinkTypeAttributes:  true
+        },
+      },
+
+      app: {
+        options: {
+          module: 'app',            // This came from the angular.module('app');
+          standalone: false,
+          usemin: 'app/app.min.js', // This came from the <!-- build:js --> block
+        },
+        cwd: '<%= pathConfig.client %>',
+        src: 'app/**/*.html',
+        dest: '<%= pathConfig.tmp %>/templates.js'
+      }
+    },
+
+    postcss: {
+      options: {
+        // map: true, // inline sourcemaps
+        map: false,
+        processors: [
+          // require('pixrem')(), // add fallbacks for rem units
+          // require('cssnano')() // minify the result
+          require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+        ],
+      },
+      dist: {
+        src: ['<%= pathConfig.tmp %>/concat/css/*.css'],
+      },
+    },
+
+
+    // css 检查
+    stylelint: {
+      css: {
+        options: {
+          configFile: '.stylelintrc',
+          formatter: 'string',
+          ignoreDisables: false,
+          failOnError: true,
+          outputFile: '',
+          reportNeedlessDisables: false,
+          syntax: ''
+        },
+        src: [
+          '<%= pathConfig.client %>/css/**/*.css',
+          '!<%= pathConfig.client %>/css/normalize.css'
+        ]
+      }
+    },
+
+
+    // Reads HTML for usemin blocks to enable smart builds that automatically
+    // concat, minify and revision files. Creates configurations in memory so
+    // additional tasks can operate on them
+    useminPrepare: {
+      html: [
+        '<%= pathConfig.client %>/index.html',
+      ],
+      options: {
+        // The root directory from which your files will be resolved.
+        root: ['<%= pathConfig.client %>'],
+        // Base directory where the transformed files should be output.
+        dest: '<%= pathConfig.dist %>',
+        // Base directory where the temporary files should be output (e.g. concatenated files).
+        staging: '<%= pathConfig.tmp %>',
+        // This allow you to configure the workflow 
+        flow: {
+          steps: {
+            css: ['concat', 'cssmin'],
+            // js: ['concat', 'uglifyjs']
+            js: ['concat', 'uglify']
+          }, 
+          post: {}
+        }
+      }
+    },
+
+
+    // usemin replaces the blocks by the file they reference, and replaces all references to assets by their revisioned version if it is found on the disk. 
+    // This target modifies the files it is working on.
+    usemin: {
+      html: [
+        '<%= pathConfig.dist %>/index.html'
+      ],
+      // js: [
+      // '<%= pathConfig.dist %>/js/**/*.js'
+      // ],
+      // css: [
+      // '<%= pathConfig.dist %>/css/**/*.css',
+      // ], 
+      options: {
+        // revmap:
+        assetsDirs: [
+          '<%= pathConfig.dist %>'
+        ],
+        patterns: {
+          // html: [
+          // [/(js\/thirdParty\.js)/g, 'replace thirdParty.js in html']
+          // ],
+          // js: [
+          // [/(resources\/markdown\/[\/\w-]+\.(md))/g, 'replace markdown in js']
+          // ],
+          // css: [
+          // [/(images\/[\/\w-]+\.(png|gif|jpg|jpeg))/g, 'replace images in css'],
+          // ],
+        }
+      }
+    },
+
+
+    watch: {
+
+      css: {
+        files: [
+          '<%= pathConfig.client %>/css/**/*.css',
+        ],
+        tasks: ['stylelint'],
+        options: {
+          spawn: false,
+          event: ['all']
+        }
+      },
+
+      js: {
+        files: [
+          '<%= pathConfig.client %>/app/**/*.js',
+          '<%= pathConfig.test %>/**/*.js'
+        ],
+        tasks: ['eslint'],
+        options: {
+          spawn: false,
+          event: ['all']
+        }
+      }
+    },
+
+
+    wiredep: {
+      options: {
+        exclude: [
+          '/angularjs-unstable/'
+        ],
+      },
+
+      app: {
+        src: ['<%= pathConfig.client %>/index.html'],
+        ignorePath: '../',
+        devDependencies: false,
+      },
+
+      test: {
+        src: '<%= pathConfig.test %>/karma.conf.js',
+        ignorePath: '../',
+        devDependencies: true,
+        fileTypes:{
+          js: {
+            block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
+            detect: {
+              js: /'(.*\.js)'/gi
+            },
+            replace: {
+              js: '\'{{filePath}}\','
+            }
+          }
+        }
+      },
+    },
+
+  };
+
+  grunt.util._.extend(config, pluginsConfig);
   grunt.initConfig(config);
 
   // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
