@@ -116,7 +116,7 @@ module.exports = function(grunt) {
       angular2html: {
         options: {
           template: '<%= pathConfig.client %>/index.html',
-          starttag: '<!-- injector:angular -->',
+          starttag: '<!-- injector:angular:js -->',
           endtag: '<!-- endinjector -->',
           transform: function (file) {
             var content = '<script src="file" type="text/javascript"></script>';
@@ -132,7 +132,7 @@ module.exports = function(grunt) {
       angular2karma: {
         options: {
           template: '<%= pathConfig.test %>/karma.conf.js',
-          starttag: '/*-- injector:angular --*/',
+          starttag: '/*-- injector:angular:js --*/',
           endtag: '/*-- endinjector --*/',
           transform: function (file) {
             var content = '\'file\',';
@@ -375,7 +375,7 @@ module.exports = function(grunt) {
         devDependencies: true,
         fileTypes:{
           js: {
-            block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
+            block: /(([\s\t]*)\/\*--\s*?bower:js\s*?--\*\/(\S*))(\n|\r|.)*?(\/\*--\s*endbower\s*--\*\/)/gi,
             detect: {
               js: /'(.*\.js)'/gi
             },

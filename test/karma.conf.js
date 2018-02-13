@@ -19,7 +19,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      // bower:js
+      /*-- bower:js --*/
       'src/client/bower_components/angular/angular.js',
       'src/client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'src/client/bower_components/angular-resource/angular-resource.js',
@@ -27,9 +27,9 @@ module.exports = function(config) {
       'src/client/bower_components/angular-toastr/dist/angular-toastr.tpls.js',
       'src/client/bower_components/angularjs-imageupload-directive/public/javascripts/imageupload.js',
       'src/client/bower_components/angular-mocks/angular-mocks.js',
-      // endbower
+      /*-- endbower --*/
       
-      /*-- injector:angular --*/
+      /*-- injector:angular:js --*/
       'src/client/app/animations/animations.component.js',
       'src/client/app/animations/animations.module.js',
       'src/client/app/app.module.js',
