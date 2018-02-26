@@ -412,6 +412,7 @@ module.exports = function(grunt) {
     'wiredep:app',
     'eslint:angularjs',
     'stylelint',
+    'test',
 
     'express:dev',
     'watch'
@@ -421,6 +422,7 @@ module.exports = function(grunt) {
     'wiredep:app',
     'eslint:angularjs',
     'stylelint',
+    'test',
 
     'clean:dist',
     'copy:dist',
@@ -434,7 +436,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [
     'wiredep:test',
     'injector:test2karma',
-    // 'eslint:test',
+    'eslint:test',
     'karma:dev',
   ]);
 
