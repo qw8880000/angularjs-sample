@@ -8,10 +8,12 @@ extends:
 
 plugins:
     - angular
+    - jasmine
 
 # override airbnb-base setting
 env:
     es6: false
+    jasmine: true
 
 parserOptions:
     ecmaVersion: 5

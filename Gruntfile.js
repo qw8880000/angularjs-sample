@@ -113,26 +113,11 @@ module.exports = function(grunt) {
     // Inject references to files into other files 
     // ---------------------------------- 
     injector: {
-      angular2html: {
-        options: {
-          template: '<%= pathConfig.client %>/index.html',
-          starttag: '<!-- injector:angular:js -->',
-          endtag: '<!-- endinjector -->',
-          transform: function (file) {
-            var content = '<script src="file" type="text/javascript"></script>';
-            return content.replace(/file/i, file);
-          },
-          ignorePath: 'src/client/',
-          addRootSlash: false
-        },
-        src: ['<%= pathConfig.client %>/app/**/*.js'],
-        dest: '<%= pathConfig.client %>/index.html'
-      },
 
-      angular2karma: {
+      test2karma: {
         options: {
           template: '<%= pathConfig.test %>/karma.conf.js',
-          starttag: '/*-- injector:angular:js --*/',
+          starttag: '/*-- injector:test:js --*/',
           endtag: '/*-- endinjector --*/',
           transform: function (file) {
             var content = '\'file\',';
@@ -141,7 +126,7 @@ module.exports = function(grunt) {
           // ignorePath: 'src/client/',
           addRootSlash: false
         },
-        src: ['<%= pathConfig.client %>/app/**/*.js'],
+        src: ['<%= pathConfig.test %>/unit/**/*.js'],
         dest: '<%= pathConfig.test %>/karma.conf.js'
       },
 
@@ -406,14 +391,6 @@ module.exports = function(grunt) {
     this.async();
   });
 
-  // # 自动注入
-  // 1. wiredep: Inject Bower packages into your source code
-  // 1. compass: Compile Sass to CSS
-  grunt.registerTask('autoInject', [
-    'wiredep:app',
-    // 'sass',
-  ]);
-
   // # js 与 css 合并与压缩
   // Replaces references from non-optimized scripts, stylesheets and other assets to their optimized version within a set of HTML files (or any templates/views)
   // 'useminprepare' is the first step, and the 'usemin' is the last step.
@@ -432,8 +409,8 @@ module.exports = function(grunt) {
 
   // the default task can be run just by typing "grunt" on the command line
   grunt.registerTask('default', [
-    'autoInject',
-    'eslint',
+    'wiredep:app',
+    'eslint:angularjs',
     'stylelint',
 
     'express:dev',
@@ -441,8 +418,8 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('dist', [
-    'autoInject',
-    'eslint',
+    'wiredep:app',
+    'eslint:angularjs',
     'stylelint',
 
     'clean:dist',
@@ -456,7 +433,8 @@ module.exports = function(grunt) {
   
   grunt.registerTask('test', [
     'wiredep:test',
-    'eslint:test',
+    'injector:test2karma',
+    // 'eslint:test',
     'karma:dev',
   ]);
 

@@ -9,7 +9,7 @@ module.exports = function(config) {
     // autoWatch: true,
 
     // base path, that will be used to resolve files and exclude
-    // basePath: '../',
+    basePath: '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
     // as well as any additional frameworks (requirejs/chai/sinon/...)
@@ -29,26 +29,29 @@ module.exports = function(config) {
       'src/client/bower_components/angular-mocks/angular-mocks.js',
       /*-- endbower --*/
       
-      /*-- injector:angular:js --*/
-      'src/client/app/animations/animations.component.js',
+      /*-- angular.js --*/
       'src/client/app/animations/animations.module.js',
-      'src/client/app/app.module.js',
-      'src/client/app/core/checkmask.filter.js',
+      'src/client/app/animations/animations.component.js',
       'src/client/app/core/core.module.js',
+      'src/client/app/core/checkmask.filter.js',
       'src/client/app/core/data.service.js',
       'src/client/app/core/route.config.js',
       'src/client/app/core/toastr.config.js',
-      'src/client/app/custom-filters/custom-filters.component.js',
       'src/client/app/custom-filters/custom-filters.module.js',
-      'src/client/app/file-upload/file-upload.component.js',
+      'src/client/app/custom-filters/custom-filters.component.js',
       'src/client/app/file-upload/file-upload.module.js',
-      'src/client/app/home/home.component.js',
+      'src/client/app/file-upload/file-upload.component.js',
       'src/client/app/home/home.module.js',
+      'src/client/app/home/home.component.js',
       'src/client/app/layout/layout.module.js',
-      'src/client/app/repeaters/repeaters.component.js',
       'src/client/app/repeaters/repeaters.module.js',
-      'src/client/app/toastrs/toastrs.component.js',
+      'src/client/app/repeaters/repeaters.component.js',
       'src/client/app/toastrs/toastrs.module.js',
+      'src/client/app/toastrs/toastrs.component.js',
+      'src/client/app/app.module.js',
+
+      /*-- injector:test:js --*/
+      'test/unit/app.module.spec.js',
       /*-- endinjector --*/
     ],
 
