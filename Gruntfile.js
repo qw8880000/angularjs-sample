@@ -412,7 +412,6 @@ module.exports = function(grunt) {
     'wiredep:app',
     'eslint:angularjs',
     'stylelint',
-    'test',
 
     'express:dev',
     'watch'

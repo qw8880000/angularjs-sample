@@ -24,7 +24,7 @@ Angular.js 1.x sample.
 * [Grunt]
 
 自动化测试：
-* [karma](https://karma-runner.github.io/2.0/index.html) + [jasmine](https://jasmine.github.io/) : 单元测试
+* [karma](https://karma-runner.github.io/2.0/index.html) + [jasmine](https://jasmine.github.io/) : 单元测试(unit test)
 * [Protractor](http://www.protractortest.org/#/) : 端到端测试(end-to-end test)
 
 # Architecture
@@ -68,9 +68,10 @@ Angular.js 1.x sample.
 # How to use
 
 1. 克隆本代码仓库
-2. `npm install`
-3. `bower install`
-4. 普通开发使用`grunt`命令；发布使用`grunt dist`
+1. `npm install`
+1. `bower install`
+1. `npm install -g protractor@5.3.0`，`webdriver-manager update`
+1. 普通开发使用`grunt`命令；发布使用`grunt dist`
 
 # Automation
 
