@@ -5,10 +5,13 @@ globals:
 
 extends:
     - airbnb-base
+    - plugin:jasmine/recommended
+    - plugin:protractor/recommended
 
 plugins:
     - angular
     - jasmine
+    - protractor
 
 # override airbnb-base setting
 env:

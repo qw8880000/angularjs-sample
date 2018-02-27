@@ -61,13 +61,21 @@ module.exports = function(grunt) {
         ]
       },
 
-      test: {
+      unitTest: {
         options: {
           // configFile: "<%= pathConfig.client %>/app/.eslintrc.json",
         },
         src: [
-          '<%= pathConfig.test %>/**/*.js',
-          '!<%= pathConfig.test %>/karma.conf.js',
+          '<%= pathConfig.test %>/unit/**/*.js',
+        ]
+      },
+
+      e2eTest: {
+        options: {
+          // configFile: "<%= pathConfig.client %>/app/.eslintrc.json",
+        },
+        src: [
+          '<%= pathConfig.test %>/e2e/**/*.js',
         ]
       }
     },
@@ -130,6 +138,21 @@ module.exports = function(grunt) {
         dest: '<%= pathConfig.test %>/karma.conf.js'
       },
 
+      test2protractor: {
+        options: {
+          template: '<%= pathConfig.test %>/protractor.conf.js',
+          starttag: '/*-- injector:test:js --*/',
+          endtag: '/*-- endinjector --*/',
+          transform: function (file) {
+            var content = '\'file\',';
+            return content.replace(/file/i, file);
+          },
+          ignorePath: 'test/',
+          addRootSlash: false
+        },
+        src: ['<%= pathConfig.test %>/e2e/**/*.js'],
+        dest: '<%= pathConfig.test %>/protractor.conf.js'
+      },
     },
 
     // ---------------------------------- 
@@ -421,7 +444,7 @@ module.exports = function(grunt) {
     'wiredep:app',
     'eslint:angularjs',
     'stylelint',
-    'test',
+    'unitTest',
 
     'clean:dist',
     'copy:dist',
@@ -432,11 +455,16 @@ module.exports = function(grunt) {
     'grunt-keepalive'
   ]);
   
-  grunt.registerTask('test', [
+  grunt.registerTask('unitTest', [
     'wiredep:test',
     'injector:test2karma',
-    'eslint:test',
+    'eslint:unitTest',
     'karma:dev',
+  ]);
+
+  grunt.registerTask('e2eTest', [
+    'injector:test2protractor',
+    'eslint:e2eTest',
   ]);
 
 };

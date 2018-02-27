@@ -70,7 +70,6 @@ Angular.js 1.x sample.
 1. 克隆本代码仓库
 1. `npm install`
 1. `bower install`
-1. `npm install -g protractor@5.3.0`，`webdriver-manager update`
 1. 普通开发使用`grunt`命令；发布使用`grunt dist`
 
 # Automation
