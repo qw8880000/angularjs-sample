@@ -245,6 +245,15 @@ module.exports = function(grunt) {
     },
 
     // ---------------------------------- 
+    // A Grunt plugin for running Protractor runner.
+    // ---------------------------------- 
+    protractor: {
+      e2eTest: {
+        configFile: '<%= pathConfig.test %>/protractor.conf.js',
+      },
+    },
+
+    // ---------------------------------- 
     // Apply several post-processors to your CSS using [PostCSS](https://github.com/postcss/postcss).
     // ---------------------------------- 
     postcss: {
@@ -465,6 +474,8 @@ module.exports = function(grunt) {
   grunt.registerTask('e2eTest', [
     'injector:test2protractor',
     'eslint:e2eTest',
+    'express:dev',
+    'protractor:e2eTest',
   ]);
 
 };
