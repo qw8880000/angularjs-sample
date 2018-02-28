@@ -192,6 +192,17 @@ module.exports = function(grunt) {
     },
 
     // ---------------------------------- 
+    // Compile LESS files to CSS
+    // ---------------------------------- 
+    less: {
+      dev: {
+        files: {
+          '<%= pathConfig.client %>/css/app.css': '<%= pathConfig.client %>/less/app.less',
+        },
+      },
+    },
+
+    // ---------------------------------- 
     // Add, remove and rebuild AngularJS dependency injection annotations.
     // ---------------------------------- 
     ngAnnotate: {
@@ -286,8 +297,8 @@ module.exports = function(grunt) {
           syntax: ''
         },
         src: [
-          '<%= pathConfig.client %>/css/**/*.css',
-          '!<%= pathConfig.client %>/css/normalize.css'
+          '<%= pathConfig.client %>/less/**/*.less',
+          '!<%= pathConfig.client %>/less/_normalize.less',
         ]
       }
     },
@@ -442,6 +453,7 @@ module.exports = function(grunt) {
   // the default task can be run just by typing "grunt" on the command line
   grunt.registerTask('default', [
     'wiredep:app',
+    'less:dev',
     'eslint:angularjs',
     'stylelint',
 
@@ -451,6 +463,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('dist', [
     'wiredep:app',
+    'less:dev',
     'eslint:angularjs',
     'stylelint',
     'unitTest',

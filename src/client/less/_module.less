@@ -1,47 +1,14 @@
 /* ----------------------------------
- * 姝ss浣跨敤BEM鏍囧噯
+ * 此css使用BEM标准
  *
  * [BEM](https://en.bem.info/)
  *
  *
- * 鍛戒护绾﹀畾浣跨敤Two Dashes style:
+ * 命令约定使用Two Dashes style:
  *    block-name__elem-name--mod-name-mod-val
- * 璇﹁锛歨ttps://en.bem.info/methodology/naming-convention/#two-dashes-style
+ * 详见：https://en.bem.info/methodology/naming-convention/#two-dashes-style
  *
  * ---------------------------------- */
-
-html {
-  font-family: sans-serif;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-h1 {
-  font-size: 4rem;
-  font-weight: 500;
-  text-align: center;
-}
-
-h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 3rem;
-  font-weight: 300;
-  text-align: center;
-  line-height: 1.5;
-}
 
 .img--circle {
   border-radius: 50%;
@@ -56,7 +23,7 @@ h2 {
   background-color: #71c9f3;
 }
 
-/* 涓績鍐呭 */
+/* 中心内容 */
 .lead {
   display: block;
   font-size: 1.2rem;
@@ -72,7 +39,7 @@ h2 {
   transition: 0.3s;
 }
 
-/* 瑙ｅ喅锛氬寘鍚潡涓嬬殑瀛愬厓绱犻兘涓哄潡鍏冪礌鐨勬儏鍐典笅锛屽寘鍚潡涓嶅寘鍚瓙鍏冪礌鐨刴argin-top涓巑argin-bottom */
+/* 解决：包含块下的子元素都为块元素的情况下，包含块不包含子元素的margin-top与margin-bottom */
 .card::before {
   content: "";
   display: table;
