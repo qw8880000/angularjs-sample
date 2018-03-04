@@ -1,0 +1,15 @@
+root: true
+
+extends:
+    - plugin:jasmine/recommended
+    - plugin:protractor/recommended
+
+plugins:
+    - jasmine
+    - protractor
+
+rules: 
+    # http://eslint.cn/docs/rules/#best-practices
+
+    # http://eslint.cn/docs/rules/#stylistic-issues
+    linebreak-style: 0
