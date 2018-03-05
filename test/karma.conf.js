@@ -20,10 +20,11 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       /*-- bower:js --*/
+      'src/client/bower_components/jquery/dist/jquery.js',
       'src/client/bower_components/angular/angular.js',
+      'src/client/bower_components/angular-animate/angular-animate.js',
       'src/client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'src/client/bower_components/angular-resource/angular-resource.js',
-      'src/client/bower_components/angular-animate/angular-animate.js',
       'src/client/bower_components/angular-toastr/dist/angular-toastr.tpls.js',
       'src/client/bower_components/angularjs-imageupload-directive/public/javascripts/imageupload.js',
       'src/client/bower_components/angular-mocks/angular-mocks.js',
@@ -43,8 +44,6 @@ module.exports = function(config) {
       'src/client/app/core/toastr.config.js',
       'src/client/app/custom-filters/custom-filters.module.js',
       'src/client/app/custom-filters/custom-filters.component.js',
-      'src/client/app/file-upload/file-upload.module.js',
-      'src/client/app/file-upload/file-upload.component.js',
       'src/client/app/home/home.module.js',
       'src/client/app/home/home.component.js',
       'src/client/app/layout/layout.module.js',

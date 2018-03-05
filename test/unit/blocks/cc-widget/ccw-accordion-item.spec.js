@@ -52,6 +52,7 @@ describe('Testing ccw-accordion-item directive:', function () {
         </div> \
         </div>';
       var element = getCompiledElement(template);
+      console.log(element.find('[ccw-accordion-toggle]'));
     });
   });
 

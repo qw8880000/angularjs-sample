@@ -384,9 +384,6 @@ module.exports = function(grunt) {
     // ---------------------------------- 
     wiredep: {
       options: {
-        exclude: [
-          '/angularjs-unstable/'
-        ],
       },
 
       app: {

@@ -17,7 +17,7 @@
       /*
        * 3rd party modules
        */
-      'ui.router', 'toastr', 'imageupload',
+      'ui.router', 'toastr',
 
       /*
        *  app common area
@@ -33,7 +33,6 @@
       'app.customFilters',
       'app.animations',
       'app.toastrs',
-      'app.fileUpload',
     ]);
 
 }());
