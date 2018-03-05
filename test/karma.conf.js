@@ -32,6 +32,10 @@ module.exports = function(config) {
       /*-- angular.js --*/
       'src/client/app/animations/animations.module.js',
       'src/client/app/animations/animations.component.js',
+      'src/client/app/blocks/cc-widget/cc-widget.module.js',
+      'src/client/app/blocks/cc-widget/accordion/ccw-accordion.module.js',
+      'src/client/app/blocks/cc-widget/accordion/ccw-accordion.directive.js',
+      'src/client/app/blocks/cc-widget/accordion/ccw-accordion-item.directive.js',
       'src/client/app/core/core.module.js',
       'src/client/app/core/checkmask.filter.js',
       'src/client/app/core/data.service.js',
@@ -52,6 +56,8 @@ module.exports = function(config) {
 
       /*-- injector:test:js --*/
       'test/unit/app.module.spec.js',
+      'test/unit/blocks/cc-widget/ccw-accordion-item.spec.js',
+      'test/unit/blocks/cc-widget/ccw-accordion.spec.js',
       /*-- endinjector --*/
     ],
 
@@ -82,7 +88,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    // singleRun: false,
+    singleRun: true,
 
     colors: true,
 

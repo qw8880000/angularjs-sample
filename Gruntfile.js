@@ -186,8 +186,6 @@ module.exports = function(grunt) {
     karma: {
       dev: {
         configFile: '<%= pathConfig.test %>/karma.conf.js',
-        singleRun: true,
-        reporters: 'dots',
       },
     },
 

@@ -12,7 +12,7 @@
       /*
        * Our reusable cross app code modules
        */
-      // 'blocks.exception', 'blocks.logger', 'blocks.router',
+      'ccWidget',
 
       /*
        * 3rd party modules
@@ -23,7 +23,6 @@
        *  app common area
        */
       'app.core',
-      // 'app.widgets',
 
       /*
        * feature area

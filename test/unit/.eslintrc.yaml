@@ -1,0 +1,13 @@
+root: true
+
+extends:
+    - plugin:jasmine/recommended
+
+plugins:
+    - jasmine
+
+rules: 
+    # http://eslint.cn/docs/rules/#best-practices
+
+    # http://eslint.cn/docs/rules/#stylistic-issues
+    'jasmine/new-line-before-expect': 0
