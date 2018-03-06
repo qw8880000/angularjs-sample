@@ -35,13 +35,9 @@
     };
 
     // This is called from the accordion-item directive to add itself to the accordion
-    this.addItem = function(itemScope) {
+    this.addItem = function(item) {
       var that = this;
-      this.items.push(itemScope);
-
-      // itemScope.$on('$destroy', function(event) {
-        // that.removeItem(itemScope);
-      // });
+      this.items.push(item);
     };
 
     // This is called from the accordion-item directive when to remove itself

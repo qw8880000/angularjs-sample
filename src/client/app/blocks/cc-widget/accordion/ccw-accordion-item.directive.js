@@ -9,23 +9,50 @@
   function ccwAccordionItem() {
     var directive = {
       require: '^ccwAccordion',   // Require ccwAccordion directive and inject its controller as the fourth argument to the linking function.
-      bindToController: false, 
-      controller: Controller,
       link: link,
       restrict: 'A',
       scope: {
+        openClass: '@',
+        isOpen: '=?',
       }
     };
     return directive;
 
     function link(scope, element, attrs, accordionCtrl) {
+      var toggleElement = element.find('[ccw-accordion-toggle]');;
+      var panelElement = element.find('[ccw-accordion-panel]');
+
+      scope.openClass = attrs.openClass || 'panel-open';
+      scope.isOpen = attrs.isOpen || false;
+
+      // set ccw-accordion-toggle click listener
+      if(toggleElement != null && panelElement != null) {
+        toggleElement.on('click', function () {
+          _toggleOpen(scope, accordionCtrl);
+        });
+      }
+
+      // set watcher to attr
+      scope.$watch('isOpen', function (value) {
+        panelElement.toggleClass(scope.openClass, !!value);
+      })
+
+      // add scope to ccw-accordion controller
       accordionCtrl.addItem(scope);
+
+      // set listener to destroy
+      scope.$on('$destroy', function(event) {
+        accordionCtrl.removeItem(scope);
+      });
     }
+
+    function _toggleOpen(scope, accordionCtrl) {
+      scope.isOpen = !scope.isOpen;
+      if (scope.isOpen) {
+        accordionCtrl.closeOthers(scope);
+      }
+    }
+
   }
 
-  /* @ngInject */
-  function Controller() {
-    this.header = null;
-    this.body = null;
-  }
 }());
