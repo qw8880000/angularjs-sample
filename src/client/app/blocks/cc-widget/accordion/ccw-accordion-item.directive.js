@@ -14,6 +14,7 @@
       scope: {
         openClass: '@',
         isOpen: '=?',
+        isDisabled: '=?',
       }
     };
     return directive;
@@ -24,6 +25,11 @@
 
       scope.openClass = attrs.openClass || 'panel-open';
       scope.isOpen = attrs.isOpen || false;
+      scope.isDisabled = attrs.isDisabled || false;
+
+      if(scope.isDisabled) {
+        return;
+      }
 
       // set ccw-accordion-toggle click listener
       if(toggleElement != null && panelElement != null) {
