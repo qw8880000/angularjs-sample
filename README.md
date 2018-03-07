@@ -27,7 +27,7 @@ Angular.js 1.x sample.
 * [karma](https://karma-runner.github.io/2.0/index.html) + [jasmine](https://jasmine.github.io/) : 单元测试(unit test)
 * [Protractor](http://www.protractortest.org/#/) : 端到端测试(end-to-end test)
 
-# Architecture
+# AngularJs Architecture
 
 ```
      +--------+
@@ -64,6 +64,20 @@ Angular.js 1.x sample.
 * 第二层：app的功能模块。
 * 第三层：此app的通用模块。如 常量，数据服务，控件等。
 * 第四层：跨app的通用模块。如 blocks.exception,blocks.logger。
+
+# CSS Architecture
+
+* 命名规范使用 [BEM].
+* css 预处理器使用 Less.
+* 字体单位使用 [REM], 其他元素使用px. 
+
+# Less Directory Structure
+
+// todo
+
+# css 编码规范
+
+// todo
 
 # How to use
 
@@ -120,3 +134,5 @@ Angular.js 1.x sample.
 [grunt-ng-annotate]: <https://www.npmjs.com/package/grunt-ng-annotate>
 [grunt-postcss]: <https://www.npmjs.com/package/grunt-postcss>
 [grunt-usemin]: <https://www.npmjs.com/package/grunt-usemin>
+
+[REM]: <https://blog.bugsnag.com/responsive-typography-with-rems/>
