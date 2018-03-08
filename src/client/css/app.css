@@ -1,3 +1,6 @@
+/* ==================================
+ * Vendors
+ * ================================== */
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -389,8 +392,24 @@ template {
 [hidden] {
   display: none;
 }
+/* ==================================
+ * Base 
+ * ================================== */
+/* Base colors
+   ================================== */
+/* Alert colors
+   ================================== */
+/* Nav colors
+   ================================== */
+/* base
+   ================================== */
+/* headings
+   ================================== */
+/* lead
+   ================================== */
 html {
   font-family: sans-serif;
+  font-size: 16px;
 }
 body {
   margin: 0;
@@ -404,55 +423,77 @@ html,
 body {
   height: 100%;
 }
-h1 {
-  font-size: 4rem;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* Headings
+   ================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
   font-weight: 500;
-  text-align: center;
+  line-height: 1.2;
+  color: inherit;
+}
+h1 {
+  font-size: 2.5rem;
 }
 h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 3rem;
-  font-weight: 300;
-  text-align: center;
-  line-height: 1.5;
+  font-size: 2rem;
 }
-/* ----------------------------------
- * ��cssʹ��BEM��׼
- *
- * [BEM](https://en.bem.info/)
- *
- *
- * ����Լ��ʹ��Two Dashes style:
- *    block-name__elem-name--mod-name-mod-val
- * ������https://en.bem.info/methodology/naming-convention/#two-dashes-style
- *
- * ---------------------------------- */
-.img--circle {
-  border-radius: 50%;
+h3 {
+  font-size: 1.75rem;
 }
-/* box */
-.box--shadow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+h4 {
+  font-size: 1.5rem;
 }
-.box--bg-primary {
-  background-color: #71c9f3;
+h5 {
+  font-size: 1.25rem;
 }
-/* �������� */
+h6 {
+  font-size: 1rem;
+}
 .lead {
-  display: block;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 300;
-  text-align: center;
 }
-/* card */
+/* ==================================
+ * Components 
+ * ================================== */
+.btn {
+  display: inline-block;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 0.25em;
+  padding: 0.75rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.15;
+}
+.btn--cl-orange {
+  background-color: #f7931e;
+  color: #fff;
+}
+.btn--cl-orange:hover {
+  background-color: #f9ab4f;
+  color: #fff;
+}
 .card {
   margin-bottom: 10px;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
-/* �������������µ���Ԫ�ض�Ϊ��Ԫ�ص������£������鲻������Ԫ�ص�margin-top��margin-bottom */
+/* 解决：包含块下的子元素都为块元素的情况下，包含块不包含子元素的margin-top与margin-bottom */
 .card::before {
   content: "";
   display: table;
@@ -484,28 +525,6 @@ h2 {
 .card--theme-gray > .card__content {
   border: 1px solid #2a5254;
 }
-/* button */
-.btn {
-  display: inline-block;
-  margin: 0;
-  border: 1px solid transparent;
-  border-radius: 0.25em;
-  padding: 0.75rem 2rem;
-  text-align: center;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.15;
-}
-.btn--cl-orange {
-  background-color: #f7931e;
-  color: #fff;
-}
-.btn--cl-orange:hover {
-  background-color: #f9ab4f;
-  color: #fff;
-}
-/* input form */
 .form-group {
   display: block;
   margin-bottom: 1rem;
@@ -537,50 +556,44 @@ h2 {
   color: #868e96;
   opacity: 1;
 }
-/* logo */
-.logo {
-  display: block;
-  position: relative;
-  width: auto;
-  height: 60px;
+.img--circle {
+  border-radius: 50%;
 }
-.logo__img {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* box */
+.box--shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-/* ----------------------------------
- * 此css使用BEM标准
- *
- * [BEM](https://en.bem.info/)
- *
- *
- * 命令约定使用Two Dashes style:
- *    block-name__elem-name--mod-name-mod-val
- * 详见：https://en.bem.info/methodology/naming-convention/#two-dashes-style
- *
- * ---------------------------------- */
-/* ----------------------------------
- * fixed header
- * ---------------------------------- */
+.box--bg-primary {
+  background-color: #71c9f3;
+}
+/* ==================================
+ * Partials 
+ * ================================== */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  display: flex;
+  align-items: center;
   height: 60px;
   width: 100%;
-  padding-left: 200px;
-  box-sizing: border-box;
+  /* padding-left: 200px; */
+  /* box-sizing: border-box; */
   background-color: #fff;
 }
-.author {
-  float: right;
-  display: inline-block;
-  line-height: 60px;
+.header__brand {
+  display: block;
+  width: 200px;
+  height: 60px;
+  background-image: url("/img/AngularJS.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+.header__author {
+  margin-left: auto;
   margin-right: 20px;
+}
+/* author
+   ================================== */
+.author {
+  display: block;
   text-decoration-line: none;
 }
 .author__avatar {
@@ -591,107 +604,55 @@ h2 {
 .author__name {
   vertical-align: middle;
 }
-/* ----------------------------------
- * fixed sidebar
- * ---------------------------------- */
+.main {
+  background-color: #eaeaea;
+}
 .sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #28a745;
+}
+/* nav
+   ================================== */
+.nav {
+  background-color: #28a745;
+}
+.nav__item {
+  display: block;
+  padding: 15px 20px;
+  margin: 2px 0;
+  background-color: #1c3043;
+  text-decoration-line: none;
+}
+.nav__item:hover {
+  background-color: #508dbb;
+}
+.nav__item--active {
+  background-color: #23394b;
+}
+/* ==================================
+ * Pages 
+ * ================================== */
+.index__header--fixed {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
-  width: 200px;
-  height: 100%;
-  background-color: #1c2b36;
 }
-.sidebar__logo {
-  background-color: #1c2b36;
+.index__sidebar--fixed {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 1;
 }
-.sidebar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.sidebar__link {
-  display: block;
-  padding: 15px 20px;
-  background-color: #113956;
-  margin: 2px 0;
-  color: #b7b7b7;
-  font-weight: 500;
-  text-decoration-line: none;
-}
-.sidebar__link:hover {
-  background-color: #146caa;
-  color: white;
-}
-.sidebar__link--active {
-  background-color: #146caa;
-  color: white;
-}
-/* ----------------------------------
- *  content
- * ---------------------------------- */
-.container {
+.index__main {
   position: relative;
-  margin-top: 60px;
-  margin-left: 200px;
+  padding-top: 70px;
+  padding-left: 210px;
+  padding-right: 10px;
   min-height: 100%;
-  padding: 10px;
-  background-color: #eaeaea;
+  box-sizing: border-box;
 }
-/* ----------------------------------
- * home demo
- * ---------------------------------- */
-.home__logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 120px;
-  height: 120px;
-}
-/* ----------------------------------
- * repeaters demo
- * ---------------------------------- */
-.repeaters__order {
-  margin: 20px 0;
-}
-.repeaters__input {
-  width: 30%;
-}
-.phone-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.phone-list__item {
-  height: 100px;
-  margin-bottom: 2px;
-  padding: 10px;
-  border: 1px solid #2a4254;
-}
-.phone-list__item-img {
-  float: left;
-  width: auto;
-  height: 100%;
-  margin: 0 10px 0 0;
-}
-/* ----------------------------------
- * aninations demo
- * ---------------------------------- */
-/* The starting CSS styles for the enter animation */
-.fade.ng-enter {
-  transition: 0.5s linear all;
-  opacity: 0;
-}
-/* The finishing CSS styles for the enter animation */
-.fade.ng-enter.ng-enter-active {
-  opacity: 1;
-}
-/* now the element will fade out before it is removed from the DOM */
-.fade.ng-leave {
-  transition: 0.5s linear all;
-  opacity: 1;
-}
-.fade.ng-leave.ng-leave-active {
-  opacity: 0;
-}
+/* ==================================
+ * Themes 
+ * ================================== */

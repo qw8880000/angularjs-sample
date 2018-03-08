@@ -17,19 +17,30 @@ body {
   height: 100%;
 }
 
-h1 {
-  font-size: 4rem;
-  font-weight: 500;
-  text-align: center;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 3rem;
-  font-weight: 300;
-  text-align: center;
-  line-height: 1.5;
+/* Headings
+   ================================== */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: @headings-margin-bottom;
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  line-height: @headings-line-height;
+  color: @headings-color;
 }
+h1 { font-size: @h1-font-size; }
+h2 { font-size: @h2-font-size; }
+h3 { font-size: @h3-font-size; }
+h4 { font-size: @h4-font-size; }
+h5 { font-size: @h5-font-size; }
+h6 { font-size: @h6-font-size; }
 
+.lead {
+  font-size: @lead-font-size;
+  font-weight: @lead-font-weight;
+}
 

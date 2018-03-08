@@ -1,0 +1,23 @@
+.index__header--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.index__sidebar--fixed {
+  position: fixed;
+  top: @header-height;
+  left: 0;
+  z-index: 1;
+}
+
+.index__main {
+  position: relative;
+  padding-top: @header-height + 10px;
+  padding-left: @sidebar-width + 10px;
+  padding-right: 10px;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+

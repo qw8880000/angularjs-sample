@@ -296,7 +296,7 @@ module.exports = function(grunt) {
         },
         src: [
           '<%= pathConfig.client %>/less/**/*.less',
-          '!<%= pathConfig.client %>/less/_normalize.less',
+          '!<%= pathConfig.client %>/less/vendors/**/*.less',
         ]
       }
     },
@@ -358,9 +358,9 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: [
-          '<%= pathConfig.client %>/css/**/*.css',
+          '<%= pathConfig.client %>/less/**/*.less',
         ],
-        tasks: ['stylelint'],
+        tasks: ['stylelint', 'less'],
         options: {
           spawn: false,
           event: ['all']

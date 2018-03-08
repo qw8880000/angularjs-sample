@@ -13,30 +13,32 @@
 </head>
 <body>
 
-<header class="header box--shadow">
-  <a class="author" href="https://github.com/qw8880000/angularjs-sample" target="_blank">
-    <img class="author__avatar img--circle" src="img/avatar.gif" alt="author's avatar">
-    <span class="author__name">好好编程</span>
-  </a>
+<header class="header index__header--fixed">
+
+  <a class="header__brand" href="https://angularjs.org" target="_blank"></a>
+
+  <div class="header__author">
+    <a class="author" href="https://github.com/qw8880000/angularjs-sample" target="_blank">
+      <img class="author__avatar" src="img/avatar.gif" alt="author's avatar">
+      <span class="author__name">好好编程</span>
+    </a>
+  </div>
+
 </header>
 
-<aside class="sidebar box--shadow">
+<aside class="sidebar index__sidebar--fixed">
 
-  <a class="logo sidebar__logo" href="https://angularjs.org" target="_blank">
-    <img class="logo__img" src="./img/AngularJS.png" alt="angular.js logo" title="go to angular.js home page">
-  </a>
-
-  <ul>
-    <li> <a class="sidebar__link" ui-sref="home" ui-sref-active="sidebar__link--active">Home</a> </li>
-    <li> <a class="sidebar__link" ui-sref="repeaters" ui-sref-active="sidebar__link--active">Repeaters</a> </li>
-    <li> <a class="sidebar__link" ui-sref="customFilters" ui-sref-active="sidebar__link--active">Custom filters</a> </li>
-    <li> <a class="sidebar__link" ui-sref="animations" ui-sref-active="sidebar__link--active">Animations</a> </li>
-    <li> <a class="sidebar__link" ui-sref="toastrs" ui-sref-active="sidebar__link--active">Toastrs</a> </li>
+  <ul class="nav">
+    <li> <a class="nav__item" ui-sref="home" ui-sref-active="nav__item--active">Home</a> </li>
+    <li> <a class="nav__item" ui-sref="repeaters" ui-sref-active="nav__item--active">Repeaters</a> </li>
+    <li> <a class="nav__item" ui-sref="customFilters" ui-sref-active="nav__item--active">Custom filters</a> </li>
+    <li> <a class="nav__item" ui-sref="animations" ui-sref-active="nav__item--active">Animations</a> </li>
+    <li> <a class="nav__item" ui-sref="toastrs" ui-sref-active="nav__item--active">Toastrs</a> </li>
   </ul>
 
 </aside>
 
-<div class="container">
+<div class="main index__main">
 
   <div class="content">
     <ui-view></ui-view>
