@@ -28,7 +28,7 @@
        * feature area
        */
       'app.layout',
-      'app.home',
+      'app.dashboard',
       'app.repeaters',
       'app.customFilters',
       'app.animations',

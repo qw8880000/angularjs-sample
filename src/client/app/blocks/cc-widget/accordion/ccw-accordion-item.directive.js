@@ -12,7 +12,8 @@
       link: link,
       restrict: 'A',
       scope: {
-        openClass: '@',
+        toggleItemClass: '@',
+        togglePanelClass: '@',
         isOpen: '=?',
         isDisabled: '=?',
       }
@@ -20,10 +21,11 @@
     return directive;
 
     function link(scope, element, attrs, accordionCtrl) {
-      var toggleElement = element.find('[ccw-accordion-toggle]');;
-      var panelElement = element.find('[ccw-accordion-panel]');
+      var toggleElements = element.find('[ccw-accordion-toggle]');;
+      var panelElements = element.find('[ccw-accordion-panel]');
 
-      scope.openClass = attrs.openClass || 'panel-open';
+      scope.toggleItemClass = attrs.toggleItemClass || 'item-open';
+      scope.togglePanelClass = attrs.togglePanelClass || 'panel-open';
       scope.isOpen = attrs.isOpen || false;
       scope.isDisabled = attrs.isDisabled || false;
 
@@ -32,16 +34,21 @@
       }
 
       // set ccw-accordion-toggle click listener
-      if(toggleElement != null && panelElement != null) {
-        toggleElement.on('click', function () {
+      if(toggleElements.length > 0) {
+        toggleElements.on('click', function () {
           _toggleOpen(scope, accordionCtrl);
         });
       }
 
       // set watcher to attr
       scope.$watch('isOpen', function (value) {
-        panelElement.toggleClass(scope.openClass, !!value);
-      })
+
+        element.toggleClass(scope.toggleItemClass, !!value);
+
+        if(panelElements.length > 0) {
+          panelElements.toggleClass(scope.togglePanelClass, !!value);
+        }
+      });
 
       // add scope to ccw-accordion controller
       accordionCtrl.addItem(scope);
@@ -54,9 +61,11 @@
 
     function _toggleOpen(scope, accordionCtrl) {
       scope.isOpen = !scope.isOpen;
+      element.addClass(scope.toggleItemClass);
       if (scope.isOpen) {
         accordionCtrl.closeOthers(scope);
       }
+      accordionCtrl.digest();     // force the watcher to run by calling $digest
     }
 
   }

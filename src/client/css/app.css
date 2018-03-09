@@ -393,19 +393,27 @@ template {
   display: none;
 }
 /* ==================================
- * Base 
+ * Base
  * ================================== */
 /* Base colors
    ================================== */
-/* Alert colors
+/* Alert
    ================================== */
-/* Nav colors
+/* Nav
    ================================== */
-/* base
+/* Header
    ================================== */
-/* headings
+/* Main
    ================================== */
-/* lead
+/* Base
+   ================================== */
+/* Headings
+   ================================== */
+/* Lead
+   ================================== */
+/* Sidebar
+   ================================== */
+/* Header
    ================================== */
 html {
   font-family: sans-serif;
@@ -460,12 +468,14 @@ h5 {
 h6 {
   font-size: 1rem;
 }
+/* Lead
+   ================================== */
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
 }
 /* ==================================
- * Components 
+ * Components
  * ================================== */
 .btn {
   display: inline-block;
@@ -567,15 +577,13 @@ h6 {
   background-color: #71c9f3;
 }
 /* ==================================
- * Partials 
+ * Partials
  * ================================== */
 .header {
   display: flex;
   align-items: center;
   height: 60px;
   width: 100%;
-  /* padding-left: 200px; */
-  /* box-sizing: border-box; */
   background-color: #fff;
 }
 .header__brand {
@@ -605,33 +613,44 @@ h6 {
   vertical-align: middle;
 }
 .main {
-  background-color: #eaeaea;
+  background-color: #e9ecef;
 }
 .sidebar {
   width: 200px;
   height: 100%;
-  background-color: #28a745;
+  background-color: #1c3043;
 }
 /* nav
    ================================== */
 .nav {
-  background-color: #28a745;
+  background-color: #1c3043;
 }
 .nav__item {
   display: block;
-  padding: 15px 20px;
-  margin: 2px 0;
-  background-color: #1c3043;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #23394b;
   text-decoration-line: none;
 }
 .nav__item:hover {
-  background-color: #508dbb;
+  background-color: #17a2b8;
 }
 .nav__item--active {
-  background-color: #23394b;
+  background-color: #13202c;
+}
+.sub-nav {
+  height: 0;
+  display: none;
+}
+.sub-nav--open {
+  border-left: 3px solid #20c997;
+}
+.sub-nav--open .sub-nav {
+  height: auto;
+  display: block;
 }
 /* ==================================
- * Pages 
+ * Pages
  * ================================== */
 .index__header--fixed {
   position: fixed;
@@ -654,5 +673,5 @@ h6 {
   box-sizing: border-box;
 }
 /* ==================================
- * Themes 
+ * Themes
  * ================================== */

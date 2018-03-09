@@ -6,24 +6,36 @@
 
 /* nav
    ================================== */
-
 .nav {
   background-color: @nav-color;
 }
 
 .nav__item {
   display: block;
-  padding: 15px 20px;
-  margin: 2px 0;
+  padding: 10px 20px;
+  color: @nav-font-color;
   background-color: @nav-item-color;
   text-decoration-line: none;
+
+  &:hover {
+    background-color: @nav-item-hover-color;
+  }
+
+  &--active {
+    background-color: @nav-item-active-color;
+  }
 }
 
-.nav__item:hover {
-  background-color: @nav-item-hover-color;
+.sub-nav {
+  height: 0;
+  display: none;
 }
 
-.nav__item--active {
-  background-color: @nav-item-active-color;
-}
+.sub-nav--open {
+  border-left: 3px solid @nav-vertical-line-color;
 
+  .sub-nav {
+    height: auto;
+    display: block;
+  }
+}

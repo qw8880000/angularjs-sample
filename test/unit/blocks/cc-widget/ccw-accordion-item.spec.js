@@ -26,7 +26,7 @@ describe('Testing ccw-accordion-item directive:', function () {
     
     clickElement = function (element) {
       element.triggerHandler('click');
-      $scope.$digest();     // force the watcher to run by calling $digest
+      // $scope.$digest();     // force the watcher to run by calling $digest
     }
 
   }));
@@ -53,7 +53,7 @@ describe('Testing ccw-accordion-item directive:', function () {
       var element = getCompiledElement(template);
       var itemScope = element.find('[ccw-accordion-item]').isolateScope();
 
-      expect(itemScope.openClass).toBe('panel-open');
+      expect(itemScope.togglePanelClass).toBe('panel-open');
       expect(itemScope.isOpen).toBe(false);
     });
   });
@@ -103,14 +103,16 @@ describe('Testing ccw-accordion-item directive:', function () {
       var toggleElements = element.find('[ccw-accordion-toggle]');
       var panelElements = element.find('[ccw-accordion-panel]');
       
-      // console.log(toggleElements);
+      expect(angular.element(panelElements[0]).hasClass('panel-open')).toBe(false);
+      expect(angular.element(panelElements[1]).hasClass('panel-open')).toBe(false);
+
       clickElement(angular.element(toggleElements[0]));
       expect(angular.element(panelElements[0]).hasClass('panel-open')).toBe(true);
       expect(angular.element(panelElements[1]).hasClass('panel-open')).toBe(false);
 
-      clickElement(angular.element(toggleElements[0]));
+      clickElement(angular.element(toggleElements[1]));
       expect(angular.element(panelElements[0]).hasClass('panel-open')).toBe(false);
-      expect(angular.element(panelElements[1]).hasClass('panel-open')).toBe(false);
+      expect(angular.element(panelElements[1]).hasClass('panel-open')).toBe(true);
     });
 
   });

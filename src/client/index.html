@@ -6,8 +6,9 @@
 <title>angular.js sample</title>
 
 <!-- build:css css/styles.min.css -->
-<link rel="stylesheet" href="css/app.css" type="text/css">
 <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+<link rel="stylesheet" href="css/app.css" type="text/css">
 <!-- endbuild -->
 
 </head>
@@ -28,12 +29,23 @@
 
 <aside class="sidebar index__sidebar--fixed">
 
-  <ul class="nav">
-    <li> <a class="nav__item" ui-sref="home" ui-sref-active="nav__item--active">Home</a> </li>
-    <li> <a class="nav__item" ui-sref="repeaters" ui-sref-active="nav__item--active">Repeaters</a> </li>
-    <li> <a class="nav__item" ui-sref="customFilters" ui-sref-active="nav__item--active">Custom filters</a> </li>
-    <li> <a class="nav__item" ui-sref="animations" ui-sref-active="nav__item--active">Animations</a> </li>
-    <li> <a class="nav__item" ui-sref="toastrs" ui-sref-active="nav__item--active">Toastrs</a> </li>
+  <ul ccw-accordion class="nav">
+    <li ccw-accordion-item>
+      <a ccw-accordion-toggle class="nav__item" ui-sref="dashboard" ui-sref-active="nav__item--active">
+        <i class="fa fa-tachometer" aria-hidden="true"></i> dashboard
+      </a>
+    </li>
+    <li ccw-accordion-item item-class="sub-nav--open"> 
+      <a ccw-accordion-toggle class="nav__item" href=""> 
+        angularjs demo 
+      </a>
+      <ul class="sub-nav">
+        <li> <a class="nav__item" ui-sref="repeaters" ui-sref-active="nav__item--active">Repeaters</a> </li>
+        <li> <a class="nav__item" ui-sref="customFilters" ui-sref-active="nav__item--active">Custom filters</a> </li>
+        <li> <a class="nav__item" ui-sref="animations" ui-sref-active="nav__item--active">Animations</a> </li>
+        <li> <a class="nav__item" ui-sref="toastrs" ui-sref-active="nav__item--active">Toastrs</a> </li>
+      </ul>
+    </li>
   </ul>
 
 </aside>
@@ -73,8 +85,8 @@
 <script src="app/core/toastr.config.js" type="text/javascript"></script>
 <script src="app/custom-filters/custom-filters.module.js" type="text/javascript"></script>
 <script src="app/custom-filters/custom-filters.component.js" type="text/javascript"></script>
-<script src="app/home/home.module.js" type="text/javascript"></script>
-<script src="app/home/home.component.js" type="text/javascript"></script>
+<script src="app/dashboard/dashboard.module.js" type="text/javascript"></script>
+<script src="app/dashboard/dashboard.component.js" type="text/javascript"></script>
 <script src="app/layout/layout.module.js" type="text/javascript"></script>
 <script src="app/repeaters/repeaters.module.js" type="text/javascript"></script>
 <script src="app/repeaters/repeaters.component.js" type="text/javascript"></script>

@@ -47,5 +47,10 @@
         this.items.splice(index, 1);
       }
     };
+
+    // Force the itself and it's children to flesh
+    this.digest = function () {
+      $scope.$digest();     // force the watcher to run by calling $digest
+    };
   }
 }());

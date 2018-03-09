@@ -8,13 +8,13 @@
   /* @ngInject */
   function routeConfig($stateProvider, $urlServiceProvider) {
 
-    $urlServiceProvider.rules.otherwise('/home');
+    $urlServiceProvider.rules.otherwise('/dashboard');
 
     $stateProvider
       .state({
-        name: 'home',
-        url: '/home',
-        component: 'home',
+        name: 'dashboard',
+        url: '/dashboard',
+        component: 'dashboard',
       })
       .state({
         name: 'repeaters',

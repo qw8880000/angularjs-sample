@@ -3,6 +3,7 @@
 
   "rules": {
     "block-no-empty": null,
-    "max-empty-lines": 2
+    "max-empty-lines": 2,
+    "selector-list-comma-newline-after": "always-multi-line"
   }
 }
