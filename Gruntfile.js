@@ -193,7 +193,7 @@ module.exports = function(grunt) {
     // Compile LESS files to CSS
     // ---------------------------------- 
     less: {
-      dev: {
+      app: {
         files: {
           '<%= pathConfig.client %>/css/app.css': '<%= pathConfig.client %>/less/app.less',
         },
@@ -274,6 +274,9 @@ module.exports = function(grunt) {
           // require('cssnano')() // minify the result
           require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
         ],
+      },
+      app: {
+        src: ['<%= pathConfig.client %>/css/app.css'],
       },
       dist: {
         src: ['<%= pathConfig.tmp %>/concat/css/*.css'],
@@ -437,7 +440,7 @@ module.exports = function(grunt) {
     'useminPrepare',
     'ngtemplates:dist',
     'concat:generated',
-    'postcss:dist',
+    // 'postcss:dist',
     'ngAnnotate:dist',
     'cssmin:generated',
     'uglify:generated',
@@ -445,29 +448,34 @@ module.exports = function(grunt) {
     'usemin'
   ]);
 
-  // the default task can be run just by typing "grunt" on the command line
-  grunt.registerTask('default', [
+  grunt.registerTask('prepare', [
     'wiredep:app',
-    'less:dev',
+    'less:app',
+    'postcss:app',
     'eslint:angularjs',
     'stylelint',
+  ]);
 
+  // the default task can be run just by typing "grunt" on the command line
+  grunt.registerTask('default', [
+    'prepare',
+
+    // start server
     'express:dev',
     'watch'
   ]);
 
   grunt.registerTask('dist', [
-    'wiredep:app',
-    'less:dev',
-    'eslint:angularjs',
-    'stylelint',
+    'prepare',
     'unitTest',
 
+    // build
     'clean:dist',
     'copy:dist',
     'image:dist',
     'replacesReferences',
 
+    // start server
     'express:dist',
     'grunt-keepalive'
   ]);
