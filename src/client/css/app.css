@@ -635,6 +635,9 @@ h6 {
 .nav__item:hover {
   background-color: #17a2b8;
 }
+.nav__item--focus {
+  border-left: 3px solid #20c997;
+}
 .nav__item--active {
   background-color: #13202c;
 }
@@ -642,10 +645,7 @@ h6 {
   height: 0;
   display: none;
 }
-.sub-nav--open {
-  border-left: 3px solid #20c997;
-}
-.sub-nav--open .sub-nav {
+.nav__item--open .sub-nav {
   height: auto;
   display: block;
 }

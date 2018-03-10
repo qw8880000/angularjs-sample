@@ -37,9 +37,12 @@
         });
       }
 
+      if(scope.isFocus) {
+        accordionCtrl.setFocus(scope);
+      }
+
       // set watcher to attr
       scope.$watch('isOpen', function (value) {
-
         // toggle class
         element.toggleClass(scope.itemOpenClass, !!value);
 

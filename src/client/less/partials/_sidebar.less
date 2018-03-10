@@ -21,6 +21,10 @@
     background-color: @nav-item-hover-color;
   }
 
+  &--focus {
+    border-left: 3px solid @nav-vertical-line-color;
+  }
+
   &--active {
     background-color: @nav-item-active-color;
   }
@@ -31,9 +35,7 @@
   display: none;
 }
 
-.sub-nav--open {
-  border-left: 3px solid @nav-vertical-line-color;
-
+.nav__item--open {
   .sub-nav {
     height: auto;
     display: block;
