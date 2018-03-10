@@ -5,7 +5,6 @@ describe('Testing ccw-accordion-item directive:', function () {
     $compile,
     $scope;
 
-
   // load the module, which contains the directive
   beforeEach(angular.mock.module('ccwAccordion'));
 
@@ -53,25 +52,25 @@ describe('Testing ccw-accordion-item directive:', function () {
       var element = getCompiledElement(template);
       var itemScope = element.find('[ccw-accordion-item]').isolateScope();
 
-      expect(itemScope.attachItemClass).toBe('');
-      expect(itemScope.toggleItemClass).toBe('');
-      expect(itemScope.togglePanelClass).toBe('');
+      expect(itemScope.itemFocusClass).toBe('');
+      expect(itemScope.itemOpenClass).toBe('');
+      expect(itemScope.panelOpenClass).toBe('');
       expect(itemScope.isOpen).toBe(false);
       expect(itemScope.isDisabled).toBe(false);
     });
 
     it('test custom scope:', function () {
       var template = '<div ccw-accordion> \
-            <div ccw-accordion-item is-open="true" is-disabled="true" attach-item-class="test1" toggle-item-class="test2" toggle-panel-class="test3"> \
+            <div ccw-accordion-item is-open="true" is-disabled="true" item-focus-class="test1" item-open-class="test2" panel-open-class="test3"> \
             </div> \
         </div>';
 
       var element = getCompiledElement(template);
       var itemScope = element.find('[ccw-accordion-item]').isolateScope();
 
-      expect(itemScope.attachItemClass).toBe('test1');
-      expect(itemScope.toggleItemClass).toBe('test2');
-      expect(itemScope.togglePanelClass).toBe('test3');
+      expect(itemScope.itemFocusClass).toBe('test1');
+      expect(itemScope.itemOpenClass).toBe('test2');
+      expect(itemScope.panelOpenClass).toBe('test3');
       expect(itemScope.isOpen).toBe(true);
       expect(itemScope.isDisabled).toBe(true);
     });
@@ -191,9 +190,9 @@ describe('Testing ccw-accordion-item directive:', function () {
       expect(scope2.isOpen).toBe(true);
     });
 
-    it('ccw-accordion-toggle clicked, should toggle togglePanelClass to ccw-accordion-panel and toggle toggleItemClass to ccw-accordion-item:', function () {
+    it('ccw-accordion-toggle clicked, should toggle panelOpenClass to ccw-accordion-panel and toggle itemOpenClass to ccw-accordion-item:', function () {
       var template = '<div ccw-accordion> \
-        <div ccw-accordion-item toggle-panel-class="panel-open" toggle-item-class="item-open"> \
+        <div ccw-accordion-item panel-open-class="panel-open" item-open-class="item-open"> \
           <div ccw-accordion-toggle></div> \
           <div ccw-accordion-panel></div> \
           <div ccw-accordion-panel></div> \
@@ -214,6 +213,37 @@ describe('Testing ccw-accordion-item directive:', function () {
       expect(panelElements.hasClass('panel-open')).toBe(false);
     });
 
+    it('ccw-accordion-toggle clicked, should add itemFocusClass to ccw-accordion-item:', function () {
+      var template = '<div ccw-accordion> \
+          <div ccw-accordion-item item-focus-class="item-focus"> \
+            <div ccw-accordion-toggle></div> \
+          </div> \
+          <div ccw-accordion-item item-focus-class="item-focus"> \
+            <div ccw-accordion-toggle></div> \
+          </div> \
+        </div>';
+      var element = getCompiledElement(template);
+      var itemElements = element.find('[ccw-accordion-item]');
+      var toggleElements = element.find('[ccw-accordion-toggle]');
+      
+      expect(itemElements.hasClass('item-focus')).toBe(false);
+
+      clickElement(angular.element(toggleElements[0]));
+      expect(angular.element(itemElements[0]).hasClass('item-focus')).toBe(true);
+      expect(angular.element(itemElements[1]).hasClass('item-focus')).toBe(false);
+
+      clickElement(angular.element(toggleElements[0]));
+      expect(angular.element(itemElements[0]).hasClass('item-focus')).toBe(true);
+      expect(angular.element(itemElements[1]).hasClass('item-focus')).toBe(false);
+
+      clickElement(angular.element(toggleElements[1]));
+      expect(angular.element(itemElements[0]).hasClass('item-focus')).toBe(false);
+      expect(angular.element(itemElements[1]).hasClass('item-focus')).toBe(true);
+
+      clickElement(angular.element(toggleElements[1]));
+      expect(angular.element(itemElements[0]).hasClass('item-focus')).toBe(false);
+      expect(angular.element(itemElements[1]).hasClass('item-focus')).toBe(true);
+    });
 
   });
 

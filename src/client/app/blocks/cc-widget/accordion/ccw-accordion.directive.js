@@ -20,6 +20,7 @@
   function Controller($scope, $attrs) {
     // This array keeps track of the accordion items
     this.items = [];
+    this.focusItem = null;
 
     this.isCloseOthers = angular.isDefined($attrs.closeOthers) ? $scope.$eval($attrs.closeOthers) : true;
 
@@ -31,6 +32,19 @@
             item.isOpen = false;
           }
         });
+      }
+    };
+
+    this.setFocus = function(focusItem) {
+      if (this.focusItem === null) {
+        focusItem.isFocus = true;
+        this.focusItem = focusItem;
+      } else {
+        if (focusItem !== this.focusItem) {
+          focusItem.isFocus = true;
+          this.focusItem.isFocus = false;
+          this.focusItem = focusItem;
+        }
       }
     };
 

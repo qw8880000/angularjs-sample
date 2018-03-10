@@ -19,11 +19,12 @@
       var toggleElements = element.find('[ccw-accordion-toggle]');
       var panelElements = element.find('[ccw-accordion-panel]');
 
-      scope.attachItemClass = attrs.attachItemClass || '';
-      scope.toggleItemClass = attrs.toggleItemClass || '';
-      scope.togglePanelClass = attrs.togglePanelClass || '';
+      scope.itemFocusClass = attrs.itemFocusClass || '';
+      scope.itemOpenClass = attrs.itemOpenClass || '';
+      scope.panelOpenClass = attrs.panelOpenClass || '';
       scope.isOpen = angular.isDefined(attrs.isOpen) ? scope.$eval(attrs.isOpen) : false;
       scope.isDisabled = angular.isDefined(attrs.isDisabled) ? scope.$eval(attrs.isDisabled) : false;
+      scope.isFocus = angular.isDefined(attrs.isFocus) ? scope.$eval(attrs.isFocus) : false;
 
       if(scope.isDisabled) {
         return;
@@ -39,10 +40,19 @@
       // set watcher to attr
       scope.$watch('isOpen', function (value) {
 
-        element.toggleClass(scope.toggleItemClass, !!value);
+        // toggle class
+        element.toggleClass(scope.itemOpenClass, !!value);
 
         if(panelElements.length > 0) {
-          panelElements.toggleClass(scope.togglePanelClass, !!value);
+          panelElements.toggleClass(scope.panelOpenClass, !!value);
+        }
+      });
+
+      scope.$watch('isFocus', function (value) {
+        if(value) {
+          element.addClass(scope.itemFocusClass);
+        } else {
+          element.removeClass(scope.itemFocusClass);
         }
       });
 
@@ -56,10 +66,14 @@
     }
 
     function _toggleOpen(scope, accordionCtrl) {
+      // set open
       scope.isOpen = !scope.isOpen;
       if (scope.isOpen) {
         accordionCtrl.closeOthers(scope);
       }
+
+      // set focus
+      accordionCtrl.setFocus(scope);
 
       accordionCtrl.digest();     // force the watcher to run by calling $digest
     }
