@@ -11,23 +11,19 @@
       require: '^ccwAccordion',   // Require ccwAccordion directive and inject its controller as the fourth argument to the linking function.
       link: link,
       restrict: 'A',
-      scope: {
-        toggleItemClass: '@',
-        togglePanelClass: '@',
-        isOpen: '=?',
-        isDisabled: '=?',
-      }
+      scope: {},
     };
     return directive;
 
     function link(scope, element, attrs, accordionCtrl) {
-      var toggleElements = element.find('[ccw-accordion-toggle]');;
+      var toggleElements = element.find('[ccw-accordion-toggle]');
       var panelElements = element.find('[ccw-accordion-panel]');
 
-      scope.toggleItemClass = attrs.toggleItemClass || 'item-open';
-      scope.togglePanelClass = attrs.togglePanelClass || 'panel-open';
-      scope.isOpen = attrs.isOpen || false;
-      scope.isDisabled = attrs.isDisabled || false;
+      scope.attachItemClass = attrs.attachItemClass || '';
+      scope.toggleItemClass = attrs.toggleItemClass || '';
+      scope.togglePanelClass = attrs.togglePanelClass || '';
+      scope.isOpen = angular.isDefined(attrs.isOpen) ? scope.$eval(attrs.isOpen) : false;
+      scope.isDisabled = angular.isDefined(attrs.isDisabled) ? scope.$eval(attrs.isDisabled) : false;
 
       if(scope.isDisabled) {
         return;
@@ -61,10 +57,10 @@
 
     function _toggleOpen(scope, accordionCtrl) {
       scope.isOpen = !scope.isOpen;
-      element.addClass(scope.toggleItemClass);
       if (scope.isOpen) {
         accordionCtrl.closeOthers(scope);
       }
+
       accordionCtrl.digest();     // force the watcher to run by calling $digest
     }
 
