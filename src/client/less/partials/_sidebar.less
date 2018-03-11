@@ -11,8 +11,16 @@
 }
 
 .nav__item {
+  &--focus {
+    border-left: 3px solid @nav-vertical-line-color;
+  }
+}
+
+.nav__link {
   display: block;
   padding: 10px 20px;
+  font-size: 0.9rem;
+  line-height: 1;
   color: @nav-font-color;
   background-color: @nav-item-color;
   text-decoration-line: none;
@@ -21,12 +29,19 @@
     background-color: @nav-item-hover-color;
   }
 
-  &--focus {
-    border-left: 3px solid @nav-vertical-line-color;
-  }
-
+  /* ui-router active class */
   &--active {
     background-color: @nav-item-active-color;
+  }
+
+  .nav__icon {
+    margin-right: 5px;
+  }
+
+  /* arrow */
+  .nav__arrow {
+    line-height: 1;
+    float: right;
   }
 }
 
@@ -35,9 +50,18 @@
   display: none;
 }
 
+.sub-nav__link {
+  padding-left: 40px;
+}
+
 .nav__item--open {
   .sub-nav {
     height: auto;
     display: block;
+  }
+
+  /* arrow */
+  .nav__arrow {
+    transform: rotate(90deg);
   }
 }

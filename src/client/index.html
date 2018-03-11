@@ -30,20 +30,23 @@
 <aside class="sidebar index__sidebar--fixed">
 
   <ul ccw-accordion class="nav">
-    <li ccw-accordion-item item-focus-class="nav__item--focus" is-focus="true">
-      <a ccw-accordion-toggle class="nav__item" ui-sref="dashboard" ui-sref-active="nav__item--active">
-        <i class="fa fa-tachometer" aria-hidden="true"></i> dashboard
+    <li ccw-accordion-item item-focus-class="nav__item--focus" is-focus="true" class="nav__item">
+      <a ccw-accordion-toggle class="nav__link" ui-sref="dashboard" ui-sref-active="nav__link--active">
+        <i class="fa fa-tachometer nav__icon" aria-hidden="true"></i> 
+        <span> Dashboard </span>
       </a>
     </li>
-    <li ccw-accordion-item item-focus-class="nav__item--focus" item-open-class="nav__item--open"> 
-      <a ccw-accordion-toggle class="nav__item" href=""> 
-        angularjs demo 
+    <li ccw-accordion-item item-focus-class="nav__item--focus" item-open-class="nav__item--open" class="nav__item"> 
+      <a ccw-accordion-toggle class="nav__link" href="">
+        <i class="fa fa-tachometer nav__icon" aria-hidden="true"></i>
+        <span>angularjs demo</span>
+        <i class="fa fa-angle-right nav__arrow" aria-hidden="true"></i>
       </a>
       <ul class="sub-nav">
-        <li> <a class="nav__item" ui-sref="repeaters" ui-sref-active="nav__item--active">Repeaters</a> </li>
-        <li> <a class="nav__item" ui-sref="customFilters" ui-sref-active="nav__item--active">Custom filters</a> </li>
-        <li> <a class="nav__item" ui-sref="animations" ui-sref-active="nav__item--active">Animations</a> </li>
-        <li> <a class="nav__item" ui-sref="toastrs" ui-sref-active="nav__item--active">Toastrs</a> </li>
+        <li> <a class="nav__link sub-nav__link" ui-sref="repeaters" ui-sref-active="nav__link--active">Repeaters</a> </li>
+        <li> <a class="nav__link sub-nav__link" ui-sref="customFilters" ui-sref-active="nav__link--active">Custom filters</a> </li>
+        <li> <a class="nav__link sub-nav__link" ui-sref="animations" ui-sref-active="nav__link--active">Animations</a> </li>
+        <li> <a class="nav__link sub-nav__link" ui-sref="toastrs" ui-sref-active="nav__link--active">Toastrs</a> </li>
       </ul>
     </li>
   </ul>
