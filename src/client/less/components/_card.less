@@ -1,6 +1,7 @@
 .card {
   background-color: @card-bg-color;
   border: 1px solid @card-border-color;
+  border-radius: 0.25rem;
 }
 
 /* 解决：包含块下的子元素都为块元素的情况下，包含块不包含子元素的margin-top与margin-bottom */
@@ -30,7 +31,7 @@
   }
 }
 
-.card--theme-green {
+.card--green {
   border: 1px solid @card-green;
 
   > .card__header {
@@ -38,7 +39,7 @@
   }
 }
 
-.card--theme-outline-green {
+.card--outline-green {
   border: 1px solid @card-green;
 }
 
