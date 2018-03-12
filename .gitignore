@@ -9,3 +9,5 @@ bower_components/
 # other
 .tmp
 
+# ide
+*.idea
