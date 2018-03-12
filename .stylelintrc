@@ -4,6 +4,7 @@
   "rules": {
     "block-no-empty": null,
     "max-empty-lines": 2,
-    "selector-list-comma-newline-after": "always-multi-line"
+    "selector-list-comma-newline-after": "always-multi-line",
+    "comment-empty-line-before": null
   }
 }

@@ -6,11 +6,7 @@
 }
 
 /* 解决：包含块下的子元素都为块元素的情况下，包含块不包含子元素的margin-top与margin-bottom */
-.card::before {
-  content: "";
-  display: table;
-}
-
+.card::before,
 .card::after {
   content: "";
   display: table;

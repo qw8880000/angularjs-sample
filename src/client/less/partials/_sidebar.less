@@ -1,7 +1,7 @@
 .sidebar {
   width: @sidebar-width;
   height: 100%;
-  background-color: @nav-color;
+  background-color: @sidebar-color;
 }
 
 /* nav
@@ -33,16 +33,19 @@
   &--active {
     background-color: @nav-item-active-color;
   }
+}
 
-  .nav__icon {
-    margin-right: 5px;
-  }
+.nav__link-icon {
+  margin-right: 5px;
+}
 
-  /* arrow */
-  .nav__arrow {
-    line-height: 1;
-    float: right;
-  }
+/* arrow */
+.nav__link-arrow {
+  line-height: 1;
+  float: right;
+}
+
+.nav__link-label {
 }
 
 .sub-nav {
@@ -51,7 +54,7 @@
 }
 
 .sub-nav__link {
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 .nav__item--open {

@@ -1,29 +1,29 @@
 .header {
-  display: flex;
-  align-items: center;
   height: @header-height;
   width: 100%;
   background-color: @header-bg-color;
 }
 
 .header__brand {
-  display: block;
+  display: inline-block;
   width: @sidebar-width;
   height: @header-height;
   background-image: url("/img/AngularJS.png");
   background-repeat: no-repeat;
   background-position: 50%;
+  background-color: @sidebar-color;
 }
 
 .header__author {
-  margin-left: auto;
-  margin-right: 20px;
+  float: right;
+  display: inline-block;
+  line-height: @header-height;
 }
 
 /* author
    ================================== */
 .author {
-  display: block;
+  display: inline-block;
   text-decoration-line: none;
 }
 

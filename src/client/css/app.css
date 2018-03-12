@@ -1,30 +1,71 @@
 /* ==================================
  * Vendors
  * ================================== */
-/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
+/* ==================================
+ * Helpers
+ * ================================== */
+/* Base colors
+   ================================== */
+/* Alert
+   ================================== */
+/* Body
+   ================================== */
+/* Nav
+   ================================== */
+/* Header
+   ================================== */
+/* Main
+   ================================== */
+/* Sidebar
+   ================================== */
+/* Header
+   ================================== */
+/* Sidebar
+   ================================== */
+/* Base
+   ================================== */
+/* Headings
+   ================================== */
+/* Lead
+   ================================== */
+/* Button
+   ================================== */
+/* ==================================
+ * Base
+ * ================================== */
 /**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
+ * Normalization of HTML elements, manually forked from Normalize.css to remove
+ * styles targeting irrelevant browsers while applying new styles.
+ *
+ * Normalize is licensed MIT. https://github.com/necolas/normalize.css
  */
+/* Document
+   ================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 html {
+  font-family: sans-serif;
   line-height: 1.15;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* Body
+   ================================== */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
 }
 /* Sections
    ========================================================================== */
-/**
- * Remove the margin in all browsers (opinionated).
- */
-body {
-  margin: 0;
-}
 /**
  * Add the correct display in IE 9-.
  */
@@ -392,49 +433,11 @@ template {
 [hidden] {
   display: none;
 }
-/* ==================================
- * Base
- * ================================== */
-/* Base colors
+/* Document
    ================================== */
-/* Alert
-   ================================== */
-/* Nav
-   ================================== */
-/* Header
-   ================================== */
-/* Main
-   ================================== */
-/* Base
-   ================================== */
-/* Headings
-   ================================== */
-/* Lead
-   ================================== */
-/* Header
-   ================================== */
-/* Sidebar
-   ================================== */
-html {
-  font-family: sans-serif;
-  font-size: 16px;
-}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-}
 html,
 body {
   height: 100%;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 /* Headings
    ================================== */
@@ -443,30 +446,50 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-top: 0;
   margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 500;
   line-height: 1.2;
   color: inherit;
 }
-h1 {
+h1,
+.h1 {
   font-size: 2.5rem;
 }
-h2 {
+h2,
+.h2 {
   font-size: 2rem;
 }
-h3 {
+h3,
+.h3 {
   font-size: 1.75rem;
 }
-h4 {
+h4,
+.h4 {
   font-size: 1.5rem;
 }
-h5 {
+h5,
+.h5 {
   font-size: 1.25rem;
 }
-h6 {
+h6,
+.h6 {
   font-size: 1rem;
+}
+/* List
+   ================================== */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 /* Lead
    ================================== */
@@ -496,23 +519,16 @@ h6 {
 }
 .btn {
   display: inline-block;
-  margin: 0;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
   border: 1px solid transparent;
   border-radius: 0.25em;
-  padding: 0.75rem 2rem;
-  text-align: center;
+  padding: 0.375rem 0.75rem;
   cursor: pointer;
+  font-weight: 400;
   font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.15;
-}
-.btn--cl-orange {
-  background-color: #f7931e;
-  color: #fff;
-}
-.btn--cl-orange:hover {
-  background-color: #f9ab4f;
-  color: #fff;
+  line-height: 1.5;
 }
 .card {
   margin-bottom: 10px;
@@ -521,10 +537,7 @@ h6 {
   transition: 0.3s;
 }
 /* 解决：包含块下的子元素都为块元素的情况下，包含块不包含子元素的margin-top与margin-bottom */
-.card::before {
-  content: "";
-  display: table;
-}
+.card::before,
 .card::after {
   content: "";
   display: table;
@@ -586,39 +599,34 @@ h6 {
 .img--circle {
   border-radius: 50%;
 }
-/* box */
-.box--shadow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-.box--bg-primary {
-  background-color: #71c9f3;
-}
+/*
+   ================================== */
 /* ==================================
  * Partials
  * ================================== */
 .header {
-  display: flex;
-  align-items: center;
   height: 60px;
   width: 100%;
   background-color: #fff;
 }
 .header__brand {
-  display: block;
+  display: inline-block;
   width: 220px;
   height: 60px;
   background-image: url("/img/AngularJS.png");
   background-repeat: no-repeat;
   background-position: 50%;
+  background-color: #1c3043;
 }
 .header__author {
-  margin-left: auto;
-  margin-right: 20px;
+  float: right;
+  display: inline-block;
+  line-height: 60px;
 }
 /* author
    ================================== */
 .author {
-  display: block;
+  display: inline-block;
   text-decoration-line: none;
 }
 .author__avatar {
@@ -677,7 +685,6 @@ h6 {
   background-color: #23394b;
   text-decoration-line: none;
   /* ui-router active class */
-  /* arrow */
 }
 .nav__link:hover {
   background-color: #17a2b8;
@@ -685,10 +692,11 @@ h6 {
 .nav__link--active {
   background-color: #13202c;
 }
-.nav__link .nav__icon {
+.nav__link-icon {
   margin-right: 5px;
 }
-.nav__link .nav__arrow {
+/* arrow */
+.nav__link-arrow {
   line-height: 1;
   float: right;
 }
@@ -697,7 +705,7 @@ h6 {
   display: none;
 }
 .sub-nav__link {
-  padding-left: 40px;
+  padding-left: 50px;
 }
 .nav__item--open {
   /* arrow */
