@@ -1,10 +1,9 @@
 .card {
-  background-color: @cl-card-bg;
-  border: 1px solid @cl-card-border;
+  background-color: $cl-card-bg;
+  border: 1px solid $cl-card-border;
   border-radius: 0.25rem;
 }
 
-/* 解决：包含块下的子元素都为块元素的情况下，包含块不包含子元素的margin-top与margin-bottom */
 .card::before,
 .card::after {
   content: "";
@@ -13,7 +12,7 @@
 
 .card__header {
   padding: 0.75rem 1.25rem;
-  background-color: @cl-card-border;
+  background-color: $cl-card-border;
 }
 
 .card__body {
@@ -32,14 +31,14 @@
 }
 
 .card--green {
-  border: 1px solid @cl-card-green;
+  border: 1px solid $cl-card-green;
 
   > .card__header {
-    background-color: @cl-card-green;
+    background-color: $cl-card-green;
   }
 }
 
 .card--outline-green {
-  border: 1px solid @cl-card-green;
+  border: 1px solid $cl-card-green;
 }
 

@@ -11,3 +11,7 @@ bower_components/
 
 # ide
 *.idea
+
+# sass
+.sass-cache/
+src/client/css/app.css.map

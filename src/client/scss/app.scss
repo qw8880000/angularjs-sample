@@ -5,39 +5,39 @@
 /* ==================================
  * Helpers
  * ================================== */
-@import "helpers/variables/_color.less";
-@import "helpers/variables/_misc.less";
-@import "helpers/variables/_typography.less";
-@import "helpers/mixins/_button.less";
+@import "helpers/variables/_color.scss";
+@import "helpers/variables/_misc.scss";
+@import "helpers/variables/_typography.scss";
+@import "helpers/mixins/_button.scss";
 
 /* ==================================
  * Base
  * ================================== */
-@import "base/_reset.less";
-@import "base/_base.less";
+@import "base/_reset.scss";
+@import "base/_base.scss";
 
 /* ==================================
  * Components
  * ================================== */
-@import "components/_animations.less";
-@import "components/_button.less";
-@import "components/_card.less";
-@import "components/_form.less";
-@import "components/_image.less";
-@import "components/_utilities.less";
+@import "components/_animations.scss";
+@import "components/_button.scss";
+@import "components/_card.scss";
+@import "components/_form.scss";
+@import "components/_image.scss";
+@import "components/_utilities.scss";
 
 /* ==================================
  * Partials
  * ================================== */
-@import "partials/_header.less";
-@import "partials/_main.less";
-@import "partials/_main-repeaters.less";
-@import "partials/_sidebar.less";
+@import "partials/_header.scss";
+@import "partials/_main.scss";
+@import "partials/_main-repeaters.scss";
+@import "partials/_sidebar.scss";
 
 /* ==================================
  * Pages
  * ================================== */
-@import "pages/_index.less";
+@import "pages/_index.scss";
 
 /* ==================================
  * Themes

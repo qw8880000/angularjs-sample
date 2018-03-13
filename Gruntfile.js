@@ -190,14 +190,17 @@ module.exports = function(grunt) {
     },
 
     // ---------------------------------- 
-    // Compile LESS files to CSS
+    // Compile scss files to CSS
     // ---------------------------------- 
-    less: {
+    sass: {
       app: {
-        files: {
-          '<%= pathConfig.client %>/css/app.css': '<%= pathConfig.client %>/less/app.less',
+        options: {
+          style: 'expanded',
         },
-      },
+        files: {
+          '<%= pathConfig.client %>/css/app.css': '<%= pathConfig.client %>/scss/app.scss',
+        }
+      }
     },
 
     // ---------------------------------- 
@@ -298,8 +301,8 @@ module.exports = function(grunt) {
           syntax: ''
         },
         src: [
-          '<%= pathConfig.client %>/less/**/*.less',
-          '!<%= pathConfig.client %>/less/vendors/**/*.less',
+          '<%= pathConfig.client %>/scss/**/*.scss',
+          '!<%= pathConfig.client %>/scss/vendors/**/*.scss',
         ]
       }
     },
@@ -361,9 +364,9 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: [
-          '<%= pathConfig.client %>/less/**/*.less',
+          '<%= pathConfig.client %>/scss/**/*.scss',
         ],
-        tasks: ['stylelint', 'less'],
+        tasks: ['stylelint', 'scss'],
         options: {
           spawn: false,
           event: ['all']
@@ -450,7 +453,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('prepare', [
     'wiredep:app',
-    'less:app',
+    'sass:app',
     'postcss:app',
     'eslint:angularjs',
     'stylelint',

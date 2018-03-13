@@ -1,0 +1,13 @@
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: 0.25em;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  font-weight: $btn-font-weight;
+  font-size: $btn-font-size;
+}

@@ -1,23 +1,23 @@
 .header {
-  height: @header-height;
+  height: $header-height;
   width: 100%;
-  background-color: @cl-header-bg;
+  background-color: $cl-header-bg;
 }
 
 .header__brand {
   display: inline-block;
-  width: @sidebar-width;
-  height: @header-height;
+  width: $sidebar-width;
+  height: $header-height;
   background-image: url("/img/AngularJS.png");
   background-repeat: no-repeat;
   background-position: 50%;
-  background-color: @cl-sidebar-bg;
+  background-color: $cl-sidebar-bg;
 }
 
 .header__author {
   float: right;
   display: inline-block;
-  line-height: @header-height;
+  line-height: $header-height;
 }
 
 /* author
