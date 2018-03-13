@@ -12,6 +12,21 @@
 
     $stateProvider
       .state({
+        name: 'animations',
+        url: '/animations',
+        component: 'animations',
+      })
+      .state({
+        name: 'buttons',
+        url: '/buttons',
+        component: 'buttons',
+      })
+      .state({
+        name: 'customFilters',
+        url: '/custom-filters',
+        component: 'customFilters',
+      })
+      .state({
         name: 'dashboard',
         url: '/dashboard',
         component: 'dashboard',
@@ -22,24 +37,9 @@
         component: 'repeaters',
       })
       .state({
-        name: 'customFilters',
-        url: '/custom-filters',
-        component: 'customFilters',
-      })
-      .state({
-        name: 'animations',
-        url: '/animations',
-        component: 'animations',
-      })
-      .state({
         name: 'toastrs',
         url: '/toastrs',
         component: 'toastrs',
-      })
-      .state({
-        name: 'fileUpload',
-        url: '/fileUpload',
-        component: 'fileUpload',
       });
   }
 

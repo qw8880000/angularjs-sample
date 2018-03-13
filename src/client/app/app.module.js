@@ -27,11 +27,12 @@
       /*
        * feature area
        */
-      'app.layout',
-      'app.dashboard',
-      'app.repeaters',
-      'app.customFilters',
       'app.animations',
+      'app.buttons',
+      'app.customFilters',
+      'app.dashboard',
+      'app.layout',
+      'app.repeaters',
       'app.toastrs',
     ]);
 

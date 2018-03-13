@@ -20,6 +20,8 @@
    ================================== */
 /* Card
    ================================== */
+/* Button
+   ================================== */
 /* Header
    ================================== */
 /* Sidebar
@@ -524,21 +526,53 @@ ul {
   vertical-align: middle;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.5;
   border: 1px solid transparent;
   border-radius: 0.25em;
   padding: 0.375rem 0.75rem;
   cursor: pointer;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.5;
 }
 .btn--primary {
   color: #fff;
   background-color: #007bff;
+  border-color: unset;
 }
-.btn--secondery {
+.btn--secondary {
   color: #fff;
   background-color: #6c757d;
+  border-color: unset;
+}
+.btn--success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: unset;
+}
+.btn--info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: unset;
+}
+.btn--warning {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: unset;
+}
+.btn--danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: unset;
+}
+.btn--light {
+  color: #fff;
+  background-color: #f8f9fa;
+  border-color: unset;
+}
+.btn--dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: unset;
 }
 .card {
   background-color: #fff;
@@ -682,7 +716,7 @@ ul {
 /* nav
    ================================== */
 .nav {
-  background-color: #1c3043;
+  background-color: #fff;
 }
 .nav__item--focus {
   border-left: 3px solid #20c997;

@@ -1,18 +1,18 @@
 .sidebar {
   width: @sidebar-width;
   height: 100%;
-  background-color: @sidebar-color;
+  background-color: @cl-sidebar-bg;
 }
 
 /* nav
    ================================== */
 .nav {
-  background-color: @nav-color;
+  background-color: @cl-nav-font;
 }
 
 .nav__item {
   &--focus {
-    border-left: 3px solid @nav-vertical-line-color;
+    border-left: 3px solid @cl-nav-vertical-line;
   }
 }
 
@@ -21,17 +21,17 @@
   padding: 10px 20px;
   font-size: 0.9rem;
   line-height: 1;
-  color: @nav-font-color;
-  background-color: @nav-item-color;
+  color: @cl-nav-font;
+  background-color: @cl-nav-item;
   text-decoration-line: none;
 
   &:hover {
-    background-color: @nav-item-hover-color;
+    background-color: @cl-nav-item-hover;
   }
 
   /* ui-router active class */
   &--active {
-    background-color: @nav-item-active-color;
+    background-color: @cl-nav-item-active;
   }
 }
 

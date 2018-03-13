@@ -3,21 +3,43 @@
   vertical-align: middle;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.5;
   border: 1px solid transparent;
   border-radius: 0.25em;
   padding: 0.375rem 0.75rem;
   cursor: pointer;
   font-weight: @btn-font-weight;
   font-size: @btn-font-size;
-  line-height: 1.5;
 }
 
 .btn--primary {
-  color: @cl-white;
-  background-color: @cl-primary;
+  .button-variant(@cl-btn-font; @cl-btn-bg-primary;);
 }
 
-.btn--secondery {
-  color: @cl-white;
-  background-color: @cl-secondary;
+.btn--secondary {
+  .button-variant(@cl-btn-font; @cl-btn-bg-secondary;);
+}
+
+.btn--success {
+  .button-variant(@cl-btn-font; @cl-btn-bg-success;);
+}
+
+.btn--info {
+  .button-variant(@cl-btn-font; @cl-btn-bg-info;);
+}
+
+.btn--warning {
+  .button-variant(@cl-btn-font; @cl-btn-bg-warning;);
+}
+
+.btn--danger {
+  .button-variant(@cl-btn-font; @cl-btn-bg-danger;);
+}
+
+.btn--light {
+  .button-variant(@cl-btn-font; @cl-btn-bg-light;);
+}
+
+.btn--dark {
+  .button-variant(@cl-btn-font; @cl-btn-bg-dark;);
 }
