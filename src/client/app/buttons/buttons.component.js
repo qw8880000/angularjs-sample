@@ -13,13 +13,16 @@
   function buttonsController() {
     var vm = this;
     vm.title = 'buttonsController';
-
-    activate();
-
-    ////////////////
-
-    function activate() {
-    }
+    vm.themes = [
+      'primary',
+      'secondary',
+      'success',
+      'info',
+      'warning',
+      'danger',
+      'light',
+      'dark',
+    ];
   }
 
 }());

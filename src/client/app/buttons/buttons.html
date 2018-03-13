@@ -6,16 +6,45 @@
   
   <div class="card__body">
 
-    <div>
+    <div class="h3">buttons</div>
       <button class="btn">default</button>
-      <button class="btn btn--primary">primary</button>
-      <button class="btn btn--secondary">Secondary</button>
-      <button class="btn btn--success">Success</button>
-      <button class="btn btn--info">Info</button>
-      <button class="btn btn--warning">Warning</button>
-      <button class="btn btn--danger">Danger</button>
-      <button class="btn btn--light">Light</button>
-      <button class="btn btn--dark">Dark</button>
+      <button ng-repeat="theme in vm.themes" class="btn btn--{{theme}} m-left-4">{{theme}}</button>
+    </ul>
+
+    <div class="h3"> outline buttons</div>
+    <div>
+      <button class="btn btn--outline-primary">primary</button>
+      <button class="btn btn--outline-secondary">Secondary</button>
+      <button class="btn btn--outline-success">Success</button>
+      <button class="btn btn--outline-info">Info</button>
+      <button class="btn btn--outline-warning">Warning</button>
+      <button class="btn btn--outline-danger">Danger</button>
+      <button class="btn btn--outline-light">Light</button>
+      <button class="btn btn--outline-dark">Dark</button>
+    </div>
+
+    <div class="h3"> disabled buttons</div>
+    <div>
+      <button disabled class="btn">default</button>
+      <button disabled class="btn btn--primary">primary</button>
+      <button disabled class="btn btn--secondary">Secondary</button>
+      <button disabled class="btn btn--success">Success</button>
+      <button disabled class="btn btn--info">Info</button>
+      <button disabled class="btn btn--warning">Warning</button>
+      <button disabled class="btn btn--danger">Danger</button>
+      <button disabled class="btn btn--light">Light</button>
+      <button disabled class="btn btn--dark">Dark</button>
+    </div>
+
+    <div>
+      <button disabled class="btn btn--outline-primary">primary</button>
+      <button disabled class="btn btn--outline-secondary">Secondary</button>
+      <button disabled class="btn btn--outline-success">Success</button>
+      <button disabled class="btn btn--outline-info">Info</button>
+      <button disabled class="btn btn--outline-warning">Warning</button>
+      <button disabled class="btn btn--outline-danger">Danger</button>
+      <button disabled class="btn btn--outline-light">Light</button>
+      <button disabled class="btn btn--outline-dark">Dark</button>
     </div>
 
   </div>

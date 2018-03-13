@@ -16,6 +16,11 @@
     outline: 0;
     @include button-box-shadow($cl-primary);
   }
+
+  &:disabled {
+    opacity: .65;
+    cursor: auto;
+  }
 }
 
 @each $theme, $value in $theme-colors {
@@ -30,10 +35,22 @@
       border-color: darken($value, 10%);
     }
 
-    &:active {
-      color: color-yiq(darken($value, 10%));
-      background-color: darken($value, 10%);
-      border-color: darken($value, 12.5%);
+    &:focus {
+      @include button-box-shadow($value);
+    }
+  }
+}
+
+@each $theme, $value in $theme-colors {
+  .btn--outline-#{$theme} {
+    color: $value;
+    background-color: transparent;
+    border-color: $value;
+    background-image: none;
+
+    &:hover {
+      color: color-yiq($value);
+      background-color: $value;
     }
 
     &:focus {
@@ -41,3 +58,4 @@
     }
   }
 }
+

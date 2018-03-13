@@ -18,6 +18,7 @@
  * ================================== */
 @import "base/_reset.scss";
 @import "base/_base.scss";
+@import "base/_utilities.scss";
 
 /* ==================================
  * Components
@@ -27,7 +28,6 @@
 @import "components/_card.scss";
 @import "components/_form.scss";
 @import "components/_image.scss";
-@import "components/_utilities.scss";
 
 /* ==================================
  * Partials
