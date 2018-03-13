@@ -1,0 +1,24 @@
+// Bootstrap functions
+//
+// Utility mixins and functions for evalutating source code across our variables, maps, and mixins.
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+
+$yiq-text-dark: $gray-900;
+$yiq-text-light: $white;
+
+// Color contrast
+@function color-yiq($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @if ($yiq >= 150) {
+    @return $yiq-text-dark;
+  }
+  @else {
+    @return $yiq-text-light;
+  }
+}

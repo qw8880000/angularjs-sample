@@ -38,6 +38,19 @@ $cl-danger:            $red;
 $cl-light:             $gray-100;
 $cl-dark:              $gray-800;
 
+/* Map
+   ================================== */
+$theme-colors: (
+  "primary":    $cl-primary,
+  "secondary":  $cl-secondary,
+  "success":    $cl-success,
+  "info":       $cl-info,
+  "warning":    $cl-warning,
+  "danger":     $cl-danger,
+  "light":      $cl-light,
+  "dark":       $cl-dark
+);
+
 /* Body
    ================================== */
 $cl-body-bg:           $white;
@@ -75,14 +88,17 @@ $cl-card-green:        $green;
 
 /* Button
    ================================== */
-$cl-btn-bg-primary:   $cl-primary;
-$cl-btn-bg-secondary: $cl-secondary;
-$cl-btn-bg-success:   $cl-success;
-$cl-btn-bg-info:      $cl-info;
-$cl-btn-bg-warning:   $cl-warning;
-$cl-btn-bg-danger:    $cl-danger;
-$cl-btn-bg-light:     $cl-light;
-$cl-btn-bg-dark:      $cl-dark;
+$btn-theme-colors: (
+  "primary":    $cl-primary,
+  "secondary":  $cl-secondary,
+  "success":    $cl-success,
+  "info":       $cl-info,
+  "warning":    $cl-warning,
+  "danger":     $cl-danger,
+  "light":      $cl-light,
+  "dark":       $cl-dark
+);
+
 
 $cl-btn-font: $white;
 

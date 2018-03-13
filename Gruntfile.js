@@ -366,7 +366,7 @@ module.exports = function(grunt) {
         files: [
           '<%= pathConfig.client %>/scss/**/*.scss',
         ],
-        tasks: ['stylelint', 'scss'],
+        tasks: ['stylelint', 'sass'],
         options: {
           spawn: false,
           event: ['all']

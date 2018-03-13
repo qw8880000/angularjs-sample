@@ -1,10 +1,19 @@
 {
-  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-scss"
+  ],
+
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss"
+  ],
 
   "rules": {
     "block-no-empty": null,
     "max-empty-lines": 2,
     "selector-list-comma-newline-after": "always-multi-line",
-    "comment-empty-line-before": null
+    "at-rule-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "number-leading-zero": "never"
   }
 }
