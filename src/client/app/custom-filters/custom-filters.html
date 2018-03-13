@@ -1,5 +1,5 @@
 
-<div class="card card--theme-green">
+<div class="card card--green">
 
   <div class="card__header">
     <span class="h2"> Custom filters demo </span>
@@ -11,7 +11,7 @@
     <p> Angular.js filter 可以是过滤功能，也可以是转换功能。以下例子使用Angular.js filter作为转换器，把'true'转换成 &#10003，把'false'转换成 &#10008 。</p>
     
     <p>转换前：</p>
-    <ul class="box--bg-primary">
+    <ul class="card card--dark p-2">
       <li>
         <span>android: </span>
         <span> {{vm.phoneDetail.android}} </span>
@@ -31,7 +31,7 @@
     </ul>
 
     <p>转换后：</p>
-    <ul class="box--bg-primary">
+    <ul class="card card--dark p-2">
       <li>
         <span>android: </span>
         <span> {{vm.phoneDetail.android | checkmask}} </span>

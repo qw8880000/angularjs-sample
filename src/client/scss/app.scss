@@ -8,8 +8,6 @@
 @import "helpers/variables/_color.scss";
 @import "helpers/variables/_misc.scss";
 @import "helpers/variables/_typography.scss";
-@import "helpers/variables/_animation.scss";
-@import "helpers/variables/_shadow.scss";
 @import "helpers/mixins/_button.scss";
 @import "helpers/_functions.scss";
 
@@ -23,11 +21,11 @@
 /* ==================================
  * Components
  * ================================== */
-@import "components/_animations.scss";
 @import "components/_button.scss";
 @import "components/_card.scss";
 @import "components/_form.scss";
 @import "components/_image.scss";
+@import "components/_transitions.scss";
 
 /* ==================================
  * Partials

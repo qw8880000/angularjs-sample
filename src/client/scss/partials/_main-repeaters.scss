@@ -14,16 +14,15 @@
 }
 
 .phone-list__item {
-  height: 100px;
   margin-bottom: 2px;
   padding: 10px;
-  border: 1px solid #2a4254;
+  border: 1px solid $cl-dark;
 }
 
 .phone-list__item-img {
   float: left;
   width: auto;
-  height: 100%;
+  height: 100px;
   margin: 0 10px 0 0;
 }
 

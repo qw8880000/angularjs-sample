@@ -24,22 +24,18 @@ $teal:                 #20c997;
 $cyan:                 #17a2b8;
 
 $big-stone:            #1c3043;
-$blue-dianne:          #23394b;
-$gable-green:          #13202c;
 
 /* Theme
    ================================== */
 $cl-primary:           $blue;
-$cl-secondary:         $gray-600;
+$cl-secondary:         $gray-500;
 $cl-success:           $green;
 $cl-info:              $cyan;
 $cl-warning:           $yellow;
 $cl-danger:            $red;
-$cl-light:             $gray-100;
+$cl-light:             $gray-200;
 $cl-dark:              $gray-800;
 
-/* Map
-   ================================== */
 $theme-colors: (
   "primary":    $cl-primary,
   "secondary":  $cl-secondary,
@@ -51,6 +47,16 @@ $theme-colors: (
   "dark":       $cl-dark
 );
 
+$theme-colors-2: (
+  "blue":   $blue,
+  "gray":   $gray-500,
+  "green":  $green,
+  "cyan":   $cyan,
+  "yellow": $yellow,
+  "red":    $red,
+  "orange": $orange
+);
+
 /* Body
    ================================== */
 $cl-body-bg:           $white;
@@ -59,8 +65,8 @@ $cl-body-font:         $gray-900;
 /* Nav
    ================================== */
 $cl-nav-font:          $big-stone;
-$cl-nav-item:          $blue-dianne;
-$cl-nav-item-active:   $gable-green;
+$cl-nav-item:          lighten($big-stone, 8%);
+$cl-nav-item-active:   darken($big-stone, 8%);
 $cl-nav-item-hover:    $cyan;
 
 $cl-nav-font:          $white;
@@ -84,21 +90,9 @@ $cl-sidebar-bg:        $big-stone;
 $cl-card-bg:           $white;
 $cl-card-border:       $gray-400;
 
-$cl-card-green:        $green;
+$card-theme-colors: map-merge($theme-colors-2, ());
 
 /* Button
    ================================== */
-$btn-theme-colors: (
-  "primary":    $cl-primary,
-  "secondary":  $cl-secondary,
-  "success":    $cl-success,
-  "info":       $cl-info,
-  "warning":    $cl-warning,
-  "danger":     $cl-danger,
-  "light":      $cl-light,
-  "dark":       $cl-dark
-);
-
-
-$cl-btn-font: $white;
+$btn-theme-colors: map-merge($theme-colors, $theme-colors-2);
 

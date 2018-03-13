@@ -23,11 +23,15 @@
   }
 }
 
-@each $theme, $value in $theme-colors {
+@each $theme, $value in $btn-theme-colors {
   .btn--#{$theme} {
     color: color-yiq($value);
     background-color: $value;
     border-color: $value;
+
+    &:focus {
+      @include button-box-shadow($value);
+    }
 
     &:hover {
       color: color-yiq(darken($value, 7.5%));
@@ -35,26 +39,38 @@
       border-color: darken($value, 10%);
     }
 
-    &:focus {
-      @include button-box-shadow($value);
+    &:active {
+    }
+
+    &:disabled {
+      background-color: $value;
+      border-color: $value;
     }
   }
 }
 
-@each $theme, $value in $theme-colors {
+@each $theme, $value in $btn-theme-colors {
   .btn--outline-#{$theme} {
     color: $value;
     background-color: transparent;
     border-color: $value;
     background-image: none;
 
+    &:focus {
+      @include button-box-shadow($value);
+    }
+
     &:hover {
       color: color-yiq($value);
       background-color: $value;
     }
 
-    &:focus {
-      @include button-box-shadow($value);
+    &:active {
+    }
+
+    &:disabled {
+      color: $value;
+      background-color: transparent;
     }
   }
 }

@@ -22,6 +22,10 @@
       'danger',
       'light',
       'dark',
+      'green',
+      'cyan',
+      'yellow',
+      'red',
     ];
   }
 
