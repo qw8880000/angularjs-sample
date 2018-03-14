@@ -33,6 +33,7 @@
       'app.cards',
       'app.customFilters',
       'app.dashboard',
+      'app.forms',
       'app.layout',
       'app.repeaters',
       'app.toastrs',

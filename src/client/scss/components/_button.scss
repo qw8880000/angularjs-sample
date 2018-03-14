@@ -3,18 +3,18 @@
   vertical-align: middle;
   text-align: center;
   white-space: nowrap;
-  line-height: 1.5;
   border: 1px solid transparent;
-  padding: .375rem .75rem;
   cursor: pointer;
-  border-radius: $border-radius;
+  padding: $btn-padding-y $btn-padding-x;
+  line-height: $btn-line-height;
+  border-radius: $btn-border-radius;
   font-weight: $btn-font-weight;
   font-size: $btn-font-size;
   transition: $btn-transition;
 
   &:focus {
     outline: 0;
-    @include button-box-shadow($cl-primary);
+    box-shadow: $btn-focus-box-shadow;
   }
 
   &:disabled {

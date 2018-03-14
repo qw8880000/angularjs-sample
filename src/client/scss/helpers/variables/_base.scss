@@ -49,6 +49,8 @@ $theme-colors: (
   "orange":    $orange
 );
 
+$component-active-bg:         $cl-primary;
+
 //
 // typography
 //
@@ -94,3 +96,6 @@ $transition-collapse:         height .35s ease !default;
 $border-radius:               .25rem !default;
 $border-radius-lg:            .3rem !default;
 $border-radius-sm:            .2rem !default;
+
+$border-width:                1px !default;
+$border-color:                $gray-300 !default;

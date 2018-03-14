@@ -22,3 +22,7 @@ $yiq-text-light: $white;
     @return $yiq-text-light;
   }
 }
+
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}

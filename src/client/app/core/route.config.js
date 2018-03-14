@@ -42,6 +42,11 @@
         component: 'dashboard',
       })
       .state({
+        name: 'forms',
+        url: '/forms',
+        component: 'forms',
+      })
+      .state({
         name: 'repeaters',
         url: '/repeaters',
         component: 'repeaters',
