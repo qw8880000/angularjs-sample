@@ -28,6 +28,7 @@
        * feature area
        */
       'app.animations',
+      'app.breadcrumbs',
       'app.buttons',
       'app.cards',
       'app.customFilters',

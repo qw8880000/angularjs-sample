@@ -17,6 +17,11 @@
         component: 'animations',
       })
       .state({
+        name: 'breadcrumbs',
+        url: '/breadcrumbs',
+        component: 'breadcrumbs',
+      })
+      .state({
         name: 'buttons',
         url: '/buttons',
         component: 'buttons',
