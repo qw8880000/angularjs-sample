@@ -28,7 +28,7 @@
     text-decoration: none;
   }
 
-  &--active {
+  &.active {
     color: $breadcrumb-active-color;
   }
 }

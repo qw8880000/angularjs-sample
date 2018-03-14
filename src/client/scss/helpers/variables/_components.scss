@@ -17,5 +17,9 @@ $card-theme-colors: map-merge($theme-colors, ());
 // BreadCrumb
 //
 $breadcrumb-item-padding:           .5rem !default;
-$breadcrumb-divider:                "/" !default;
+
+$breadcrumb-margin-bottom:          1rem !default;
+
 $breadcrumb-divider-color:          $gray-600 !default;
+$breadcrumb-active-color:           $gray-600 !default;
+$breadcrumb-divider:                "/" !default;
