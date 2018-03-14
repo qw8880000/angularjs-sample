@@ -878,6 +878,52 @@ ul {
   font-weight: 700;
 }
 
+/* Border
+   ================================== */
+.border-primary {
+  border-color: #007bff;
+}
+
+.border-secondary {
+  border-color: #adb5bd;
+}
+
+.border-light {
+  border-color: #e9ecef;
+}
+
+.border-dark {
+  border-color: #343a40;
+}
+
+.border-blue {
+  border-color: #007bff;
+}
+
+.border-gray {
+  border-color: #adb5bd;
+}
+
+.border-green {
+  border-color: #28a745;
+}
+
+.border-cyan {
+  border-color: #17a2b8;
+}
+
+.border-yellow {
+  border-color: #ffc107;
+}
+
+.border-red {
+  border-color: #dc3545;
+}
+
+.border-orange {
+  border-color: #fd7e14;
+}
+
 /* Border-radius
    ================================== */
 .rounded {
@@ -895,43 +941,43 @@ ul {
 /* Sizing
    ================================== */
 .w-25 {
-  width: 25% !important;
+  width: 25%;
 }
 
 .w-50 {
-  width: 50% !important;
+  width: 50%;
 }
 
 .w-75 {
-  width: 75% !important;
+  width: 75%;
 }
 
 .w-100 {
-  width: 100% !important;
+  width: 100%;
 }
 
 .h-25 {
-  height: 25% !important;
+  height: 25%;
 }
 
 .h-50 {
-  height: 50% !important;
+  height: 50%;
 }
 
 .h-75 {
-  height: 75% !important;
+  height: 75%;
 }
 
 .h-100 {
-  height: 100% !important;
+  height: 100%;
 }
 
 .mw-100 {
-  max-width: 100% !important;
+  max-width: 100%;
 }
 
 .mh-100 {
-  max-height: 100% !important;
+  max-height: 100%;
 }
 
 /* ==================================

@@ -60,6 +60,14 @@ $spacers: (
 .font-weight-normal { font-weight: $font-weight-normal; }
 .font-weight-bold { font-weight: $font-weight-bold; }
 
+/* Border
+   ================================== */
+@each $color, $value in $theme-colors {
+  .border-#{$color} {
+    border-color: $value;
+  }
+}
+
 /* Border-radius
    ================================== */
 .rounded {
@@ -86,9 +94,9 @@ $sizes: (
 
 @each $prop, $abbrev in (width: w, height: h) {
   @each $size, $length in $sizes {
-    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+    .#{$abbrev}-#{$size} { #{$prop}: $length; }
   }
 }
 
-.mw-100 { max-width: 100% !important; }
-.mh-100 { max-height: 100% !important; }
+.mw-100 { max-width: 100%; }
+.mh-100 { max-height: 100%; }
