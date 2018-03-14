@@ -5,9 +5,9 @@
   white-space: nowrap;
   line-height: 1.5;
   border: 1px solid transparent;
-  border-radius: .25em;
   padding: .375rem .75rem;
   cursor: pointer;
+  border-radius: $border-radius;
   font-weight: $btn-font-weight;
   font-size: $btn-font-size;
   transition: $btn-transition;

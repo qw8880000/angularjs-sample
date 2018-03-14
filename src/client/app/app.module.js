@@ -29,6 +29,7 @@
        */
       'app.animations',
       'app.buttons',
+      'app.cards',
       'app.customFilters',
       'app.dashboard',
       'app.layout',

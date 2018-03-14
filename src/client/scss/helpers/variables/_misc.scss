@@ -1,23 +1,24 @@
-/* ==================================
- * transitions
- * ================================== */
+/* Transitions
+   ================================== */
 $transition-base:             all .2s ease-in-out !default;
 $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
 
-/* button
-   ================================== */
+// button
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-/* ==================================
- * height, width
- * ================================== */
-
-/* Header
+/* Border
    ================================== */
+$border-radius:               .25rem !default;
+$border-radius-lg:            .3rem !default;
+$border-radius-sm:            .2rem !default;
+
+/* Height, Width
+   ================================== */
+
+// header
 $header-height: 60px;
 
-/* Sidebar
-   ================================== */
+// sidebar
 $sidebar-width: 220px;
 

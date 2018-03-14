@@ -1,0 +1,39 @@
+<ul ccw-accordion class="nav">
+
+  <!-- Dashboard -->
+  <li ccw-accordion-item item-focus-class="nav__item--focus" is-focus="true" class="nav__item">
+    <a ccw-accordion-toggle class="nav__link" ui-sref="dashboard" ui-sref-active="nav__link--active">
+      <i class="fa fa-th-large nav__link-icon" aria-hidden="true"></i> 
+      <span class="nav__link-label"> Dashboard </span>
+    </a>
+  </li>
+
+  <!-- Components -->
+  <li ccw-accordion-item item-focus-class="nav__item--focus" item-open-class="nav__item--open" class="nav__item"> 
+    <a ccw-accordion-toggle class="nav__link" href="">
+      <i class="fa fa-gavel nav__link-icon" aria-hidden="true"></i>
+      <span class="nav__link-label">Components</span>
+      <i class="fa fa-angle-right nav__link-arrow" aria-hidden="true"></i>
+    </a>
+    <ul class="sub-nav">
+      <li> <a class="nav__link sub-nav__link" ui-sref="buttons" ui-sref-active="nav__link--active">Buttons</a> </li>
+      <li> <a class="nav__link sub-nav__link" ui-sref="cards" ui-sref-active="nav__link--active">Cards</a> </li>
+    </ul>
+  </li>
+
+  <!-- Angularjs demo -->
+  <li ccw-accordion-item item-focus-class="nav__item--focus" item-open-class="nav__item--open" class="nav__item"> 
+    <a ccw-accordion-toggle class="nav__link" href="">
+      <i class="fa fa-tachometer nav__link-icon" aria-hidden="true"></i>
+      <span class="nav__link-label">Angularjs demo</span>
+      <i class="fa fa-angle-right nav__link-arrow" aria-hidden="true"></i>
+    </a>
+    <ul class="sub-nav">
+      <li> <a class="nav__link sub-nav__link" ui-sref="repeaters" ui-sref-active="nav__link--active">Repeaters</a> </li>
+      <li> <a class="nav__link sub-nav__link" ui-sref="customFilters" ui-sref-active="nav__link--active">Custom filters</a> </li>
+      <li> <a class="nav__link sub-nav__link" ui-sref="animations" ui-sref-active="nav__link--active">Animations</a> </li>
+      <li> <a class="nav__link sub-nav__link" ui-sref="toastrs" ui-sref-active="nav__link--active">Toastrs</a> </li>
+    </ul>
+  </li>
+
+</ul>

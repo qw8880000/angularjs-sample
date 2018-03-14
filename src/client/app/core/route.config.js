@@ -22,6 +22,11 @@
         component: 'buttons',
       })
       .state({
+        name: 'cards',
+        url: '/cards',
+        component: 'cards',
+      })
+      .state({
         name: 'customFilters',
         url: '/custom-filters',
         component: 'customFilters',

@@ -37,24 +37,17 @@ $cl-light:             $gray-200;
 $cl-dark:              $gray-800;
 
 $theme-colors: (
-  "primary":    $cl-primary,
-  "secondary":  $cl-secondary,
-  "success":    $cl-success,
-  "info":       $cl-info,
-  "warning":    $cl-warning,
-  "danger":     $cl-danger,
-  "light":      $cl-light,
-  "dark":       $cl-dark
-);
-
-$theme-colors-2: (
-  "blue":   $blue,
-  "gray":   $gray-500,
-  "green":  $green,
-  "cyan":   $cyan,
-  "yellow": $yellow,
-  "red":    $red,
-  "orange": $orange
+  "primary":   $cl-primary,
+  "secondary": $cl-secondary,
+  "light":     $cl-light,
+  "dark":      $cl-dark,
+  "blue":      $blue,
+  "gray":      $gray-500,
+  "green":     $green,
+  "cyan":      $cyan,
+  "yellow":    $yellow,
+  "red":       $red,
+  "orange":    $orange
 );
 
 /* Body
@@ -90,9 +83,9 @@ $cl-sidebar-bg:        $big-stone;
 $cl-card-bg:           $white;
 $cl-card-border:       $gray-400;
 
-$card-theme-colors: map-merge($theme-colors-2, ());
+$card-theme-colors: map-merge($theme-colors, ());
 
 /* Button
    ================================== */
-$btn-theme-colors: map-merge($theme-colors, $theme-colors-2);
+$btn-theme-colors: map-merge($theme-colors, ());
 

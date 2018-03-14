@@ -1,18 +1,18 @@
 (function () {
-  'use strict';
+'use strict';
 
   angular
-    .module('app.buttons')
-    .component('buttons', {
-      templateUrl: 'app/buttons/buttons.html',
-      controller: buttonsController,
+    .module('app.cards')
+    .component('cards', {
+      templateUrl: 'app/cards/cards.html',
+      controller: cardsController,
       controllerAs: 'vm',
     });
 
   /* @ngInject */
-  function buttonsController() {
+  function cardsController() {
     var vm = this;
-    vm.title = 'buttonsController';
+    vm.title = 'cardsController';
     vm.themes = [
       'primary',
       'secondary',

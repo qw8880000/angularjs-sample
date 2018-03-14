@@ -44,17 +44,13 @@ $spacers: (
 .d-block { display: block; }
 .d-inline-block { display: inline-block; }
 
-/* clearfix
+/* Clearfix
    ================================== */
 .clearfix {
-  &::after {
-    display: block;
-    clear: both;
-    content: "";
-  }
+  @include clearfix();
 }
 
-/* text
+/* Text
    ================================== */
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -63,3 +59,36 @@ $spacers: (
 .font-weight-light { font-weight: $font-weight-light; }
 .font-weight-normal { font-weight: $font-weight-normal; }
 .font-weight-bold { font-weight: $font-weight-bold; }
+
+/* Border-radius
+   ================================== */
+.rounded {
+  border-radius: $border-radius;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.rounded-0 {
+  border-radius: 0;
+}
+
+/* Sizing
+   ================================== */
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
+
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+
+.mw-100 { max-width: 100% !important; }
+.mh-100 { max-height: 100% !important; }
