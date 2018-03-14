@@ -5,11 +5,12 @@
 /* ==================================
  * Helpers
  * ================================== */
-@import "helpers/variables/_color.scss";
+@import "helpers/variables/_base.scss";
+@import "helpers/variables/_components.scss";
 @import "helpers/variables/_misc.scss";
-@import "helpers/variables/_typography.scss";
 
 @import "helpers/mixins/_button.scss";
+@import "helpers/mixins/_box-shadow.scss";
 @import "helpers/mixins/_clearfix.scss";
 
 @import "helpers/_functions.scss";
@@ -27,7 +28,6 @@
 @import "components/_button.scss";
 @import "components/_card.scss";
 @import "components/_form.scss";
-@import "components/_image.scss";
 @import "components/_transitions.scss";
 
 /* ==================================

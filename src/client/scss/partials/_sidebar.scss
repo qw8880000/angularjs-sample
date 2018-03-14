@@ -1,18 +1,18 @@
 .sidebar {
   width: $sidebar-width;
   height: 100%;
-  background-color: $cl-sidebar-bg;
+  background-color: $sidebar-bg-color;
 }
 
 /* nav
    ================================== */
 .nav {
-  background-color: $cl-nav-font;
+  background-color: $nav-font-color;
 }
 
 .nav__item {
   &--focus {
-    border-left: 3px solid $cl-nav-vertical-line;
+    border-left: 3px solid $nav-vline-color;
   }
 }
 
@@ -21,17 +21,17 @@
   padding: 10px 20px;
   font-size: .9rem;
   line-height: 1;
-  color: $cl-nav-font;
-  background-color: $cl-nav-item;
+  color: $nav-font-color;
+  background-color: $nav-item-color;
   text-decoration-line: none;
 
   &:hover {
-    background-color: $cl-nav-item-hover;
+    background-color: $nav-item-hover-color;
   }
 
   /* ui-router active class */
   &--active {
-    background-color: $cl-nav-item-active;
+    background-color: $nav-item-active-color;
   }
 }
 

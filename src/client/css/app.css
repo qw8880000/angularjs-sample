@@ -4,38 +4,6 @@
 /* ==================================
  * Helpers
  * ================================== */
-/* Base colors
-   ================================== */
-/* Theme
-   ================================== */
-/* Body
-   ================================== */
-/* Nav
-   ================================== */
-/* Header
-   ================================== */
-/* Main
-   ================================== */
-/* Sidebar
-   ================================== */
-/* Card
-   ================================== */
-/* Button
-   ================================== */
-/* Transitions
-   ================================== */
-/* Border
-   ================================== */
-/* Height, Width
-   ================================== */
-/* Base
-   ================================== */
-/* Headings
-   ================================== */
-/* Lead
-   ================================== */
-/* Button
-   ================================== */
 /* ==================================
  * Base
  * ================================== */
@@ -980,6 +948,175 @@ ul {
   max-height: 100%;
 }
 
+/* Colors
+   ================================== */
+.text-primary {
+  color: #007bff;
+}
+
+.text-secondary {
+  color: #adb5bd;
+}
+
+.text-light {
+  color: #e9ecef;
+}
+
+.text-dark {
+  color: #343a40;
+}
+
+.text-blue {
+  color: #007bff;
+}
+
+.text-gray {
+  color: #adb5bd;
+}
+
+.text-green {
+  color: #28a745;
+}
+
+.text-cyan {
+  color: #17a2b8;
+}
+
+.text-yellow {
+  color: #ffc107;
+}
+
+.text-red {
+  color: #dc3545;
+}
+
+.text-orange {
+  color: #fd7e14;
+}
+
+.bg-primary {
+  background-color: #007bff;
+}
+
+.bg-secondary {
+  background-color: #adb5bd;
+}
+
+.bg-light {
+  background-color: #e9ecef;
+}
+
+.bg-dark {
+  background-color: #343a40;
+}
+
+.bg-blue {
+  background-color: #007bff;
+}
+
+.bg-gray {
+  background-color: #adb5bd;
+}
+
+.bg-green {
+  background-color: #28a745;
+}
+
+.bg-cyan {
+  background-color: #17a2b8;
+}
+
+.bg-yellow {
+  background-color: #ffc107;
+}
+
+.bg-red {
+  background-color: #dc3545;
+}
+
+.bg-orange {
+  background-color: #fd7e14;
+}
+
+/* Box shadow
+   ================================== */
+.bsd-around-primary {
+  box-shadow: 0 0 8px 1px rgba(0, 123, 255, 0.5);
+}
+.bsd-around-primary:hover {
+  box-shadow: 0 0 8px 2px rgba(0, 123, 255, 0.5);
+}
+
+.bsd-around-secondary {
+  box-shadow: 0 0 8px 1px rgba(173, 181, 189, 0.5);
+}
+.bsd-around-secondary:hover {
+  box-shadow: 0 0 8px 2px rgba(173, 181, 189, 0.5);
+}
+
+.bsd-around-light {
+  box-shadow: 0 0 8px 1px rgba(233, 236, 239, 0.5);
+}
+.bsd-around-light:hover {
+  box-shadow: 0 0 8px 2px rgba(233, 236, 239, 0.5);
+}
+
+.bsd-around-dark {
+  box-shadow: 0 0 8px 1px rgba(52, 58, 64, 0.5);
+}
+.bsd-around-dark:hover {
+  box-shadow: 0 0 8px 2px rgba(52, 58, 64, 0.5);
+}
+
+.bsd-around-blue {
+  box-shadow: 0 0 8px 1px rgba(0, 123, 255, 0.5);
+}
+.bsd-around-blue:hover {
+  box-shadow: 0 0 8px 2px rgba(0, 123, 255, 0.5);
+}
+
+.bsd-around-gray {
+  box-shadow: 0 0 8px 1px rgba(173, 181, 189, 0.5);
+}
+.bsd-around-gray:hover {
+  box-shadow: 0 0 8px 2px rgba(173, 181, 189, 0.5);
+}
+
+.bsd-around-green {
+  box-shadow: 0 0 8px 1px rgba(40, 167, 69, 0.5);
+}
+.bsd-around-green:hover {
+  box-shadow: 0 0 8px 2px rgba(40, 167, 69, 0.5);
+}
+
+.bsd-around-cyan {
+  box-shadow: 0 0 8px 1px rgba(23, 162, 184, 0.5);
+}
+.bsd-around-cyan:hover {
+  box-shadow: 0 0 8px 2px rgba(23, 162, 184, 0.5);
+}
+
+.bsd-around-yellow {
+  box-shadow: 0 0 8px 1px rgba(255, 193, 7, 0.5);
+}
+.bsd-around-yellow:hover {
+  box-shadow: 0 0 8px 2px rgba(255, 193, 7, 0.5);
+}
+
+.bsd-around-red {
+  box-shadow: 0 0 8px 1px rgba(220, 53, 69, 0.5);
+}
+.bsd-around-red:hover {
+  box-shadow: 0 0 8px 2px rgba(220, 53, 69, 0.5);
+}
+
+.bsd-around-orange {
+  box-shadow: 0 0 8px 1px rgba(253, 126, 20, 0.5);
+}
+.bsd-around-orange:hover {
+  box-shadow: 0 0 8px 2px rgba(253, 126, 20, 0.5);
+}
+
 /* ==================================
  * Components
  * ================================== */
@@ -1426,11 +1563,11 @@ ul {
 /* Modifier
    ================================== */
 .card--shadow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px 1px rgba(52, 58, 64, 0.5);
   transition: all 0.2s ease-in-out;
 }
 .card--shadow:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px 2px rgba(52, 58, 64, 0.5);
 }
 
 .card--primary {
@@ -1557,10 +1694,6 @@ ul {
   opacity: 1;
 }
 
-.img--circle {
-  border-radius: 50%;
-}
-
 /* The starting CSS styles for the enter animation */
 .fade.ng-enter {
   transition: .5s linear all;
@@ -1589,6 +1722,10 @@ ul {
   height: 60px;
   width: 100%;
   background-color: #fff;
+  box-shadow: 0 0 8px 1px rgba(52, 58, 64, 0.5);
+}
+.header:hover {
+  box-shadow: 0 0 8px 2px rgba(52, 58, 64, 0.5);
 }
 
 .header__brand {

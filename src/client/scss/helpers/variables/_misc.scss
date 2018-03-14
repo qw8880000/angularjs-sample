@@ -1,24 +1,32 @@
-/* Transitions
-   ================================== */
-$transition-base:             all .2s ease-in-out !default;
-$transition-fade:             opacity .15s linear !default;
-$transition-collapse:         height .35s ease !default;
+//
+// Body
+//
+$body-bg-color:           $white;
+$body-font-color:         $gray-900;
 
-// button
-$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
-
-/* Border
-   ================================== */
-$border-radius:               .25rem !default;
-$border-radius-lg:            .3rem !default;
-$border-radius-sm:            .2rem !default;
-
-/* Height, Width
-   ================================== */
-
+//
 // header
+//
 $header-height: 60px;
+$header-bg-color:         $white;
 
+//
 // sidebar
+//
 $sidebar-width: 220px;
+$sidebar-bg-color:        $big-stone;
 
+//
+// Main
+//
+$main-bg-color:           $gray-200;
+
+//
+// Nav
+//
+$nav-font-color:          $big-stone;
+$nav-item-color:          lighten($big-stone, 8%);
+$nav-item-active-color:   darken($big-stone, 8%);
+$nav-item-hover-color:    $cyan;
+$nav-font-color:          $white;
+$nav-vline-color: $teal;

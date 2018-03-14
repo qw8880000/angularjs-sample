@@ -62,8 +62,8 @@ $spacers: (
 
 /* Border
    ================================== */
-@each $color, $value in $theme-colors {
-  .border-#{$color} {
+@each $theme, $value in $theme-colors {
+  .border-#{$theme} {
     border-color: $value;
   }
 }
@@ -100,3 +100,26 @@ $sizes: (
 
 .mw-100 { max-width: 100%; }
 .mh-100 { max-height: 100%; }
+
+/* Colors
+   ================================== */
+@each $theme, $value in $theme-colors {
+  .text-#{$theme} {
+    color: $value;
+  }
+}
+
+@each $theme, $value in $theme-colors {
+  .bg-#{$theme} {
+    background-color: $value;
+  }
+}
+
+/* Box shadow
+   ================================== */
+@each $theme, $value in $theme-colors {
+  .bsd-around-#{$theme} {
+    @include box-shadow-around($color: $value);
+  }
+}
+
