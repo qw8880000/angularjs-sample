@@ -1,3 +1,5 @@
+$component-active-bg:         $cl-primary;
+
 //
 // Buttons + Forms
 //
@@ -66,3 +68,8 @@ $input-focus-bg:                        $input-bg !default;
 $input-focus-border-color:              lighten($component-active-bg, 25%) !default;
 $input-focus-color:                     $input-color !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
+
+//
+// link
+//
+$link-color:  $cl-primary;

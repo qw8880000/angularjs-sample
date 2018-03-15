@@ -1,7 +1,13 @@
-.form-control,
-.form__input {
+.form {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.form-control {
   display: block;
-  width: 100%;
+  // width: 100%;
   padding: $input-padding-y $input-padding-x;
   font-size: $input-font-size;
   line-height: $input-line-height;

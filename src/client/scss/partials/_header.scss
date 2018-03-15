@@ -5,8 +5,14 @@
   @include box-shadow-around($color: $cl-dark);
 }
 
+.header__inner {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
 .header__brand {
-  display: inline-block;
   width: $sidebar-width;
   height: $header-height;
   background-image: url("/img/AngularJS.png");
@@ -16,15 +22,16 @@
 }
 
 .header__author {
-  float: right;
-  display: inline-block;
-  line-height: $header-height;
+  // make element in flex box taking most of free space.
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 /* author
    ================================== */
 .author {
   display: inline-block;
+  line-height: $header-height;
   text-decoration-line: none;
 }
 
@@ -36,5 +43,6 @@
 
 .author__name {
   vertical-align: middle;
+  @include link-color();
 }
 

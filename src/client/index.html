@@ -15,16 +15,7 @@
 <body>
 
 <header class="header index__header--fixed">
-
-  <a class="header__brand" href="https://angularjs.org" target="_blank"></a>
-
-  <div class="header__author">
-    <a class="author" href="https://github.com/qw8880000/angularjs-sample" target="_blank">
-      <img class="author__avatar" src="img/avatar.gif" alt="author's avatar">
-      <span class="author__name">好好编程</span>
-    </a>
-  </div>
-
+  <div ng-include="'app/layout/header.html'"></div>
 </header>
 
 <aside class="sidebar index__sidebar--fixed">
@@ -33,9 +24,10 @@
 
 <div class="main index__main">
 
-  <div class="content">
+  <div class="main__inner">
     <ui-view></ui-view>
   </div>
+
 </div>
 
 </body>
