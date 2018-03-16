@@ -10,15 +10,20 @@
     });
 
   /* @ngInject */
-  function loginController() {
+  function loginController(authenticationService,
+    $state) {
     var vm = this;
     vm.title = 'loginController';
-
-    activate();
+    vm.submit = submit;
+    vm.username = null;
+    vm.password = null;
 
     ////////////////
 
-    function activate() {
+    function submit() {
+      authenticationService.login(vm.username, vm.password, function () {
+        $state.go('home.dashboard');
+      });
     }
   }
 

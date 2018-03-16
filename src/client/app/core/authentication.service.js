@@ -12,6 +12,7 @@
 
     var service = {
       isAuthenticated: isAuthenticated,
+      login: login,
     };
     return service;
 
@@ -19,6 +20,15 @@
 
     function isAuthenticated() {
       return authenticated;
+    }
+
+    function login(username, password, success, fail) {
+      if (username === 'test' && password === '123456') {
+        authenticated = true;
+        success();
+      } else {
+        fail();
+      }
     }
   }
 }());

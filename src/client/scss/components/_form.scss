@@ -1,13 +1,17 @@
-.form {
-  display: flex;
-  flex: 0 0 auto;
-  flex-flow: row nowrap;
-  align-items: center;
+.form-group {
+  display: block;
 }
 
-.form-control {
+.form-group__label {
   display: block;
-  // width: 100%;
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+}
+
+.form-control,
+.form-group__input {
+  display: block;
+  width: 100%;
   padding: $input-padding-y $input-padding-x;
   font-size: $input-font-size;
   line-height: $input-line-height;
@@ -53,3 +57,4 @@
     opacity: 1;
   }
 }
+

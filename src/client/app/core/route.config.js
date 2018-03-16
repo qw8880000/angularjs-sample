@@ -9,7 +9,7 @@
   function routeConfig($stateProvider, $urlServiceProvider) {
 
     // 默认路由设置
-    $urlServiceProvider.rules.otherwise('/home.dashboard');
+    $urlServiceProvider.rules.otherwise('home');
 
     // 路由设置
     $stateProvider
