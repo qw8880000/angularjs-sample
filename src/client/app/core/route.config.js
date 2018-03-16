@@ -8,51 +8,67 @@
   /* @ngInject */
   function routeConfig($stateProvider, $urlServiceProvider) {
 
-    $urlServiceProvider.rules.otherwise('/dashboard');
+    // 默认路由设置
+    $urlServiceProvider.rules.otherwise('/home.dashboard');
 
+    // 路由设置
     $stateProvider
       .state({
-        name: 'animations',
-        url: '/animations',
-        component: 'animations',
+        name: 'login',
+        url: '/login',
+        component: 'login',
+        data: {
+          public: true,
+        },
       })
       .state({
-        name: 'breadcrumbs',
+        name: 'home',
+        url: '/home',
+        component: 'home',
+      })
+      .state({
+        name: 'home.animations',
+        url: '/animations',
+        component: 'animations',
+        data: {public: true},
+      })
+      .state({
+        name: 'home.breadcrumbs',
         url: '/breadcrumbs',
         component: 'breadcrumbs',
       })
       .state({
-        name: 'buttons',
+        name: 'home.buttons',
         url: '/buttons',
         component: 'buttons',
       })
       .state({
-        name: 'cards',
+        name: 'home.cards',
         url: '/cards',
         component: 'cards',
       })
       .state({
-        name: 'customFilters',
+        name: 'home.customFilters',
         url: '/custom-filters',
         component: 'customFilters',
       })
       .state({
-        name: 'dashboard',
+        name: 'home.dashboard',
         url: '/dashboard',
         component: 'dashboard',
       })
       .state({
-        name: 'forms',
+        name: 'home.forms',
         url: '/forms',
         component: 'forms',
       })
       .state({
-        name: 'repeaters',
+        name: 'home.repeaters',
         url: '/repeaters',
         component: 'repeaters',
       })
       .state({
-        name: 'toastrs',
+        name: 'home.toastrs',
         url: '/toastrs',
         component: 'toastrs',
       });

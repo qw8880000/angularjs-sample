@@ -5,19 +5,14 @@
     .module('app', [
 
       /*
-       * Angular modules
+       *  3rd party angular modules
        */
-      'ngResource', 'ngAnimate', // 'ngSanitize',
+      'ngResource', 'ngAnimate', 'ui.router', 'toastr',
 
       /*
        * Our reusable cross app code modules
        */
       'ccWidget',
-
-      /*
-       * 3rd party modules
-       */
-      'ui.router', 'toastr',
 
       /*
        *  app common area
@@ -27,6 +22,9 @@
       /*
        * feature area
        */
+      'app.login',
+      'app.layout',
+      'app.home',
       'app.animations',
       'app.breadcrumbs',
       'app.buttons',
@@ -34,7 +32,6 @@
       'app.customFilters',
       'app.dashboard',
       'app.forms',
-      'app.layout',
       'app.repeaters',
       'app.toastrs',
     ]);
