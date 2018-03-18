@@ -59,7 +59,7 @@ rules:
     angular/value-name: 2
 
     # Conventions
-    angular/di-order: 2
+    angular/di-order: 0
     angular/di: 2
     angular/dumb-inject: 2
     angular/function-type: 

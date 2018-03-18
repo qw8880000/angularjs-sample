@@ -27,8 +27,8 @@
   + .breadcrumb__item:hover::before {
     text-decoration: none;
   }
+}
 
-  &.active {
-    color: $breadcrumb-active-color;
-  }
+.breadcrumb__item--active {
+  color: $breadcrumb-active-color;
 }

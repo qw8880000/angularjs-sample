@@ -1,18 +1,18 @@
 <div class="login">
 
   <form novalidate class="login__form">
-    <div class="form-group mb-2">
-      <label for="username" class="form-group__label">用户名：</label>
+    <div class="form mb-2">
+      <span class="form__prepend"><i class="fa fa-user-o" aria-hidden="true"></i></span>
       <input type="text" name="username" placeholder="test"
         ng-model="vm.username"
-        class="form-group__input"/>
+        class="form__control"/>
     </div>
 
-    <div class="form-group mb-2">
-      <label for="password" class="form-group__label">密码：</label>
+    <div class="form mb-2">
+      <span class="form__prepend"><i class="fa fa-lock" aria-hidden="true"></i></span>
       <input type="text" name="password" placeholder="123456" 
         ng-model="vm.password"
-        class="form-group__input"/>
+        class="form__control"/>
 
     </div>
 

@@ -1,15 +1,7 @@
-.form-group {
-  display: block;
-}
-
-.form-group__label {
-  display: block;
-  font-size: $input-font-size;
-  line-height: $input-line-height;
-}
-
-.form-control,
-.form-group__input {
+//
+// base
+//
+.form-input {
   display: block;
   width: 100%;
   padding: $input-padding-y $input-padding-x;
@@ -19,7 +11,6 @@
   background-color: $input-bg;
   background-clip: padding-box;
   border: $input-border-width solid $input-border-color;
-  border-radius: $input-border-radius;
   box-shadow: $input-box-shadow;
   transition: $input-transition;
 
@@ -56,5 +47,33 @@
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
   }
+}
+
+.form-input--radius {
+  border-radius: $input-border-radius;
+}
+
+//
+// group
+//
+.form {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.form__prepend {
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  padding: $input-padding-y $input-padding-x;
+  border: $input-border-width solid $input-border-color;
+}
+
+.form__control {
+  @extend .form-input;
+}
+
+.form__postpend {
 }
 
