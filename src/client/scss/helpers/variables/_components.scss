@@ -16,7 +16,7 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
 // Button
 //
 $btn-padding-y:     $input-btn-padding-y !default;
-$btn-padding-x:     $input-btn-padding-x !default;
+$btn-padding-x:     $input-btn-padding-x * 2 !default;
 $btn-line-height:   $input-btn-line-height !default;
 $btn-font-size:     $input-btn-font-size;
 

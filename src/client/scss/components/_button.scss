@@ -7,7 +7,6 @@
   cursor: pointer;
   padding: $btn-padding-y $btn-padding-x;
   line-height: $btn-line-height;
-  border-radius: $btn-border-radius;
   font-weight: $btn-font-weight;
   font-size: $btn-font-size;
   transition: $btn-transition;
@@ -23,6 +22,11 @@
   }
 }
 
+.btn--radius {
+  border-radius: $btn-border-radius;
+}
+
+// .btn--blue .btn--green...
 @each $theme, $value in $btn-theme-colors {
   .btn--#{$theme} {
     color: color-yiq($value);
@@ -49,6 +53,7 @@
   }
 }
 
+// .btn-outline--blue .btn-outline--green...
 @each $theme, $value in $btn-theme-colors {
   .btn--outline-#{$theme} {
     color: $value;

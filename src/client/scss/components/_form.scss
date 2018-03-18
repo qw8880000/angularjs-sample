@@ -11,7 +11,6 @@
   background-color: $input-bg;
   background-clip: padding-box;
   border: $input-border-width solid $input-border-color;
-  box-shadow: $input-box-shadow;
   transition: $input-transition;
 
   // Unstyle the caret on `<select>`s in IE10+.
@@ -53,6 +52,10 @@
   border-radius: $input-border-radius;
 }
 
+.form-input--shadow-inset {
+  box-shadow: $input-box-shadow;
+}
+
 //
 // group
 //
@@ -64,10 +67,14 @@
 }
 
 .form__prepend {
+  width: 44px;
+  text-align: center;
+  margin-right: -$input-border-width;
   font-size: $input-font-size;
   line-height: $input-line-height;
   padding: $input-padding-y $input-padding-x;
   border: $input-border-width solid $input-border-color;
+  background-color: $gray-200;
 }
 
 .form__control {

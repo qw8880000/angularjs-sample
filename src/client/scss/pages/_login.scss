@@ -9,13 +9,20 @@
   background-color: $gray-300;
 }
 
-.login__form {
+.login__inner {
   width: 400px;
   padding: 50px;
   background-color: $white;
   border: 1px solid $gray-500;
+}
 
-  .form-group__label {
-    // color: color-yiq($cl-dark);
-  }
+.login__form {
+  margin-top: 40px;
+}
+
+.login__control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
