@@ -1579,7 +1579,6 @@ ul {
 .card {
   background-color: #fff;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
 }
 .card::before, .card::after {
   content: "";
@@ -1599,6 +1598,10 @@ ul {
 
 /* Modifier
    ================================== */
+.card--radius {
+  border-radius: 0.25rem;
+}
+
 .card--shadow {
   box-shadow: 0 0 8px 1px rgba(52, 58, 64, 0.5);
   transition: all 0.2s ease-in-out;
