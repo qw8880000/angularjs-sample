@@ -7,7 +7,7 @@
       /*
        *  3rd party angular modules
        */
-      'ngResource', 'ngAnimate', 'ui.router', 'toastr',
+      'ngResource', 'ngAnimate', 'ngCookies', 'ui.router', 'toastr',
 
       /*
        * Our reusable cross app code modules

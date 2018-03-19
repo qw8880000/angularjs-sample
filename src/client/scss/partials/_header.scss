@@ -1,3 +1,42 @@
+/* author
+   ================================== */
+.author {
+  display: flex;
+  align-items: center;
+  line-height: $header-height;
+  text-decoration-line: none;
+}
+
+.author__avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.author__name {
+  @include link-color();
+}
+
+/* user-menu
+   ================================== */
+.user-menu {
+  display: none;
+  position: absolute;
+  top: $header-height;
+  right: 0;
+  width: 180px;
+  border: 1px solid $border-color;
+  background-color: $white;
+}
+
+.user-menu__item {
+  display: block;
+  border-bottom: 1px solid $border-color;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+/* header
+   ================================== */
 .header {
   height: $header-height;
   width: 100%;
@@ -24,25 +63,15 @@
 .header__author {
   // make element in flex box taking most of free space.
   margin-left: auto;
-  margin-right: 10px;
-}
+  padding: 0 10px;
+  position: relative;
 
-/* author
-   ================================== */
-.author {
-  display: inline-block;
-  line-height: $header-height;
-  text-decoration-line: none;
-}
+  &:hover {
+    background-color: $gray-200;
 
-.author__avatar {
-  vertical-align: middle;
-  width: 40px;
-  height: 40px;
-}
-
-.author__name {
-  vertical-align: middle;
-  @include link-color();
+    .user-menu {
+      display: block;
+    }
+  }
 }
 

@@ -6,29 +6,54 @@
     .factory('authenticationService', authenticationService);
 
   /* @ngInject */
-  function authenticationService() {
-
-    var authenticated = false;
+  function authenticationService($cookies,
+    $timeout) {
 
     var service = {
       isAuthenticated: isAuthenticated,
       login: login,
+      logout: logout,
     };
     return service;
 
     ////////////////
 
     function isAuthenticated() {
-      return authenticated;
+      if ($cookies.get('isAuthenticated') === 'true') {
+        return true;
+      } else {
+        return false;
+      }
     }
 
-    function login(username, password, success, fail) {
-      if (username === 'test' && password === '123456') {
-        authenticated = true;
-        success();
-      } else {
-        fail();
-      }
+    function login(username, password, callback) {
+      /* Dummy authentication for testing, uses $timeout to simulate api call
+         ----------------------------------------------*/
+      $timeout(function(){
+        var response = { success: username === 'test' && password === '123456' };
+        var date = new Date();
+
+        if(!response.success) {
+          response.message = 'Username or password is incorrect';
+          $cookies.remove('isAuthenticated');
+        } else {
+          $cookies.put('isAuthenticated', 'true');
+        }
+
+        callback(response);
+
+      }, 1000);
+
+      /* Use this for real authentication
+         ----------------------------------------------*/
+      //$http.post('/api/authenticate', { username: username, password: password })
+      //    .success(function (response) {
+      //        callback(response);
+      //    });
+    }
+
+    function logout() {
+      $cookies.remove('isAuthenticated');
     }
   }
 }());

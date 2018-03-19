@@ -10,15 +10,17 @@
     });
 
   /* @ngInject */
-  function homeController() {
+  function homeController($state,
+    authenticationService) {
     var vm = this;
     vm.title = 'homeController';
-
-    activate();
+    vm.logout = logout;
 
     ////////////////
 
-    function activate() {
+    function logout() {
+      $state.go('login');
+      authenticationService.logout();
     }
   }
 

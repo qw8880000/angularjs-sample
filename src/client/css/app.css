@@ -1790,6 +1790,51 @@ ul {
 /* ==================================
  * Partials
  * ================================== */
+/* author
+   ================================== */
+.author {
+  display: flex;
+  align-items: center;
+  line-height: 60px;
+  text-decoration-line: none;
+}
+
+.author__avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.author__name {
+  color: #007bff;
+}
+.author__name:visited {
+  color: #007bff;
+}
+.author__name:hover {
+  color: #006fe6;
+}
+
+/* user-menu
+   ================================== */
+.user-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 180px;
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+}
+
+.user-menu__item {
+  display: block;
+  border-bottom: 1px solid #dee2e6;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+/* header
+   ================================== */
 .header {
   height: 60px;
   width: 100%;
@@ -1818,32 +1863,14 @@ ul {
 
 .header__author {
   margin-left: auto;
-  margin-right: 10px;
+  padding: 0 10px;
+  position: relative;
 }
-
-/* author
-   ================================== */
-.author {
-  display: inline-block;
-  line-height: 60px;
-  text-decoration-line: none;
+.header__author:hover {
+  background-color: #e9ecef;
 }
-
-.author__avatar {
-  vertical-align: middle;
-  width: 40px;
-  height: 40px;
-}
-
-.author__name {
-  vertical-align: middle;
-  color: #007bff;
-}
-.author__name:visited {
-  color: #007bff;
-}
-.author__name:hover {
-  color: #006fe6;
+.header__author:hover .user-menu {
+  display: block;
 }
 
 .main {
