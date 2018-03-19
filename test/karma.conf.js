@@ -26,6 +26,7 @@ module.exports = function(config) {
       'src/client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'src/client/bower_components/angular-resource/angular-resource.js',
       'src/client/bower_components/angular-toastr/dist/angular-toastr.tpls.js',
+      'src/client/bower_components/angular-cookies/angular-cookies.js',
       'src/client/bower_components/angular-mocks/angular-mocks.js',
       /*-- endbower --*/
       

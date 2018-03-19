@@ -1,25 +1,31 @@
-@mixin box-shadow-around($color, $blur: 8px, $spread: 1px) {
+@mixin box-shadow-around($color, $blur: 8px, $spread: 1px, $enable-hover: false) {
   box-shadow: 0 0 $blur $spread rgba($color, .5);
 
-  &:hover {
-    box-shadow: 0 0 $blur $spread+1px rgba($color, .5);
+  @if $enable-hover {
+    &:hover {
+      box-shadow: 0 0 $blur $spread+1px rgba($color, .5);
+    }
   }
 }
 
 // box shadow on the bottom and right
-@mixin box-shadow-br($color, $blur: 8px, $spread: -2px) {
+@mixin box-shadow-br($color, $blur: 8px, $spread: -2px, $enable-hover: false) {
   box-shadow: 4px 4px $blur $spread rgba($color, .5);
 
-  &:hover {
-    box-shadow: 4px 4px $blur $spread+1px rgba($color, .5);
+  @if $enable-hover {
+    &:hover {
+      box-shadow: 4px 4px $blur $spread+1px rgba($color, .5);
+    }
   }
 }
 
 // box shadow on the bottom
-@mixin box-shadow-b($color, $blur: 16px, $spread: -4px) {
+@mixin box-shadow-b($color, $blur: 16px, $spread: -4px, $enable-hover: false) {
   box-shadow: 0 8px $blur $spread rgba($color, .5);
 
-  &:hover {
-    box-shadow: 0 10px $blur $spread rgba($color, .5);
+  @if $enable-hover {
+    &:hover {
+      box-shadow: 0 10px $blur $spread rgba($color, .5);
+    }
   }
 }

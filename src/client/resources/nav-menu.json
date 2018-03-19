@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Dashboard",
+        "sref": "home.dashboard",
+        "icon": "fa fa-th-large"
+    },
+    {
+        "name": "Components",
+        "sref": null,
+        "icon": "fa fa-th-large",
+
+        "subMenu": {
+            {
+                "name": "Breadcrumbs",
+                "sref": "home.breadcrumbs",
+                "icon": null
+            },
+            {
+                "name": "Buttons",
+                "sref": "home.buttons",
+                "icon": null
+            },
+            {
+                "name": "Cards",
+                "sref": "home.cards",
+                "icon": null
+            },
+            {
+                "name": "Forms",
+                "sref": "home.forms",
+                "icon": null
+            }
+        }
+    }
+]

@@ -30,6 +30,9 @@
         return;
       }
 
+      // add scope to ccw-accordion controller
+      accordionCtrl.addItem(scope);
+
       // set ccw-accordion-toggle click listener
       if(toggleElements.length > 0) {
         toggleElements.on('click', function () {
@@ -37,30 +40,32 @@
         });
       }
 
-      if(scope.isFocus) {
-        accordionCtrl.setFocus(scope);
-      }
-
       // set watcher to attr
-      scope.$watch('isOpen', function (value) {
+      scope.$watch('isOpen', function (newValue, oldValue) {
+        if (newValue === oldValue) {
+          return;
+        }
+
         // toggle class
-        element.toggleClass(scope.itemOpenClass, !!value);
+        element.toggleClass(scope.itemOpenClass);
 
         if(panelElements.length > 0) {
-          panelElements.toggleClass(scope.panelOpenClass, !!value);
+          panelElements.toggleClass(scope.panelOpenClass);
         }
       });
 
-      scope.$watch('isFocus', function (value) {
-        if(value) {
+      scope.$watch('isFocus', function (newValue, oldValue) {
+
+        if (newValue === oldValue) {
+          return;
+        }
+
+        if(newValue) {
           element.addClass(scope.itemFocusClass);
         } else {
           element.removeClass(scope.itemFocusClass);
         }
       });
-
-      // add scope to ccw-accordion controller
-      accordionCtrl.addItem(scope);
 
       // set listener to destroy
       scope.$on('$destroy', function(event) {

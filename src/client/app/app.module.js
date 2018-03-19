@@ -23,7 +23,6 @@
        * feature area
        */
       'app.login',
-      'app.layout',
       'app.home',
       'app.animations',
       'app.breadcrumbs',

@@ -10,12 +10,6 @@
   background-color: $nav-font-color;
 }
 
-.nav__item {
-  &--focus {
-    border-left: 3px solid $nav-vline-color;
-  }
-}
-
 .nav__link {
   display: block;
   padding: 10px 20px;
@@ -28,14 +22,9 @@
   &:hover {
     background-color: $nav-item-hover-color;
   }
-
-  /* ui-router active class */
-  &--active {
-    background-color: $nav-item-active-color;
-  }
 }
 
-.nav__link-icon {
+.nav__link-prepend {
   margin-right: 5px;
 }
 
@@ -57,14 +46,26 @@
   padding-left: 50px;
 }
 
-.nav__item--open {
+/* for js
+   ================================== */
+.js-nav__item--active {
   .sub-nav {
     height: auto;
     display: block;
   }
 
-  /* arrow */
   .nav__link-arrow {
-    transform: rotate(90deg);
+    i {
+      transform: rotate(90deg);
+    }
   }
 }
+
+.js-nav__link--active {
+  background-color: $nav-item-active-color;
+}
+
+.js-nav__item--focus {
+  border-left: 3px solid $nav-vline-color;
+}
+

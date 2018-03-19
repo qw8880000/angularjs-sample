@@ -14,6 +14,8 @@
     authenticationService) {
     var vm = this;
     vm.title = 'homeController';
+    vm.isItemActive = isItemActive;
+    vm.hasChildActive = hasChildActive;
     vm.logout = logout;
 
     ////////////////
@@ -22,6 +24,29 @@
       $state.go('login');
       authenticationService.logout();
     }
+
+    function isItemActive(srefName) {
+      if ($state.is(srefName)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function hasChildActive(items) {
+      if (angular.isArray(items)) {
+        var currentSrefName = $state.$current.name;
+        for(var i = 0; i < items.length; i++) {
+          if(items[i].name === currentSrefName) {
+            return true;
+          }
+        }
+        return false;
+      } else {
+        return false;
+      }
+    }
+
   }
 
 }());
