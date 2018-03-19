@@ -368,6 +368,7 @@ module.exports = function(grunt) {
         ],
         tasks: ['stylelint', 'sass'],
         options: {
+          livereload: true,
           spawn: false,
           event: ['all']
         }
