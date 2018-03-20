@@ -119,8 +119,8 @@ module.exports = function(grunt) {
         src: [
           '<%= pathConfig.dist %>/app/**/*.js',
           '<%= pathConfig.dist %>/css/**/*.css',
-          // '<%= pathConfig.dist %>/img/**/*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= pathConfig.dist %>/vendor/**/*.*',
+          '<%= pathConfig.dist %>/img/**/*.{png,jpg,jpeg,gif,webp,svg}',
+          // '<%= pathConfig.dist %>/vendor/**/*.*',
         ]
       }
     },
@@ -362,28 +362,27 @@ module.exports = function(grunt) {
     // This target modifies the files it is working on.
     usemin: {
       html: ['<%= pathConfig.dist %>/index.html'],
-      // js: ['<%= pathConfig.dist %>/app/**/*.js'],
-      css: ['<%= pathConfig.dist %>/css/**/*.css',], 
-      // resources: ['<%= pathConfig.dist %>/resources/**/*.json'],
+      js: ['<%= pathConfig.dist %>/app/**/*.js'],
+      css: ['<%= pathConfig.dist %>/css/**/*.css'], 
+      resources: ['<%= pathConfig.dist %>/resources/**/*.json'],
 
       options: {
         // revmap:
         assetsDirs: [
           '<%= pathConfig.dist %>',
-          '<%= pathConfig.dist %>/vendor',
-          '<%= pathConfig.dist %>/vendor/font-awesome',
         ],
         patterns: {
+          js: [
+            [/(img\/[\/\w-]+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+          ],
+          resources: [
+            [/(img\/[\/\w-\.\d]+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+          ],
           css: [
             // [/(\.\.\/fonts\/[\/\w-]+\.(eot|svg|ttf|woff|woff2))/g, 'Replacing references to images']
-            [/(..\/fonts\/fontawesome.webfont.eot)/g, 'Replacing references to images']
+            [/(fontawesome-webfont\.(eot))/g, 'Replacing references to images'],
+            [/(img\/\w+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
           ],
-          // js: [
-            // [/(img\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
-          // ],
-          // resources: [
-            // [/(img\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
-          // ],
         }
       }
     },
