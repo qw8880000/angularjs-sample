@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Dashboard",
+    "sref": "home.dashboard",
+    "icon": "fa fa-th-large"
+  },
+  {
+    "name": "Components",
+    "sref": null,
+    "icon": "fa fa-gavel",
+    "subItems": [
+      {
+        "name": "Breadcrumbs",
+        "sref": "home.breadcrumbs",
+        "icon": null
+      },
+      {
+        "name": "Buttons",
+        "sref": "home.buttons",
+        "icon": null
+      },
+      {
+        "name": "Cards",
+        "sref": "home.cards",
+        "icon": null
+      },
+      {
+        "name": "Forms",
+        "sref": "home.forms",
+        "icon": null
+      }
+    ]
+  },
+  {
+    "name": "Angular.js demo",
+    "sref": null,
+    "icon": "fa fa-tachometer",
+    "subItems": [
+      {
+        "name": "Repeaters",
+        "sref": "home.repeaters",
+        "icon": null
+      },
+      {
+        "name": "Custom filters",
+        "sref": "home.customFilters",
+        "icon": null
+      },
+      {
+        "name": "Animations",
+        "sref": "home.animations",
+        "icon": null
+      },
+      {
+        "name": "Toastrs",
+        "sref": "home.toastrs",
+        "icon": null
+      }
+    ]
+  }
+]

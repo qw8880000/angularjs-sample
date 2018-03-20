@@ -3,31 +3,21 @@
 
   angular
     .module('app.home')
-    .component('home', {
-      templateUrl: 'app/home/home.html',
-      controller: homeController,
-      controllerAs: 'vm',
-      bindings: {
-        someObj: '<',
-      },
-    });
+    .controller('homeController', homeController);
 
   /* @ngInject */
   function homeController($state,
+    navItems,
     $log,
-    $timeout,
     authenticationService) {
+
     var vm = this;
     vm.title = 'homeController';
-    vm.isItemActive = isItemActive;
+    vm.isActive = isActive;
     vm.hasChildActive = hasChildActive;
+    vm.hasSubNav = hasSubNav;
     vm.logout = logout;
-    // vm.someObj: get from bindings
-
-      $log.info(vm.someObj);
-    $timeout(function () {
-      $log.info(vm.someObj);
-    }, 1000);
+    vm.navItems = navItems;
 
     ////////////////
 
@@ -36,7 +26,7 @@
       authenticationService.logout();
     }
 
-    function isItemActive(srefName) {
+    function isActive(srefName) {
       if ($state.is(srefName)) {
         return true;
       } else {
@@ -44,11 +34,13 @@
       }
     }
 
-    function hasChildActive(items) {
-      if (angular.isArray(items)) {
+    function hasChildActive(item) {
+      if (item && item.subItems && angular.isArray(item.subItems)) {
         var currentSrefName = $state.$current.name;
-        for(var i = 0; i < items.length; i++) {
-          if(items[i].name === currentSrefName) {
+        var subItems = item.subItems;
+
+        for(var i = 0; i < subItems.length; i++) {
+          if(subItems[i].sref === currentSrefName) {
             return true;
           }
         }
@@ -58,6 +50,13 @@
       }
     }
 
-  }
+    function hasSubNav(item) {
+      if (item && item.subItems && angular.isArray(item.subItems)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
 
+  }
 }());

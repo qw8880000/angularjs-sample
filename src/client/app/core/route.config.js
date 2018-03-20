@@ -24,7 +24,14 @@
       .state({
         name: 'home',
         url: '/home',
-        component: 'home',
+        controller: 'homeController',
+        controllerAs: 'vm',
+        templateUrl: 'app/home/home.html',
+        resolve: {
+          navItems: function (dataService) {
+            return dataService.navItems.query();
+          }
+        },
       })
       .state({
         name: 'home.animations',
