@@ -24,7 +24,7 @@ rules:
     angular/di-unused: 2
     angular/directive-restrict: 2
     angular/empty-controller: 2
-    angular/no-controller: 2
+    angular/no-controller: 0
     angular/no-inline-template: 2
     angular/no-run-logic: 2
     angular/no-services: 2

@@ -33,9 +33,9 @@ module.exports = function(config) {
       /*-- angular.js --*/
       'src/client/app/app.module.js',
       'src/client/app/blocks/cc-widget/cc-widget.module.js',
+      'src/client/app/blocks/cc-widget/accordion/ccw-accordion.module.js',
       'src/client/app/blocks/cc-widget/accordion/ccw-accordion-item.directive.js',
       'src/client/app/blocks/cc-widget/accordion/ccw-accordion.directive.js',
-      'src/client/app/blocks/cc-widget/accordion/ccw-accordion.module.js',
       'src/client/app/core/core.module.js',
       'src/client/app/core/authentication.service.js',
       'src/client/app/core/checkmask.filter.js',

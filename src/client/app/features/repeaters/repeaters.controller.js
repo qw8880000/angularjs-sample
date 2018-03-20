@@ -6,7 +6,9 @@
     .controller('RepeatersController', RepeatersController);
 
   /* @ngInject */
-  function RepeatersController($log, dataService) {
+  function RepeatersController($log,
+    dataService) {
+
     var vm = this;
     vm.phones = null;
 
