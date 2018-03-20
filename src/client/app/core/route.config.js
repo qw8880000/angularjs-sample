@@ -16,7 +16,9 @@
       .state({
         name: 'login',
         url: '/login',
-        component: 'login',
+        templateUrl: 'app/login/login.html',
+        controller: 'LoginController',
+        controllerAs: 'vm',
         data: {
           public: true,
         },
@@ -24,9 +26,9 @@
       .state({
         name: 'home',
         url: '/home',
-        controller: 'homeController',
-        controllerAs: 'vm',
         templateUrl: 'app/home/home.html',
+        controller: 'HomeController',
+        controllerAs: 'vm',
         resolve: {
           navItems: function (dataService) {
             return dataService.navItems.query();
@@ -36,48 +38,63 @@
       .state({
         name: 'home.animations',
         url: '/animations',
-        component: 'animations',
-        data: {public: true},
+        templateUrl: 'app/animations/animations.html',
+        controller: 'AnimationsController',
+        controllerAs: 'vm',
       })
       .state({
         name: 'home.breadcrumbs',
         url: '/breadcrumbs',
-        component: 'breadcrumbs',
+        templateUrl: 'app/breadcrumbs/breadcrumbs.html',
+        controller: 'BreadcrumbsController',
+        controllerAs: 'vm',
       })
       .state({
         name: 'home.buttons',
         url: '/buttons',
-        component: 'buttons',
+        templateUrl: 'app/buttons/buttons.html',
+        controller: 'ButtonsController',
+        controllerAs: 'vm',
       })
       .state({
         name: 'home.cards',
         url: '/cards',
-        component: 'cards',
+        templateUrl: 'app/cards/cards.html',
+        controller: 'CardsController',
+        controllerAs: 'vm',
       })
       .state({
         name: 'home.customFilters',
         url: '/custom-filters',
-        component: 'customFilters',
+        templateUrl: 'app/custom-filters/custom-filters.html',
+        controller: 'CustomFiltersController',
+        controllerAs: 'vm',
       })
       .state({
         name: 'home.dashboard',
         url: '/dashboard',
-        component: 'dashboard',
+        templateUrl: 'app/dashboard/dashboard.html',
       })
       .state({
         name: 'home.forms',
         url: '/forms',
-        component: 'forms',
+        templateUrl: 'app/forms/forms.html',
+        controller: 'FormsController',
+        controllerAs: 'vm',
       })
       .state({
         name: 'home.repeaters',
         url: '/repeaters',
-        component: 'repeaters',
+        templateUrl: 'app/repeaters/repeaters.html',
+        controller: 'RepeatersController',
+        controllerAs: 'vm',
       })
       .state({
         name: 'home.toastrs',
         url: '/toastrs',
-        component: 'toastrs',
+        templateUrl: 'app/toastrs/toastrs.html',
+        controller: 'ToastrsController',
+        controllerAs: 'vm',
       });
   }
 

@@ -3,14 +3,10 @@
 
   angular
     .module('app.toastrs')
-    .component('toastrs', {
-      templateUrl: 'app/toastrs/toastrs.html',
-      controller: toastrsController,
-      controllerAs: 'vm',
-    });
+    .controller('ToastrsController', ToastrsController);
 
   /* @ngInject */
-  function toastrsController(toastr) {
+  function ToastrsController(toastr) {
     var vm = this;
     vm.title = 'toastrsController';
     vm.openToastr = openToastr;

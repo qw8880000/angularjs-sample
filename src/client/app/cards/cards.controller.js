@@ -3,14 +3,10 @@
 
   angular
     .module('app.cards')
-    .component('cards', {
-      templateUrl: 'app/cards/cards.html',
-      controller: cardsController,
-      controllerAs: 'vm',
-    });
+    .controller('CardsController', CardsController);
 
   /* @ngInject */
-  function cardsController() {
+  function CardsController() {
     var vm = this;
     vm.title = 'cardsController';
     vm.themes = [

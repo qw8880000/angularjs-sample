@@ -3,11 +3,7 @@
 
   angular
     .module('app.repeaters')
-    .component('repeaters', {
-      templateUrl: 'app/repeaters/repeaters.html',
-      controller: RepeatersController,
-      controllerAs: 'vm',
-    });
+    .controller('RepeatersController', RepeatersController);
 
   /* @ngInject */
   function RepeatersController($log, dataService) {

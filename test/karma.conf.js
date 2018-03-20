@@ -32,7 +32,7 @@ module.exports = function(config) {
       
       /*-- angular.js --*/
       'src/client/app/animations/animations.module.js',
-      'src/client/app/animations/animations.component.js',
+      'src/client/app/animations/animations.controller.js',
       'src/client/app/blocks/cc-widget/cc-widget.module.js',
       'src/client/app/blocks/cc-widget/accordion/ccw-accordion.module.js',
       'src/client/app/blocks/cc-widget/accordion/ccw-accordion.directive.js',
@@ -43,14 +43,14 @@ module.exports = function(config) {
       'src/client/app/core/route.config.js',
       'src/client/app/core/toastr.config.js',
       'src/client/app/custom-filters/custom-filters.module.js',
-      'src/client/app/custom-filters/custom-filters.component.js',
+      'src/client/app/custom-filters/custom-filters.controller.js',
       'src/client/app/dashboard/dashboard.module.js',
-      'src/client/app/dashboard/dashboard.component.js',
+      'src/client/app/dashboard/dashboard.controller.js',
       'src/client/app/layout/layout.module.js',
       'src/client/app/repeaters/repeaters.module.js',
-      'src/client/app/repeaters/repeaters.component.js',
+      'src/client/app/repeaters/repeaters.controller.js',
       'src/client/app/toastrs/toastrs.module.js',
-      'src/client/app/toastrs/toastrs.component.js',
+      'src/client/app/toastrs/toastrs.controller.js',
       'src/client/app/app.module.js',
 
       /*-- injector:test:js --*/

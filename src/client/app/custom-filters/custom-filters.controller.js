@@ -3,11 +3,7 @@
 
   angular
     .module('app.customFilters')
-    .component('customFilters', {
-      templateUrl: 'app/custom-filters/custom-filters.html',
-      controller: CustomFiltersController,
-      controllerAs: 'vm',
-    });
+    .controller('CustomFiltersController', CustomFiltersController);
 
   /* @ngInject */
   function CustomFiltersController() {

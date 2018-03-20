@@ -3,14 +3,10 @@
 
   angular
     .module('app.buttons')
-    .component('buttons', {
-      templateUrl: 'app/buttons/buttons.html',
-      controller: buttonsController,
-      controllerAs: 'vm',
-    });
+    .controller('ButtonsController', ButtonsController);
 
   /* @ngInject */
-  function buttonsController() {
+  function ButtonsController() {
     var vm = this;
     vm.title = 'buttonsController';
     vm.themes = [

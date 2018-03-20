@@ -3,12 +3,11 @@
 
   angular
     .module('app.home')
-    .controller('homeController', homeController);
+    .controller('HomeController', HomeController);
 
   /* @ngInject */
-  function homeController($state,
+  function HomeController($state,
     navItems,
-    $log,
     authenticationService) {
 
     var vm = this;
