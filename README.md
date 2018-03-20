@@ -30,40 +30,33 @@ Angular.js 1.x sample.
 # AngularJs Architecture
 
 ```
-     +--------+
-     |  app   |
-     +--------+
+    app.module.js
         |
+        |-- blocks/
+        |   |
+        |   |-- exception/
+        |   |-- logger/
+        |   \-- ..
         |
-        V
-     +------------------+
-     |   app.feature1   |
-     |   app.feature2   |
-     |   app.feature3   |
-     |   ...            |
-     +------------------+
+        |-- widgets/
         |
-        +-------------------+
-        |                   |
-        V                   v
-     +-----------+     +---------------+
-     |  app.core |     |  app.widgets  |
-     +-----------+     +---------------+
+        |-- core/
         |
-        |
-        v
-     +------------------+
-     | blocks.exception |
-     | blocks.logger    |
-     | ...              |
-     +------------------+
+        \-- features/
+            |
+            |-- app.feature1
+            |-- app.feature2
+            |-- app.feature3
+            \-- ...
 
 ```
 
-* 第一层：app启动模块。存放app启动逻辑和模块依赖。
-* 第二层：app的功能模块。
-* 第三层：此app的通用模块。如 常量，数据服务，控件等。
-* 第四层：跨app的通用模块。如 blocks.exception,blocks.logger。
+angualr.js框架总体上分为三个部分：app功能模块，app通用模块，跨app通用模块。
+
+* `app.module.js`: 存放app启动逻辑和模块依赖。
+* `blocks/`：跨app的通用模块。如 blocks.exception,blocks.logger。
+* `core/` `widgets`：此app的通用的模块。
+* `features/`：app的功能模块。
 
 # CSS Architecture
 
@@ -82,6 +75,7 @@ Angular.js 1.x sample.
 # How to use
 
 1. 克隆本代码仓库
+1. 安装sass(安装[Ruby], 运行`gem update --system && gem install compass`)
 1. `npm install`
 1. `bower install`
 1. 普通开发使用`grunt`命令；发布使用`grunt dist`
@@ -136,3 +130,5 @@ Angular.js 1.x sample.
 [grunt-usemin]: <https://www.npmjs.com/package/grunt-usemin>
 
 [REM]: <https://blog.bugsnag.com/responsive-typography-with-rems/>
+
+[Ruby]: <http://www.ruby-lang.org/en/downloads/>
