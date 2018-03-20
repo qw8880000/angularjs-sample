@@ -153,6 +153,22 @@ module.exports = function(grunt) {
         src: ['<%= pathConfig.test %>/e2e/**/*.js'],
         dest: '<%= pathConfig.test %>/protractor.conf.js'
       },
+
+      help: {
+        options: {
+          template: '<%= pathConfig.client %>/index.html',
+          starttag: '/*-- injector:test:js --*/',
+          endtag: '/*-- endinjector --*/',
+          transform: function (file) {
+            var content = '\'file\',';
+            return content.replace(/file/i, file);
+          },
+          ignorePath: 'test/',
+          addRootSlash: false
+        },
+        src: ['<%= pathConfig.client %>/app/**/*.js'],
+        dest: '<%= pathConfig.client %>/index.html'
+      },
     },
 
     // ---------------------------------- 

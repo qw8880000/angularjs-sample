@@ -16,7 +16,7 @@
       .state({
         name: 'login',
         url: '/login',
-        templateUrl: 'app/login/login.html',
+        templateUrl: 'app/features/login/login.html',
         controller: 'LoginController',
         controllerAs: 'vm',
         data: {
@@ -26,7 +26,7 @@
       .state({
         name: 'home',
         url: '/home',
-        templateUrl: 'app/home/home.html',
+        templateUrl: 'app/features/home/home.html',
         controller: 'HomeController',
         controllerAs: 'vm',
         resolve: {
@@ -38,61 +38,61 @@
       .state({
         name: 'home.animations',
         url: '/animations',
-        templateUrl: 'app/animations/animations.html',
+        templateUrl: 'app/features/animations/animations.html',
         controller: 'AnimationsController',
         controllerAs: 'vm',
       })
       .state({
         name: 'home.breadcrumbs',
         url: '/breadcrumbs',
-        templateUrl: 'app/breadcrumbs/breadcrumbs.html',
+        templateUrl: 'app/features/breadcrumbs/breadcrumbs.html',
         controller: 'BreadcrumbsController',
         controllerAs: 'vm',
       })
       .state({
         name: 'home.buttons',
         url: '/buttons',
-        templateUrl: 'app/buttons/buttons.html',
+        templateUrl: 'app/features/buttons/buttons.html',
         controller: 'ButtonsController',
         controllerAs: 'vm',
       })
       .state({
         name: 'home.cards',
         url: '/cards',
-        templateUrl: 'app/cards/cards.html',
+        templateUrl: 'app/features/cards/cards.html',
         controller: 'CardsController',
         controllerAs: 'vm',
       })
       .state({
         name: 'home.customFilters',
         url: '/custom-filters',
-        templateUrl: 'app/custom-filters/custom-filters.html',
+        templateUrl: 'app/features/custom-filters/custom-filters.html',
         controller: 'CustomFiltersController',
         controllerAs: 'vm',
       })
       .state({
         name: 'home.dashboard',
         url: '/dashboard',
-        templateUrl: 'app/dashboard/dashboard.html',
+        templateUrl: 'app/features/dashboard/dashboard.html',
       })
       .state({
         name: 'home.forms',
         url: '/forms',
-        templateUrl: 'app/forms/forms.html',
+        templateUrl: 'app/features/forms/forms.html',
         controller: 'FormsController',
         controllerAs: 'vm',
       })
       .state({
         name: 'home.repeaters',
         url: '/repeaters',
-        templateUrl: 'app/repeaters/repeaters.html',
+        templateUrl: 'app/features/repeaters/repeaters.html',
         controller: 'RepeatersController',
         controllerAs: 'vm',
       })
       .state({
         name: 'home.toastrs',
         url: '/toastrs',
-        templateUrl: 'app/toastrs/toastrs.html',
+        templateUrl: 'app/features/toastrs/toastrs.html',
         controller: 'ToastrsController',
         controllerAs: 'vm',
       });
