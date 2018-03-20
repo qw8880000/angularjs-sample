@@ -10,10 +10,12 @@ var express = require('express'),
 
 var clientPath = (env === 'development') ? './src/client':'./dist';
 
-// the middleware of grunt-contrib-watch , to make browser livereload
-app.use(require('connect-livereload')({
-  port: 35729
-}));
+if (env === 'development') {
+  // the middleware of grunt-contrib-watch , to make browser livereload
+  app.use(require('connect-livereload')({
+    port: 35729
+  }));
+}
 
 app.set('port', process.env.PORT || 3002);
 app.set('bind-address', process.env.BIND_ADDRESS || 'localhost');
