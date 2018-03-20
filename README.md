@@ -64,11 +64,11 @@ angualr.js框架总体上分为三个部分：app功能模块，app通用模块�
 * css 预处理器使用 Less.
 * 字体单位使用 [REM], 其他元素使用px. 
 
-# Less Directory Structure
+# Sass Directory Structure
 
 // todo
 
-# css 编码规范
+# css coding style
 
 // todo
 
