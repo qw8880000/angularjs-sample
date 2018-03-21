@@ -119,7 +119,7 @@ module.exports = function(grunt) {
         src: [
           '<%= pathConfig.dist %>/app/**/*.js',
           '<%= pathConfig.dist %>/css/**/*.css',
-          '<%= pathConfig.dist %>/img/**/*.{png,jpg,jpeg,gif,webp,svg}',
+          // '<%= pathConfig.dist %>/img/**/*.{png,jpg,jpeg,gif,webp,svg}',
           // '<%= pathConfig.dist %>/vendor/**/*.*',
         ]
       }
@@ -362,9 +362,9 @@ module.exports = function(grunt) {
     // This target modifies the files it is working on.
     usemin: {
       html: ['<%= pathConfig.dist %>/index.html'],
-      js: ['<%= pathConfig.dist %>/app/**/*.js'],
-      css: ['<%= pathConfig.dist %>/css/**/*.css'], 
-      resources: ['<%= pathConfig.dist %>/resources/**/*.json'],
+      // js: ['<%= pathConfig.dist %>/app/**/*.js'],
+      // css: ['<%= pathConfig.dist %>/css/**/*.css'], 
+      // resources: ['<%= pathConfig.dist %>/resources/**/*.json'],
 
       options: {
         // revmap:
@@ -372,17 +372,15 @@ module.exports = function(grunt) {
           '<%= pathConfig.dist %>',
         ],
         patterns: {
-          js: [
-            [/(img\/[\/\w-]+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
-          ],
-          resources: [
-            [/(img\/[\/\w-\.\d]+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
-          ],
-          css: [
-            // [/(\.\.\/fonts\/[\/\w-]+\.(eot|svg|ttf|woff|woff2))/g, 'Replacing references to images']
-            [/(fontawesome-webfont\.(eot))/g, 'Replacing references to images'],
-            [/(img\/\w+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
-          ],
+          // js: [
+            // [/(img\/[\/\w-]+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+          // ],
+          // resources: [
+            // [/(img\/[\/\w-\.\d]+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+          // ],
+          // css: [
+            // [/(img\/\w+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+          // ],
         }
       }
     },
