@@ -67,7 +67,7 @@ rules:
         - named
     angular/module-dependency-order: 0
     angular/no-service-method: 2
-    angular/one-dependency-per-line: 2
+    angular/one-dependency-per-line: 0
     angular/rest-service: 2
     angular/watchers-execution: 2
 

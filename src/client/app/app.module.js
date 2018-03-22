@@ -12,7 +12,7 @@
       /*
        * Our reusable cross app code modules
        */
-      'ccWidget',
+      'ccWidget', 'blocks.logger',
 
       /*
        *  app common area
