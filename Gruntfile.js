@@ -496,6 +496,12 @@ module.exports = function(grunt) {
     'watch'
   ]);
 
+  grunt.registerTask('devServer', [
+    // start server
+    'express:dev',
+    'watch'
+  ]);
+
   grunt.registerTask('dist', [
     'prepare',
     'unitTest',

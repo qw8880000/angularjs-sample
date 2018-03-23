@@ -55,6 +55,11 @@
         "name": "Toastrs",
         "sref": "home.toastrs",
         "icon": null
+      },
+      {
+        "name": "Modals",
+        "sref": "home.modals",
+        "icon": null
       }
     ]
   }

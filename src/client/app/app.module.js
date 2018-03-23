@@ -7,12 +7,18 @@
       /*
        *  3rd party angular modules
        */
-      'ngResource', 'ngAnimate', 'ngCookies', 'ui.router', 'toastr',
+      'ngResource',
+      'ngAnimate',
+      'ngCookies',
+      'ui.router',
+      'toastr',
+      'ui.bootstrap',
 
       /*
        * Our reusable cross app code modules
        */
-      'ccWidget', 'blocks.logger',
+      'ccWidget',
+      'blocks.logger',
 
       /*
        *  app common area
@@ -33,6 +39,7 @@
       'app.forms',
       'app.repeaters',
       'app.toastrs',
+      'app.modals',
     ]);
 
 }());

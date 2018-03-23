@@ -95,6 +95,13 @@
         templateUrl: 'app/features/toastrs/toastrs.html',
         controller: 'ToastrsController',
         controllerAs: 'vm',
+      })
+      .state({
+        name: 'home.modals',
+        url: '/modals',
+        templateUrl: 'app/features/modals/modals.html',
+        controller: 'ModalsController',
+        controllerAs: 'vm',
       });
   }
 

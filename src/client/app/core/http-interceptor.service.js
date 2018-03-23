@@ -11,8 +11,6 @@
     var service = {
       'response': function(response) {
 
-        $log.info(response);
-
         //
         // 只拦截/api/xxx 的http 请求
         // if (response.config && response.config.url && response.config.url.search('^/api') !== -1) {
