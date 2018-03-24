@@ -41,6 +41,7 @@
       'app.toastrs',
       'app.modals',
       'app.tables',
+      'app.paginations',
     ]);
 
 }());

@@ -107,6 +107,11 @@
         name: 'home.tables',
         url: '/tables',
         templateUrl: 'app/features/tables/tables.html',
+      })
+      .state({
+        name: 'home.paginations',
+        url: '/paginations',
+        templateUrl: 'app/features/paginations/paginations.html',
       });
   }
 

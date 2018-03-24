@@ -33,6 +33,11 @@
         "name": "Tables",
         "sref": "home.tables",
         "icon": null
+      },
+      {
+        "name": "Paginations",
+        "sref": "home.paginations",
+        "icon": null
       }
     ]
   },
