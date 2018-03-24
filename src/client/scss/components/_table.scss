@@ -1,0 +1,30 @@
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    vertical-align: center;
+    background-color: $orange;
+  }
+
+  td {
+    text-align: left;
+    vertical-align: center;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: $gray-300;
+    }
+
+    &:nth-child(odd) {
+      background-color: $white;
+    }
+  }
+}
+

@@ -102,6 +102,11 @@
         templateUrl: 'app/features/modals/modals.html',
         controller: 'ModalsController',
         controllerAs: 'vm',
+      })
+      .state({
+        name: 'home.tables',
+        url: '/tables',
+        templateUrl: 'app/features/tables/tables.html',
       });
   }
 

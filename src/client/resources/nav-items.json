@@ -28,6 +28,11 @@
         "name": "Forms",
         "sref": "home.forms",
         "icon": null
+      },
+      {
+        "name": "Tables",
+        "sref": "home.tables",
+        "icon": null
       }
     ]
   },

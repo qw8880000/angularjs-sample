@@ -40,6 +40,7 @@
       'app.repeaters',
       'app.toastrs',
       'app.modals',
+      'app.tables',
     ]);
 
 }());
