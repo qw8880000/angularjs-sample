@@ -1665,13 +1665,13 @@ ul {
 .form-input, .form__control {
   display: block;
   width: 100%;
-  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #ced4da;
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .form-input::-ms-expand, .form__control::-ms-expand {
@@ -1707,6 +1707,12 @@ ul {
   flex: 0 0 auto;
   flex-flow: row nowrap;
   align-items: center;
+}
+
+.form__label {
+  font-size: 1rem;
+  line-height: 1.5;
+  flex: 0 0 auto;
 }
 
 .form__prepend {

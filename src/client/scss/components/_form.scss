@@ -4,13 +4,13 @@
 .form-input {
   display: block;
   width: 100%;
-  padding: $input-padding-y $input-padding-x;
   font-size: $input-font-size;
   line-height: $input-line-height;
+  padding: $input-padding-y $input-padding-x;
+  border: $input-border-width solid $input-border-color;
   color: $input-color;
   background-color: $input-bg;
   background-clip: padding-box;
-  border: $input-border-width solid $input-border-color;
   transition: $input-transition;
 
   // Unstyle the caret on `<select>`s in IE10+.
@@ -64,6 +64,12 @@
   flex: 0 0 auto;
   flex-flow: row nowrap;
   align-items: center;
+}
+
+.form__label {
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  flex: 0 0 auto;
 }
 
 .form__prepend {
