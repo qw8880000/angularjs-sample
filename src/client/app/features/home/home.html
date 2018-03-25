@@ -28,10 +28,11 @@
 
       <!-- no subItem -->
       <li ng-if="!vm.hasSubNav(item)"
-        ng-class="vm.isActive(item.sref) ? 'js-nav__item--focus' : ''"
-        ccw-accordion-item
-        ui-sref-active="js-nav__item--active">
-        <a class="nav__link" ui-sref="{{item.sref}}">
+      ng-class="vm.getNavClass(item)">
+        <a class="nav__link"
+          ui-sref="{{item.sref}}"
+          ui-sref-active="js-nav__link--active"
+          ng-click="vm.toggleOpen(item)">
           <span class="nav__link-prepend"> <i class="{{item.icon}}" aria-hidden="true"></i> </span>
           <span class="nav__link-label"> {{item.name}} </span>
         </a>
@@ -39,21 +40,18 @@
 
       <!-- has subItem -->
       <li ng-if="vm.hasSubNav(item)"
-        class="nav__item" 
-        ng-class="vm.hasChildActive(item) ? 'js-nav__item--focus' : ''"
-        ui-sref-active="js-nav__item--active"
-        ccw-accordion-item
-        item-open-class="js-nav__item--active">
+      class="nav__item" 
+      ng-class="vm.getNavClass(item)">
 
-        <a class="nav__link" href="" ccw-accordion-toggle>
+        <a class="nav__link" href="" ng-click="vm.toggleOpen(item)">
           <span class="nav__link-prepend"> <i class="{{item.icon}}" aria-hidden="true"></i> </span>
           <span class="nav__link-label">{{item.name}}</span>
           <span class="nav__link-arrow"> <i class="fa fa-angle-right" aria-hidden="true"></i> </span>
         </a>
         <ul class="sub-nav">
           <li ng-repeat="subItem in item.subItems">
-            <a ng-class="vm.isActive(subItem.sref) ? 'js-nav__link--active' : ''"
-              class="nav__link sub-nav__link"
+            <a class="nav__link sub-nav__link"
+              ui-sref-active="js-nav__link--active"
               ui-sref="{{subItem.sref}}">
               {{subItem.name}}
             </a>

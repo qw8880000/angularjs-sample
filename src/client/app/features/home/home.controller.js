@@ -12,21 +12,50 @@
 
     var vm = this;
     vm.title = 'homeController';
-    vm.isActive = isActive;
-    vm.hasChildActive = hasChildActive;
-    vm.hasSubNav = hasSubNav;
     vm.logout = logout;
-    vm.navItems = navItems;
+    // 
+    // nav
+    //
+    vm.navItems = [];
+    vm.hasSubNav = hasSubNav;
+    vm.toggleOpen = toggleOpen;
+    vm.getNavClass = getNavClass;
+
+    activate();
 
     ////////////////
+
+    function activate() {
+      angular.forEach(navItems, function (navItem) {
+        if (isActive(navItem) || hasChildActive(navItem)) {
+          navItem.isOpen = true;
+        } else {
+          navItem.isOpen = false;
+        }
+        vm.navItems.push(navItem);
+      });
+    }
 
     function logout() {
       $state.go('login');
       authenticationService.logout();
     }
 
-    function isActive(srefName) {
-      if ($state.is(srefName)) {
+    //
+    // nav
+    //
+    function toggleOpen(item) {
+      item.isOpen = !item.isOpen;
+
+      angular.forEach(vm.navItems, function (navItem) {
+        if (item !== navItem) {
+          navItem.isOpen = false;
+        }
+      });
+    }
+
+    function isActive(item) {
+      if ($state.is(item.sref)) {
         return true;
       } else {
         return false;
@@ -34,7 +63,7 @@
     }
 
     function hasChildActive(item) {
-      if (item && item.subItems && angular.isArray(item.subItems)) {
+      if (hasSubNav(item)) {
         var currentSrefName = $state.$current.name;
         var subItems = item.subItems;
 
@@ -55,6 +84,20 @@
       } else {
         return false;
       }
+    }
+
+    function getNavClass(item) {
+      var navClass = [];
+
+      if (isActive(item) || hasChildActive(item)) {
+        navClass.push('js-nav__item--active');
+      }
+
+      if (item.isOpen) {
+        navClass.push('js-nav__item--open');
+      }
+
+      return navClass;
     }
 
   }
