@@ -5,9 +5,6 @@
  * Helpers
  * ================================== */
 /* ==================================
- * Themes
- * ================================== */
-/* ==================================
  * Base
  * ================================== */
 /**
@@ -1980,11 +1977,11 @@ ul {
 
 /* for js
    ================================== */
-.js-nav__item--active .sub-nav {
+.js-nav__item--open .sub-nav {
   height: auto;
   display: block;
 }
-.js-nav__item--active .nav__link-arrow i {
+.js-nav__item--open .nav__link-arrow i {
   transform: rotate(90deg);
 }
 
@@ -1992,7 +1989,7 @@ ul {
   background-color: #101b26;
 }
 
-.js-nav__item--focus {
+.js-nav__item--active {
   border-left: 3px solid #20c997;
 }
 
