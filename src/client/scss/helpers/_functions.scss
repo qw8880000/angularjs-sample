@@ -2,11 +2,6 @@
 //
 // Utility mixins and functions for evalutating source code across our variables, maps, and mixins.
 
-// Customize the light and dark text colors for use in our YIQ color contrast function.
-
-$yiq-text-dark: $gray-900;
-$yiq-text-light: $white;
-
 // Color contrast
 @function color-yiq($color) {
   $r: red($color);
@@ -26,3 +21,4 @@ $yiq-text-light: $white;
 @function theme-color($key: "primary") {
   @return map-get($theme-colors, $key);
 }
+

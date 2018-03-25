@@ -1,3 +1,9 @@
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    box-shadow: $shadow;
+  }
+}
+
 @mixin box-shadow-around($color, $blur: 8px, $spread: 1px, $enable-hover: false) {
   box-shadow: 0 0 $blur $spread rgba($color, .5);
 

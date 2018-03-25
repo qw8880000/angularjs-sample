@@ -5,6 +5,9 @@
 .table {
   width: 100%;
   border-collapse: collapse;
+  @if $enable-shadows {
+    @include box-shadow-br($black);
+  }
 
   th {
     text-align: left;

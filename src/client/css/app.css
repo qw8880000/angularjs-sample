@@ -5,6 +5,9 @@
  * Helpers
  * ================================== */
 /* ==================================
+ * Themes
+ * ================================== */
+/* ==================================
  * Base
  * ================================== */
 /**
@@ -1133,18 +1136,15 @@ ul {
   font-weight: 400;
   font-size: 1rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 0.25rem;
 }
 .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 .btn:disabled {
   opacity: .65;
   cursor: auto;
-}
-
-.btn--radius {
-  border-radius: 0.25rem;
 }
 
 .btn--primary {
@@ -1546,6 +1546,9 @@ ul {
 .card {
   background-color: #fff;
   border: 1px solid #ced4da;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.5);
 }
 .card::before, .card::after {
   content: "";
@@ -1565,15 +1568,6 @@ ul {
 
 /* Modifier
    ================================== */
-.card--radius {
-  border-radius: 0.25rem;
-}
-
-.card--shadow {
-  box-shadow: 0 0 8px 1px rgba(52, 58, 64, 0.5);
-  transition: all 0.2s ease-in-out;
-}
-
 .card--primary {
   border: 1px solid #007bff;
 }
@@ -1673,6 +1667,8 @@ ul {
   background-color: #fff;
   background-clip: padding-box;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .form-input::-ms-expand, .form__control::-ms-expand {
   background-color: transparent;
@@ -1694,14 +1690,6 @@ ul {
   opacity: 1;
 }
 
-.form-input--radius {
-  border-radius: 0.25rem;
-}
-
-.form-input--shadow-inset {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-
 .form {
   display: flex;
   flex: 0 0 auto;
@@ -1716,7 +1704,6 @@ ul {
 }
 
 .form__prepend {
-  width: 44px;
   text-align: center;
   margin-right: -1px;
   font-size: 1rem;
@@ -1764,6 +1751,7 @@ ul {
 .table {
   width: 100%;
   border-collapse: collapse;
+  box-shadow: 4px 4px 8px -2px rgba(0, 0, 0, 0.5);
 }
 .table th {
   text-align: left;
@@ -1779,6 +1767,56 @@ ul {
 }
 .table tr:nth-child(odd) {
   background-color: #fff;
+}
+
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+.page-link:focus, .page-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.page-item--active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.page-item--disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.page-item:last-child .page-link {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
 /* ==================================
@@ -2012,9 +2050,5 @@ ul {
   justify-content: space-between;
   width: 100%;
 }
-
-/* ==================================
- * Themes
- * ================================== */
 
 /*# sourceMappingURL=app.css.map */

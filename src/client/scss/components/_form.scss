@@ -12,6 +12,8 @@
   background-color: $input-bg;
   background-clip: padding-box;
   transition: $input-transition;
+  @include border-radius($input-border-radius);
+  @include box-shadow($input-box-shadow);
 
   // Unstyle the caret on `<select>`s in IE10+.
   &::-ms-expand {
@@ -25,7 +27,7 @@
     color: $input-focus-color;
     background-color: $input-focus-bg;
     border-color: $input-focus-border-color;
-    box-shadow: $input-box-shadow, $input-focus-box-shadow;
+    @include box-shadow($input-box-shadow, $input-focus-box-shadow);
   }
 
   // Placeholder
@@ -48,16 +50,8 @@
   }
 }
 
-.form-input--radius {
-  border-radius: $input-border-radius;
-}
-
-.form-input--shadow-inset {
-  box-shadow: $input-box-shadow;
-}
-
 //
-// group
+// form group
 //
 .form {
   display: flex;
@@ -73,7 +67,6 @@
 }
 
 .form__prepend {
-  width: 44px;
   text-align: center;
   margin-right: -$input-border-width;
   font-size: $input-font-size;

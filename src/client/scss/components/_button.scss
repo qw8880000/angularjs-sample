@@ -10,20 +10,17 @@
   font-weight: $btn-font-weight;
   font-size: $btn-font-size;
   transition: $btn-transition;
+  @include border-radius($btn-border-radius);
 
   &:focus {
     outline: 0;
-    box-shadow: $btn-focus-box-shadow;
+    @include button-box-shadow($color: theme-color("primary"));
   }
 
   &:disabled {
     opacity: .65;
     cursor: auto;
   }
-}
-
-.btn--radius {
-  border-radius: $btn-border-radius;
 }
 
 // .btn--blue .btn--green...

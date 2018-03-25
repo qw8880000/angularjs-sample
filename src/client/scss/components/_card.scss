@@ -1,6 +1,11 @@
 .card {
   background-color: $card-bg-color;
   border: 1px solid $card-border-color;
+  transition: $transition-base;
+  @include border-radius($card-border-radius);
+  @if $enable-shadows {
+    @include box-shadow-around($black);
+  }
 
   &::before,
   &::after {
@@ -22,16 +27,6 @@
 
 /* Modifier
    ================================== */
-.card--radius {
-  border-radius: $border-radius;
-}
-
-.card--shadow {
-  @include box-shadow-around($color: $cl-dark);
-
-  transition: $transition-base;
-}
-
 @each $theme, $value in $card-theme-colors {
   .card--#{$theme} {
     border: 1px solid $value;

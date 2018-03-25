@@ -5,16 +5,22 @@
 /* ==================================
  * Helpers
  * ================================== */
+@import "helpers/_functions.scss";
 @import "helpers/variables/_base.scss";
 @import "helpers/variables/_components.scss";
 @import "helpers/variables/_partials.scss";
 
 @import "helpers/mixins/_button.scss";
+@import "helpers/mixins/_border_radius.scss";
 @import "helpers/mixins/_box-shadow.scss";
 @import "helpers/mixins/_clearfix.scss";
 @import "helpers/mixins/_link.scss";
+@import "helpers/mixins/_lists.scss";
 
-@import "helpers/_functions.scss";
+/* ==================================
+ * Themes
+ * ================================== */
+@import "themes/_theme-hello.scss";
 
 /* ==================================
  * Base
@@ -33,6 +39,7 @@
 @import "components/_link.scss";
 @import "components/_transitions.scss";
 @import "components/_table.scss";
+@import "components/_pagination.scss";
 
 /* ==================================
  * Partials
@@ -48,6 +55,3 @@
 @import "pages/_home.scss";
 @import "pages/_login.scss";
 
-/* ==================================
- * Themes
- * ================================== */
