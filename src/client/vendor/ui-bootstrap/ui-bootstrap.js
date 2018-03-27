@@ -1,2 +1,5 @@
 
-angular.module("ui.bootstrap", ["ui.bootstrap.modal"]);
+angular.module("ui.bootstrap", [
+  "ui.bootstrap.modal",
+  "ui.bootstrap.pagination",
+]);

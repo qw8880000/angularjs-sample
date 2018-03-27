@@ -112,6 +112,8 @@
         name: 'home.paginations',
         url: '/paginations',
         templateUrl: 'app/features/paginations/paginations.html',
+        controller: 'PaginatiosController',
+        controllerAs: 'vm',
       });
   }
 

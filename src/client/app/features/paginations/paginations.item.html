@@ -1,0 +1,10 @@
+<!-- first -->
+<li role="menuitem" ng-if="::boundaryLinks" ng-class="{'page-item--disabled': noPrevious()||ngDisabled}" class="page-item"><a class="page-link" href ng-click="selectPage(1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('first')}}</a></li>
+<!-- previous -->
+<li role="menuitem" ng-if="::directionLinks" ng-class="{'page-item--disabled': noPrevious()||ngDisabled}" class="page-item"><a class="page-link" href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
+<!-- items -->
+<li role="menuitem" ng-repeat="page in pages track by $index" ng-class="{'page-item--active': page.active, 'page-item--disabled': ngDisabled&&!page.active}" class="page-item"><a class="page-link" href ng-click="selectPage(page.number, $event)" ng-disabled="ngDisabled&&!page.active" uib-tabindex-toggle>{{page.text}}</a></li>
+<!-- next -->
+<li role="menuitem" ng-if="::directionLinks" ng-class="{'page-item--disabled': noNext()||ngDisabled}" class="page-item"><a class="page-link" href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
+<!-- last -->
+<li role="menuitem" ng-if="::boundaryLinks" ng-class="{'page-item--disabled': noNext()||ngDisabled}" class="page-item"><a class="page-link" href ng-click="selectPage(totalPages, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('last')}}</a></li>

@@ -5,8 +5,12 @@
  * Version: 2.5.0 - 2017-01-28
  * License: MIT
  */
-angular.module("ui.bootstrap.tpls", ["uib/template/modal/window.html"]);
-angular.module('ui.bootstrap.modal', ['ui.bootstrap.multiMap', 'ui.bootstrap.stackedMap', 'ui.bootstrap.position', 'ui.bootstrap.tpls'])
+angular.module('ui.bootstrap.modal', [
+  'ui.bootstrap.multiMap',
+  'ui.bootstrap.stackedMap',
+  'ui.bootstrap.position',
+  'uib/template/modal/window.html'
+])
 /**
  * Pluggable resolve mechanism for the modal resolve resolution
  * Supports UI Router's $resolve service
