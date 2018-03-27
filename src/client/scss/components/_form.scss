@@ -78,6 +78,8 @@
 
 .form__control {
   @extend .form-input;
+
+  border-radius: unset;
 }
 
 .form__postpend {
