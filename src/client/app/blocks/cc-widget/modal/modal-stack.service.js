@@ -70,11 +70,14 @@
       var body = $document.find('body').eq(0);
       var modalWindow = openedWindows.get(modalInstance).value;
 
-      // remove class that append to <body>
-      body.toggleClass(modalWindow.modyClass, openedWindows.length() > 0);
 
       // clean up the stack
       openedWindows.remove(modalInstance);
+
+      // remove class that append to <body>
+      if (openedWindows.length() === 0) {
+        body.removeClass(modalWindow.bodyClass);
+      }
 
       // remove window DOM element
       modalWindow.modalDom.remove();

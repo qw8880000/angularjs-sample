@@ -16,6 +16,7 @@
 
     function open() {
       var modalInstance = ccwModal.open({
+        bodyClass: 'modal-open',
         templateUrl: 'app/features/modals/modal.template.html',
         controller: 'ModalController',
         controllerAs: 'vm',

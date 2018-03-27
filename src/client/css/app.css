@@ -1824,12 +1824,30 @@ ul {
   overflow: hidden;
 }
 
+.modal-dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow: hidden;
+  z-index: 1050;
+  pointer-events: none;
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1040;
   background-color: #000;
   opacity: 0.5;
@@ -1839,15 +1857,13 @@ ul {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
   outline: 0;
-  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal__header {
@@ -1858,10 +1874,6 @@ ul {
   border-bottom: 1px solid #e9ecef;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
-}
-.modal__header .close {
-  padding: 1rem;
-  margin: -1rem -1rem -1rem auto;
 }
 
 .modal__title {
@@ -1981,6 +1993,11 @@ ul {
   font-size: 1.5rem;
   margin: 2rem 0;
   border-bottom: 2px solid #17a2b8;
+}
+
+.main-modal {
+  width: 400px;
+  margin-top: 30px;
 }
 
 .repeaters__order {

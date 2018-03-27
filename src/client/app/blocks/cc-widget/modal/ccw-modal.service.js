@@ -49,6 +49,7 @@
         // controller
         // controllerAs
         // resolve
+        // bodyClass
       };
 
       var modalResultDeferred = $q.defer();
@@ -103,6 +104,7 @@
           scope: modalScope,
           deferred: modalResultDeferred,
           template: tplAndVars[0],
+          bodyClass: modalOptions.bodyClass || '',
         });
 
       }, function resolveError(reason) {
