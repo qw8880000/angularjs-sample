@@ -3,12 +3,12 @@
 
   angular
     .module('app.paginations')
-    .controller('PaginatiosController', PaginatiosController);
+    .controller('PaginationsController', PaginationsController);
 
   /* @ngInject */
-  function PaginatiosController() {
+  function PaginationsController() {
     var vm = this;
-    vm.title = 'PaginatiosController';
+    vm.title = 'PaginationsController';
     vm.totalItems = 128;
     vm.itemsPerPage = 8
     vm.currentPage = 4;

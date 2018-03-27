@@ -20,7 +20,7 @@ rules:
     angular/controller-as-route: 2
     angular/controller-as-vm: 2
     angular/controller-as: 2
-    angular/deferred: 2
+    angular/deferred: 0
     angular/di-unused: 2
     angular/directive-restrict: 2
     angular/empty-controller: 2

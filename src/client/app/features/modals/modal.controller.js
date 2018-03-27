@@ -6,16 +6,18 @@
     .controller('ModalController', ModalController);
 
   /* @ngInject */
-  function ModalController($uibModalInstance, content) {
+  function ModalController($ccwModalInstance, content) {
     var vm = this;
     vm.content = content;
 
     vm.ok = function () {
-      $uibModalInstance.close('ok');
+      $ccwModalInstance.close('ok');
     };
 
     vm.cancel = function () {
-      $uibModalInstance.dismiss('cancel');
+      $ccwModalInstance.dismiss('cancel');
     };
+
+    vm.close = vm.cancel;
   }
 }());

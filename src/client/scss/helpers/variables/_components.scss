@@ -3,6 +3,19 @@ $enable-shadows: true;
 
 $component-active-bg:              theme-color("primary");
 
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown:                   1000 !default;
+$zindex-sticky:                     1020 !default;
+$zindex-fixed:                      1030 !default;
+$zindex-modal-backdrop:             1040 !default;
+$zindex-modal:                      1050 !default;
+$zindex-popover:                    1060 !default;
+$zindex-tooltip:                    1070 !default;
+
 //
 // Buttons + Forms
 //
@@ -102,3 +115,30 @@ $pagination-active-border-color:   $component-active-bg !default;
 $pagination-disabled-color:        $gray-600 !default;
 $pagination-disabled-bg:           $white !default;
 $pagination-disabled-border-color: $gray-300 !default;
+
+// Modals
+
+// Padding applied to the modal body
+$modal-inner-padding:            1rem !default;
+
+$modal-dialog-margin:            .5rem !default;
+$modal-dialog-margin-y-sm-up:    1.75rem !default;
+
+$modal-title-line-height:        $line-height-base !default;
+
+$modal-content-bg:               $white !default;
+$modal-content-border-color:     rgba($black, .2) !default;
+$modal-content-border-width:     $border-width !default;
+$modal-content-box-shadow-xs:    0 .25rem .5rem rgba($black, .5) !default;
+$modal-content-box-shadow-sm-up: 0 .5rem 1rem rgba($black, .5) !default;
+
+$modal-backdrop-bg:              $black !default;
+$modal-backdrop-opacity:         .5 !default;
+$modal-header-border-color:      $gray-200 !default;
+$modal-footer-border-color:      $modal-header-border-color !default;
+$modal-header-border-width:      $modal-content-border-width !default;
+$modal-footer-border-width:      $modal-header-border-width !default;
+$modal-header-padding:           1rem !default;
+
+$modal-transition:               transform .3s ease-out !default;
+

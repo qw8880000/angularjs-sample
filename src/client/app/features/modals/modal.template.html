@@ -1,12 +1,14 @@
-<div class="modal">
-  <div class="modal__header">
-    <h3 class="modal__title" id="modal-title">I'm a modal!</h3>
-  </div>
-  <div class="modal__body" id="modal-body">
-    {{vm.content}}
-  </div>
-  <div class="modal__footer">
-    <button class="btn btn--primary" type="button" ng-click="vm.ok()">OK</button>
-    <button class="btn btn--warning" type="button" ng-click="vm.cancel()">Cancel</button>
+<div class="modal-backdrop" ng-click="vm.close()">
+  <div class="modal" ccw-modal-content>
+    <div class="modal__header">
+      <h3 class="modal__title" id="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal__body" id="modal-body">
+      {{vm.content}}
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--primary" type="button" ng-click="vm.ok()">OK</button>
+      <button class="btn btn--warning" type="button" ng-click="vm.cancel()">Cancel</button>
+    </div>
   </div>
 </div>
