@@ -29,8 +29,7 @@ app.use(express.static(clientPath));
 // app.use(favicon(path.join(clientPath, '/favicon.ico')));
 
 // routes
-// Any deep link calls should return index.html
-app.use('/*', express.static(path.join(clientPath, '/index.html')));
+app.use('/', express.static(path.join(clientPath, '/index.html')));
 
 app.listen(app.get('port'), function() {
     
