@@ -15,7 +15,7 @@
 }
 
 // box shadow on the bottom and right
-@mixin box-shadow-br($color, $blur: 8px, $spread: -2px, $enable-hover: false) {
+@mixin box-shadow-br($color: $border-color, $blur: 8px, $spread: -2px, $enable-hover: false) {
   box-shadow: 4px 4px $blur $spread rgba($color, .5);
 
   @if $enable-hover {
@@ -26,7 +26,7 @@
 }
 
 // box shadow on the bottom
-@mixin box-shadow-b($color, $blur: 16px, $spread: -4px, $enable-hover: false) {
+@mixin box-shadow-b($color: $border-color, $blur: 16px, $spread: -4px, $enable-hover: false) {
   box-shadow: 0 8px $blur $spread rgba($color, .5);
 
   @if $enable-hover {

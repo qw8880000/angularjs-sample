@@ -120,7 +120,6 @@ module.exports = function(grunt) {
           '<%= pathConfig.dist %>/app/**/*.js',
           '<%= pathConfig.dist %>/css/**/*.css',
           // '<%= pathConfig.dist %>/img/**/*.{png,jpg,jpeg,gif,webp,svg}',
-          // '<%= pathConfig.dist %>/vendor/**/*.*',
         ]
       }
     },
@@ -405,7 +404,7 @@ module.exports = function(grunt) {
           '<%= pathConfig.client %>/app/**/*.js',
           '<%= pathConfig.test %>/**/*.js'
         ],
-        tasks: ['eslint'],
+        tasks: ['eslint:angularjs', 'eslint:unitTest'],
         options: {
           spawn: false,
           event: ['all']

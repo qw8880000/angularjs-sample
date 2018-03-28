@@ -12,6 +12,7 @@
       'ngCookies',
       'ui.router',
       'toastr',
+      'swxSessionStorage',
       'ui.bootstrap',
 
       /*

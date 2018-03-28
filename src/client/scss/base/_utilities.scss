@@ -43,6 +43,7 @@ $spacers: (
 .d-line { display: inline; }
 .d-block { display: block; }
 .d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
 
 /* Clearfix
    ================================== */
@@ -64,6 +65,14 @@ $spacers: (
    ================================== */
 @each $theme, $value in $theme-colors {
   .border-#{$theme} {
+    border: 1px solid $value;
+  }
+}
+
+/* Border-color
+   ================================== */
+@each $theme, $value in $theme-colors {
+  .border-color-#{$theme} {
     border-color: $value;
   }
 }
