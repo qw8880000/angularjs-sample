@@ -7,8 +7,6 @@
 
   /* @ngInject */
   function modalStack(stackMap,
-    $log,
-    $timeout,
     $compile,
     $document) {
 
