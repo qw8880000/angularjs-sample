@@ -52,7 +52,7 @@
 
 // .btn-outline--blue .btn-outline--green...
 @each $theme, $value in $btn-theme-colors {
-  .btn--outline-#{$theme} {
+  .btn-outline--#{$theme} {
     color: $value;
     background-color: transparent;
     border-color: $value;
