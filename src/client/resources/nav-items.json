@@ -70,6 +70,11 @@
         "name": "Modals",
         "sref": "home.modals",
         "icon": null
+      },
+      {
+        "name": "Croppers",
+        "sref": "home.croppers",
+        "icon": null
       }
     ]
   }

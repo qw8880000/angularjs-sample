@@ -2027,6 +2027,35 @@ ul {
   margin: 0 10px 0 0;
 }
 
+.croppers-container {
+  display: inline-block;
+  max-width: 640px;
+  margin: 20px 0 0 0;
+}
+
+.croppers-image {
+  max-width: 100%;
+}
+
+.croppers-preview-1 {
+  display: inline-block;
+  width: 320px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.croppers-preview-2 {
+  display: inline-block;
+  width: 160px;
+  height: 90px;
+  overflow: hidden;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+}
+
 .sidebar {
   width: 220px;
   height: 100%;

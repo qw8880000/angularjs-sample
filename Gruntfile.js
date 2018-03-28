@@ -44,12 +44,12 @@ module.exports = function(grunt) {
             src: '**',
             dest: '<%= pathConfig.dist %>/resources',
           },
-          // vendor
+          // icons
           {
             expand: true,
-            cwd: '<%= pathConfig.client %>/vendor',
+            cwd: '<%= pathConfig.client %>/icons/font-awesome',
             src: '**',
-            dest: '<%= pathConfig.dist %>/vendor',
+            dest: '<%= pathConfig.dist %>/icons/font-awesome',
           },
         ]
       }

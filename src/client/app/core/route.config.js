@@ -114,6 +114,13 @@
         templateUrl: 'app/features/paginations/paginations.html',
         controller: 'PaginationsController',
         controllerAs: 'vm',
+      })
+      .state({
+        name: 'home.croppers',
+        url: '/croppers',
+        templateUrl: 'app/features/croppers/croppers.html',
+        controller: 'CroppersController',
+        controllerAs: 'vm',
       });
   }
 

@@ -42,6 +42,7 @@
       'app.modals',
       'app.tables',
       'app.paginations',
+      'app.croppers',
     ]);
 
 }());
