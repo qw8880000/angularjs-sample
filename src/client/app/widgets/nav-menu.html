@@ -1,0 +1,41 @@
+
+<ul class="nav">
+
+  <div ng-repeat="item in vm.navItems">
+
+    <!-- no subItem -->
+    <li ng-if="!vm.hasSubNav(item)"
+    ng-class="vm.getNavClass(item)">
+    <a class="nav__link"
+      ui-sref="{{item.sref}}"
+      ui-sref-active="js-nav__link--active"
+      ng-click="vm.toggleOpen(item)">
+      <span class="nav__link-prepend"> <i class="{{item.icon}}" aria-hidden="true"></i> </span>
+      <span class="nav__link-label"> {{item.name}} </span>
+    </a>
+    </li>
+
+    <!-- has subItem -->
+    <li ng-if="vm.hasSubNav(item)"
+    class="nav__item" 
+    ng-class="vm.getNavClass(item)">
+
+    <a class="nav__link" href="" ng-click="vm.toggleOpen(item)">
+      <span class="nav__link-prepend"> <i class="{{item.icon}}" aria-hidden="true"></i> </span>
+      <span class="nav__link-label">{{item.name}}</span>
+      <span class="nav__link-arrow"> <i class="fa fa-angle-right" aria-hidden="true"></i> </span>
+    </a>
+    <ul class="sub-nav">
+      <li ng-repeat="subItem in item.subItems">
+      <a class="nav__link sub-nav__link"
+        ui-sref-active="js-nav__link--active"
+        ui-sref="{{subItem.sref}}">
+        {{subItem.name}}
+      </a>
+      </li>
+    </ul>
+    </li>
+
+  </div>
+
+</ul>

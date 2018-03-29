@@ -25,6 +25,7 @@
        *  app common area
        */
       'app.core',
+      'app.widgets',
 
       /*
        * feature area

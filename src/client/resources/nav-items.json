@@ -6,74 +6,74 @@
   },
   {
     "name": "Components",
-    "sref": null,
+    "sref": "home.components",
     "icon": "fa fa-gavel",
     "subItems": [
       {
         "name": "Breadcrumbs",
-        "sref": "home.breadcrumbs",
+        "sref": "home.components.breadcrumbs",
         "icon": null
       },
       {
         "name": "Buttons",
-        "sref": "home.buttons",
+        "sref": "home.components.buttons",
         "icon": null
       },
       {
         "name": "Cards",
-        "sref": "home.cards",
+        "sref": "home.components.cards",
         "icon": null
       },
       {
         "name": "Forms",
-        "sref": "home.forms",
+        "sref": "home.components.forms",
         "icon": null
       },
       {
         "name": "Tables",
-        "sref": "home.tables",
+        "sref": "home.components.tables",
         "icon": null
       },
       {
         "name": "Paginations",
-        "sref": "home.paginations",
+        "sref": "home.components.paginations",
         "icon": null
       }
     ]
   },
   {
     "name": "Angular.js demo",
-    "sref": null,
+    "sref": "home.angular",
     "icon": "fa fa-tachometer",
     "subItems": [
       {
         "name": "Repeaters",
-        "sref": "home.repeaters",
+        "sref": "home.angular.repeaters",
         "icon": null
       },
       {
         "name": "Custom filters",
-        "sref": "home.customFilters",
+        "sref": "home.angular.customFilters",
         "icon": null
       },
       {
         "name": "Animations",
-        "sref": "home.animations",
+        "sref": "home.angular.animations",
         "icon": null
       },
       {
         "name": "Toastrs",
-        "sref": "home.toastrs",
+        "sref": "home.angular.toastrs",
         "icon": null
       },
       {
         "name": "Modals",
-        "sref": "home.modals",
+        "sref": "home.angular.modals",
         "icon": null
       },
       {
         "name": "Croppers",
-        "sref": "home.croppers",
+        "sref": "home.angular.croppers",
         "icon": null
       }
     ]
