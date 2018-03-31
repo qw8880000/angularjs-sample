@@ -75,6 +75,11 @@
         "name": "Croppers",
         "sref": "home.angular.croppers",
         "icon": null
+      },
+      {
+        "name": "Datepickers",
+        "sref": "home.angular.datepickers",
+        "icon": null
       }
     ]
   }

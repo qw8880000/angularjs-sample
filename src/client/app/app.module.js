@@ -45,6 +45,7 @@
       'app.tables',
       'app.paginations',
       'app.croppers',
+      'app.datepickers',
     ]);
 
 }());

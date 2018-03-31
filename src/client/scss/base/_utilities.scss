@@ -136,3 +136,15 @@ $sizes: (
    ================================== */
 .float-left { float: left; }
 .float-right { float: right; }
+
+//
+// Screenreaders
+//
+
+.sr-only {
+  @include sr-only();
+}
+
+.sr-only-focusable {
+  @include sr-only-focusable();
+}

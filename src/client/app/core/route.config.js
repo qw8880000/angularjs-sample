@@ -140,6 +140,13 @@
         templateUrl: 'app/features/croppers/croppers.html',
         controller: 'CroppersController',
         controllerAs: 'vm',
+      })
+      .state({
+        name: 'home.angular.datepickers',
+        url: '/datepickers',
+        templateUrl: 'app/features/datepickers/datepickers.html',
+        controller: 'DatepickersController',
+        controllerAs: 'vm',
       });
   }
 
