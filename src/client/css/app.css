@@ -1974,11 +1974,22 @@ ul {
 }
 
 .datepicker {
+  display: inline-block;
   background-color: #e9ecef;
+}
+
+.datepicker__btn {
+  background-color: #fff;
+  font-size: 0.875rem;
+  padding: 0.21875rem 0.875rem;
 }
 
 .datepicker__btn--active {
   background-color: #007bff;
+}
+
+.datepicker__btn--selected {
+  background-color: #28a745;
 }
 
 /* ==================================

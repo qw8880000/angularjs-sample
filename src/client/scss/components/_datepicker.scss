@@ -1,9 +1,19 @@
 .datepicker {
+  display: inline-block;
   background-color: $gray-200;
+}
+
+.datepicker__btn {
+  background-color: $white;
+  font-size: $font-size-sm;
+  padding: $font-size-sm/4 $font-size-sm;
 }
 
 .datepicker__btn--active {
   background-color: theme-color('primary');
 }
 
+.datepicker__btn--selected {
+  background-color: theme-color('green');
+}
 
