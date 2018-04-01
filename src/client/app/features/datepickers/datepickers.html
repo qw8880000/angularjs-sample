@@ -15,6 +15,17 @@
       >
     </div>
 
+    <div class="main__h4"> datepicker popup </div>
+    <div class="form">
+      <input type="text"
+        class="form-input"
+        uib-datepicker-popup="yyyy-MM-dd"
+        ng-model="vm.dt"
+        is-open="vm.popup.opened"
+        datepicker-popup-template-url="app/layout/datepicker-popup/popup.html"
+        datepicker-template-url="app/layout/datepicker/datepicker.html">
+      <button type="button" class="btn btn--default" ng-click="vm.open()"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+    </div>
   </div>
 
 </div>
