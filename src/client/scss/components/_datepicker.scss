@@ -1,3 +1,6 @@
+//
+// datepicker
+//
 .datepicker {
   display: inline-block;
   background-color: $gray-200;
@@ -15,5 +18,25 @@
 
 .datepicker__btn--selected {
   background-color: theme-color('green');
+}
+
+//
+// datepicker popup
+//
+.datepicker-popup {
+}
+
+.datepicker-popup__button-bar {
+  display: flex;
+}
+
+.datepicker-popup__current {
+}
+
+.datepicker-popup__clear {
+}
+
+.datepicker-popup__close {
+  margin-left: auto;
 }
 

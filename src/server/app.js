@@ -21,7 +21,9 @@ app.set('port', process.env.PORT || 3002);
 app.set('bind-address', process.env.BIND_ADDRESS || 'localhost');
 
 // HTTP request logger
-app.use(logger('dev'));
+if (env !== 'development') {
+  app.use(logger('dev'));
+}
 
 // serving public files
 app.use(express.static(clientPath));
