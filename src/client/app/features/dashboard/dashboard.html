@@ -1,11 +1,84 @@
-<div class="text-center">
-  <div class="card">
-    <h1>Angular.js 1.x sample</h1>
-    <img class="dashboard__logo" src="img/pic_angular.jpg" alt="logo">
-    <p class="lead">AngularJS诞生于2009年，由Misko Hevery 等人创建，后为Google所收购。是一款优秀的前端JS框架，已经被用于Google的多款产品当中。AngularJS有着诸多特性，最为核心的是：MVVM、模块化、自动化双向数据绑定、语义化标签、依赖注入等等</p>
+<div class="main-inner">
+  <div class="main-header">
+    <span class="h5 main-header__title">欢迎使用运营商后台管理</span>
   </div>
-  
-  <div class="card">
-    <p class="lead"> 此项目是我学习angular.js用法时写的练习</p>
+
+  <div class="main-body">
+
+    <div ng-if="!vm.isEstateAgent()">
+      <div class="d-info">
+        <div class="mt-4">
+          <span class="text-green"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </span>
+          <span>运营商：{{vm.agent.agentName}} ({{vm.user.phone}}，{{vm.agent.type.name}})</span>
+        </div>
+
+        <div class="mt-2">
+          <span class="text-orange"> <i class="fa fa-bullseye" aria-hidden="true"></i> </span>
+          <span>
+          管辖社区：
+          <span ng-repeat="community in vm.agent.communities"> <span ng-if="!$first">|</span> {{community.name}} </span>
+        </span>
+        </div>
+      </div>
+
+      <div>
+        <div class="d-inline-block">
+          <div class="d-card">
+            <img class="" src="img/shop_icon.png" alt="shop">
+            <div class="d-card__info">
+              <div class="d-card__count">{{vm.shopsCount}}</div>
+              <div class="d-card__title">商家总数</div>
+              <a class="d-card__link" ui-sref="home.shops.manage">管理<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-inline-block">
+          <div class="d-card d-card--ml">
+            <img class="" src="img/gift_icon.png" alt="shop">
+            <div class="d-card__info">
+              <div class="d-card__count">{{vm.goodsCount}}</div>
+              <div class="d-card__title">商品总数</div>
+              <a class="d-card__link" ui-sref="home.goods.manage">管理<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-inline-block">
+          <div class="d-card d-card--ml">
+            <img class="" src="img/shopping_icon.png" alt="shop">
+            <div class="d-card__info">
+              <div class="d-card__count">{{vm.ordersCount}}</div>
+              <div class="d-card__title">订单总数</div>
+              <a class="d-card__link" ui-sref="home.orders.manage">管理<i class="fa fa-arrow-right"
+                                                                        aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="vm.isEstateAgent()">
+      <div class="d-info">
+        <div class="mt-4">
+          <span class="text-green"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </span>
+          <span>运营商：{{vm.agent.agentName}} ({{vm.user.phone}}，{{vm.agent.type.name}})</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="d-inline-block">
+          <div class="d-card">
+            <img class="" src="img/shop_icon.png" alt="shop">
+            <div class="d-card__info">
+              <div class="d-card__count">{{vm.regionAgentCount}}</div>
+              <div class="d-card__title">区域运营商总数</div>
+              <a class="d-card__link" ui-sref="home.agents.manage">管理<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -1,0 +1,58 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">app版本配置</li>
+      <li class="breadcrumb__item">查看</li>
+      <li class="breadcrumb__item breadcrumb__item--active">{{vm.appVersionId}}</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <div class="main-section">
+      <ul class="main-list">
+        <li class="main-list__item">
+          <span class="main-list__item-left">手机系统：</span>
+          <span class="main-list__item-middle">{{vm.appVersion.platform.name}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">应用名称：</span>
+          <span class="main-list__item-middle">{{vm.appVersion.app.name}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">版本内容：</span>
+          <span class="main-list__item-middle">{{vm.appVersion.notes}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">是否强制升级：</span>
+          <span class="main-list__item-middle">{{vm.isForceUpdate()}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">版本号：</span>
+          <span class="main-list__item-middle">{{vm.appVersion.versionCode}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">版本名称：</span>
+          <span class="main-list__item-middle">{{vm.appVersion.versionName}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">升级包链接：</span>
+          <span class="main-list__item-middle">{{vm.appVersion.url}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">发布时间：</span>
+          <span class="main-list__item-middle">{{vm.appVersion.releaseTime | date:'yyyy-MM-dd HH:mm':'GMT+08:00'}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">最近更新时间：</span>
+          <span class="main-list__item-middle">{{vm.appVersion.updateTime | date:'yyyy-MM-dd HH:mm':'GMT+08:00'}}</span>
+        </li>
+        <li class="main-list__item">
+          <div class="main-list__item-middle main-list--offset">
+            <button class="btn btn--gray col-12" type="button" ng-click="vm.cancel()">返回</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

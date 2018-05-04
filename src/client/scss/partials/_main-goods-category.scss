@@ -1,0 +1,85 @@
+.category-list {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.category-list__item {
+  display: inline-block;
+  text-align: center;
+  margin-right: $margin-lg;
+  margin-bottom: $margin-lg * 2;
+}
+
+.category-icon {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: $margin-base;
+  cursor: pointer;
+  background-color: $gray-200;
+}
+
+.category-icon__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.category-icon__delete {
+  position: absolute;
+  top: -.5rem;
+  right: -.5rem;
+  font-size: $close-font-size;
+  color: $gray-500;
+  cursor: pointer;
+  text-shadow: $close-text-shadow;
+
+  &:hover {
+    color: theme-color('error');
+  }
+}
+
+//
+// goods category select dialog
+
+.gcsd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gcsd-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gcsd-right {
+  margin-left: $margin-lg;
+}
+
+.gcsd-input {
+  width: 8rem;
+}
+
+.gcsd-category-list {
+  display: inline-block;
+  width: 10rem;
+  height: 14rem;
+  overflow: scroll;
+  border: 1px solid $border-color;
+}
+
+.gcsd-category-list__item {
+  display: block;
+  padding: $padding-sm/2 $padding-sm;
+  border-bottom: 1px solid $border-color;
+  cursor: pointer;
+}
+
+.gcsd-category-list__item--active {
+  background-color: theme-color("secondary");
+  color: $white;
+}

@@ -1,0 +1,19 @@
+//
+// !!! Custom angular-loading-bar (https://github.com/chieffancypants/angular-loading-bar)
+//
+#loading-bar .bar--theme-1 {
+  background-color: $loading-bar-color;
+  height: $loading-bar-height;
+}
+
+#loading-bar .peg--theme-1 {
+  box-shadow: $loading-bar-color 1px 0 6px 1px;
+  height: $loading-bar-height;
+}
+
+#loading-bar-spinner .spinner-icon--theme-1 {
+  border-top-color: $loading-bar-color;
+  border-left-color: $loading-bar-color;
+  width: $loading-bar-spinner-icon-width;
+  height: $loading-bar-spinner-icon-width;
+}

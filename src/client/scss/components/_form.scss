@@ -67,14 +67,19 @@
   flex: 0 0 auto;
 }
 
-.form__prepend {
+.form__icon {
   text-align: center;
-  margin-right: -$input-border-width;
   font-size: $input-font-size;
   line-height: $input-line-height;
   padding: $input-padding-y $input-padding-x;
   border: $input-border-width solid $input-border-color;
   background-color: $gray-200;
+}
+
+.form__prepend {
+  @extend .form__icon;
+
+  margin-right: -$input-border-width;
 }
 
 .form__control {
@@ -84,5 +89,8 @@
 }
 
 .form__postpend {
+  @extend .form__icon;
+
+  margin-left: -$input-border-width;
 }
 

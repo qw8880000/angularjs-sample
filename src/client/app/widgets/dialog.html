@@ -1,0 +1,27 @@
+<div class="modal-dialog main-modal-dialog">
+  <div class="modal main-modal">
+    <div class="modal__header main-modal__header">
+      <h3 class="modal__title main-modal__title" id="modal-title">提示</h3>
+    </div>
+    <div class="modal__body" id="modal-body">
+      <div>
+        {{vm.message}}
+      </div>
+      <div ng-if="vm.type === 'prompt'" class="mt-2">
+        <textarea name="reason"
+          placeholder="请输入..."
+          class="form-input"
+          ng-model="vm.userInput">
+        </textarea>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--secondary" type="button" ng-click="vm.ok()">确定</button>
+      <button ng-if="vm.type !== 'alert'" class="btn btn--warning" type="button" ng-click="vm.cancel()">取消</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" ng-click="vm.close()">
+</div>
+

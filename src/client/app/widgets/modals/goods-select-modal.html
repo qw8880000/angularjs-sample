@@ -1,0 +1,67 @@
+<div class="modal-dialog main-modal-dialog">
+  <div class="modal main-modal">
+    <div class="modal__header main-modal__header">
+      <h3 class="modal__title main-modal__title" id="modal-title">编辑</h3>
+    </div>
+    <div class="modal__body" id="modal-body">
+
+      <ul class="main-search main-section">
+        <li class="main-search__item">
+          <div class="form">
+            <input class="form__control main-search__input"
+                   ng-model="vm.search.goodsName"
+                   placeholder="请输入商品名称"
+                   type="text"/>
+          </div>
+        </li>
+        <li class="main-search__item">
+        <span class="btn btn-outline--primary" ng-click="vm.searchAction()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+        </li>
+      </ul>
+
+      <!-- data table -->
+      <div class="main-section">
+        <table class="table main-table">
+          <tr>
+            <th>选择</th>
+            <th>商品名称</th>
+            <th>销量</th>
+          </tr>
+          <tr ng-repeat="good in vm.goods">
+            <td>
+              <input type="radio" ng-value="good" ng-model="vm.selectGood">
+            </td>
+            <td>
+              <div class="main-good">
+                <a class="main-good__pic"><img ng-src="{{good.goodsCover}}"/></a>
+                <span class="main-good__info">
+                <a class="link">{{good.goodsName}}</a>
+                <span class="d-block">平台货号：{{good.platformSerial}}</span>
+              </span>
+              </div>
+            </td>
+            <td>{{good.goodsSaleNum}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- pagination -->
+      <pagination class="main-section"
+                  items-per-page="vm.itemsPerPage"
+                  total-items="vm.totalItems"
+                  ng-model="vm.currentPage"
+                  ng-change="vm.refresh()">
+      </pagination>
+
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--secondary" type="button" ng-click="vm.ok()">确定</button>
+      <button class="btn btn--warning" type="button" ng-click="vm.cancel()">取消</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" ng-click="vm.close()">
+</div>

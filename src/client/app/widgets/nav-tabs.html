@@ -1,0 +1,9 @@
+<ul class="nav-h">
+  <li class="nav-h__item"
+      ng-repeat="navItem in vm.navItems | orderBy: vm.orderBy"
+      ng-click="vm.navClick(navItem)">
+    <span class="nav-h__content" ng-class="vm.currentNavItem === navItem ? 'nav-h__content--active':''">
+      {{navItem[vm.navItemNameBy]}}
+    </span>
+  </li>
+</ul>

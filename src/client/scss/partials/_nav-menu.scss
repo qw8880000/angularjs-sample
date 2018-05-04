@@ -4,11 +4,13 @@
   background-color: $nav-font-color;
 }
 
+.nav__item {
+}
+
 .nav__link {
-  display: block;
-  padding: 10px 20px;
+  display: flex;
+  padding: $nav-link-padding-y $nav-link-padding-x;
   font-size: .9rem;
-  line-height: 1;
   color: $nav-font-color;
   background-color: $nav-item-color;
   text-decoration-line: none;
@@ -24,28 +26,39 @@
 
 /* arrow */
 .nav__link-arrow {
-  line-height: 1;
-  float: right;
+  margin-left: auto;
 }
 
 .nav__link-label {
 }
 
+//
+// 1. transition does not work form height: 0 to height: auto, so use margin-top to transition.
+//
+.sub-nav-wrapper {
+  overflow: hidden;
+}
+
 .sub-nav {
-  height: 0;
-  display: none;
+  display: block;
+  margin-top: -100%;    // 1
+  transition: margin-top .5s ease;
+  //overflow: hidden;
+  //max-height: 0;
+  //transition: max-height 1s ease;
 }
 
 .sub-nav__link {
-  padding-left: 50px;
+  padding-left: $nav-link-padding-x * 2;
 }
 
 /* for js
    ================================== */
 .js-nav__item--open {
   .sub-nav {
-    height: auto;
-    display: block;
+    margin-top: 0;
+    //max-height: 500px;
+    //transition: max-height 1s ease;
   }
 
   .nav__link-arrow {
@@ -62,4 +75,5 @@
 .js-nav__item--active {
   border-left: 3px solid $nav-vline-color;
 }
+
 

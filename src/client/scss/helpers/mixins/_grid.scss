@@ -1,0 +1,30 @@
+// Framework grid generation
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($size / $columns);
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  $num: $size / $columns;
+
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin make-grid-columns($columns: $grid-columns) {
+  @for $i from 1 through $columns {
+    .col-#{$i} {
+      @include make-col($i, $columns);
+    }
+  }
+
+  // `$columns - 1` because offsetting by the width of an entire row isn't possible
+  @for $i from 0 through ($columns - 1) {
+    .offset-#{$i} {
+      @include make-col-offset($i, $columns);
+    }
+  }
+}

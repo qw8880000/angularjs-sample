@@ -1,0 +1,14 @@
+.modal-advertisement {
+  width: 600px;
+}
+
+.modal-advertisement-img-container {
+  display: block;
+  margin: auto;
+  border: $border;
+  margin-bottom: $margin-base;
+}
+
+.modal-advertisement-img {
+  max-width: 100%;
+}

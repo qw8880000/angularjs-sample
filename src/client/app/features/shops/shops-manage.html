@@ -1,0 +1,91 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">商家</li>
+      <li class="breadcrumb__item breadcrumb__item--active">商家管理</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+
+    <!-- search -->
+    <ul class="main-search main-section">
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="shopName">商家名称：</label>
+          <input class="form__control main-search__input"
+          ng-model="vm.search.shopName"
+          placeholder="请输入商家名称"
+          type="text" name="shopName" id="shopName"/>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="shopOwner">店主名称：</label>
+          <input class="form__control main-search__input"
+            ng-model="vm.search.shopOwner"
+            placeholder="请输入店主名称"
+            type="text" name="shopOwner" id="shopOwner"/>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="shopState">状态：</label>
+          <select class="form__control main-search__input"
+            ng-model="vm.search.shopState"
+            id="shopState" name="shopState">
+            <option value="0">全部</option>
+            <option value="1">营业</option>
+            <option value="2">未营业</option>
+          </select>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <span class="btn btn-outline--primary" ng-click="vm.searchAction()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+      </li>
+    </ul>
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table">
+        <tr>
+          <th>商家名称</th>
+          <th>店主名称</th>
+          <th>店主手机号</th>
+          <th>开店日期</th>
+          <th>服务社区</th>
+          <th>状态</th>
+          <th>操作</th>
+        </tr>
+        <tr ng-repeat="shop in vm.shops">
+          <td>{{shop.storeName}}</td>
+          <td>{{shop.seller.userBase.nick}}</td>
+          <td>{{shop.seller.userBase.phone}}</td>
+          <td>{{shop.storeTime | date:"yyyy-MM-dd HH:mm"}}</td>
+          <td>
+            <span class="d-block" ng-repeat="community in shop.communities"> {{community.name}} </span>
+          </td>
+          <td>{{shop.storeState.name}}</td>
+          <td>
+            <a class="main-action__edit" ng-click="vm.edit(shop)" href="">编辑</a>
+            <a ng-if="!vm.isShopClosed(shop)" class="main-action__close" ng-click="vm.close(shop)" href="">关闭</a>
+            <a ng-if="vm.isShopClosed(shop)" class="main-action__open" ng-click="vm.open(shop)" href="">开启</a>
+            <a class="main-action__delete" ng-click="vm.del(shop)" href="">删除</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- pagination -->
+    <pagination class="main-section"
+                items-per-page="vm.itemsPerPage"
+                total-items="vm.totalItems"
+                ng-model="vm.currentPage"
+                ng-change="vm.refresh()">
+    </pagination>
+
+  </div>
+
+</div>

@@ -1,0 +1,95 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">资金</li>
+      <li class="breadcrumb__item breadcrumb__item--active">流水管理</li>
+    </ol>
+    <!--<div class="main-header__right">-->
+      <!--<button class="btn btn-outline&#45;&#45;primary badge-pill" ng-click="vm.exportResult()">导出内容</button>-->
+    <!--</div>-->
+  </div>
+
+  <div class="main-body">
+
+    <!--horizontal navigation-->
+    <div class="main-section">
+      <nav-tabs nav-items="vm.fundTypes"
+                nav-item-name-by="name"
+                ng-change="vm.searchAction()"
+                ng-model="vm.search.fundType">
+      </nav-tabs>
+    </div>
+
+    <!-- search -->
+    <ul class="main-search main-section">
+      <li class="main-search__item">
+        <datepicker-group
+            dtp-title="时间范围："
+            dtp-show-interval="true"
+            dtp-date-start="vm.search.beginTime"
+            dtp-date-end="vm.search.endTime">
+        </datepicker-group>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="sn">支付方式：</label>
+          <select class="form__control main-search__input"
+                  ng-model="vm.search.payMethod"
+                  ng-options="item as item.name for item in vm.payMethods">
+            <option value="" selected>--请选择--</option>
+          </select>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="sn">流水编号：</label>
+          <input class="form__control main-search__input"
+                 ng-model="vm.search.serialNumber"
+                 placeholder="请输入流水号"
+                 type="text" name="sn" id="sn"/>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <span class="btn btn-outline--primary" ng-click="vm.searchAction()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+      </li>
+    </ul>
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table">
+        <tr>
+          <th>流水编号</th>
+          <th>类型</th>
+          <th>支付方式</th>
+          <th>交易金额</th>
+          <th>交易时间</th>
+          <th>接收方</th>
+        </tr>
+        <tr ng-repeat="fund in vm.funds">
+          <td>{{fund.serialNumber}}</td>
+          <td>{{fund.type.name}}</td>
+          <td>{{fund.method.name}}</td>
+          <td>{{fund.amount/100 | currency: '￥'}}</td>
+          <td>{{fund.createTime | date:"yyyy/MM/dd HH:mm"}}</td>
+          <td>{{fund.accept}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="p-3 bg-gray font-size-lg text-red main-section">
+      <span class="text-dark">总计：</span>
+      <span class="mr-4" ng-repeat="fundInfo in vm.fundsInfo">{{fundInfo.type.name}}:{{fundInfo.total /100 | currency:'￥'}}</span>
+    </div>
+
+    <!-- pagination -->
+    <pagination class="main-section"
+                items-per-page="vm.itemsPerPage"
+                total-items="vm.totalItems"
+                ng-model="vm.currentPage"
+                ng-change="vm.refresh()">
+    </pagination>
+
+  </div>
+</div>

@@ -1,0 +1,41 @@
+//
+// agent info
+//
+.d-info {
+  margin-bottom: 40px;
+  color: $gray-700;
+}
+
+//
+// card
+//
+.d-card {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid $border-color;
+  @include box-shadow-around($border-color);
+}
+
+.d-card__info {
+  margin-left: 20px;
+}
+
+.d-card__count {
+  font-size: $font-size-base * 2.5;
+  line-height: 1;
+  color: $gray-800;
+}
+
+.d-card__title {
+  color: $gray-700;
+}
+
+.d-card__link {
+  color: $persian-green;
+}
+
+.d-card--ml {
+  margin-left: 50px;
+}

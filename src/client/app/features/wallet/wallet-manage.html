@@ -1,0 +1,90 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">钱包</li>
+      <li class="breadcrumb__item breadcrumb__item--active">钱包管理</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+
+    <div class="wallet main-section">
+      <img src="img/wallet_icon.png" class="wallet__icon">
+      <div>
+        <span>钱包余额</span>
+        <span class="wallet__amount">{{vm.wallet.amount / 100  | currency: '￥'}}</span>
+      </div>
+    </div>
+
+    <!-- search -->
+    <ul class="main-search main-section">
+      <li class="main-search__item">
+        <datepicker-group
+            dtp-title="时间范围："
+            dtp-show-interval="true"
+            dtp-date-start="vm.search.dateStart"
+            dtp-date-end="vm.search.dateEnd"></datepicker-group>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="shopName">流水单号：</label>
+          <input class="form__control main-search__input"
+                 ng-model="vm.search.serialNumber"
+                 placeholder="请输入流水单号"
+                 type="text" name="shopName" id="shopName"/>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <span class="btn btn-outline--primary" ng-click="vm.searchAction()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+      </li>
+    </ul>
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table">
+        <tr>
+          <th>流水单号</th>
+          <th>商家</th>
+          <th>分润金额</th>
+          <th>交易时间</th>
+          <th>操作</th>
+        </tr>
+        <tr ng-repeat="fund in vm.funds">
+          <td>{{fund.serialNumber}}</td>
+          <td>{{fund.sponsor}}</td>
+          <td>{{fund.amount/100 | currency: '￥'}}</td>
+          <td>{{fund.createTime | date:"yyyy/MM/dd HH:mm"}}</td>
+          <td>
+            <a class="main-action__edit" ui-sref="home.wallet.view({'id': fund.id})">查看</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="main-section">
+      <span class="wallet-fundinfo" ng-repeat="fundInfo in vm.fundInfos">{{fundInfo.type.name}}：{{fundInfo.total /100 | currency:'￥'}}</span>
+    </div>
+
+    <!-- pagination -->
+    <pagination class="main-section"
+                items-per-page="vm.itemsPerPage"
+                total-items="vm.totalItems"
+                ng-model="vm.currentPage"
+                ng-change="vm.refresh()">
+    </pagination>
+<!--    <ul class="pagination main-section"
+        uib-pagination
+        template-url="app/layout/pagination/pagination.html"
+        items-per-page="vm.itemsPerPage"
+        total-items="vm.totalItems"
+        max-size="5"
+        ng-model="vm.currentPage"
+        ng-change="vm.pageChange()"
+        boundary-link-numbers="true"
+        force-ellipses="true">-->
+
+  </div>
+
+</div>

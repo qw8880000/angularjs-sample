@@ -1,18 +1,26 @@
 <header class="header home__header--fixed">
   <div class="header__inner">
 
-    <a class="header__brand" href="https://angularjs.org" target="_blank"></a>
+    <a class="header__brand" href="" target="_blank"></a>
 
     <div class="header__author">
-      <a class="author" href="https://github.com/qw8880000/angularjs-sample" target="_blank">
-        <img class="author__avatar" src="img/avatar.gif" alt="author's avatar">
-        <span class="author__name">好好编程</span>
+      <a class="author" href="">
+        <img class="author__avatar" ng-src="{{vm.user.avatarUrl}}" alt="author's avatar">
+        <span class="author__name">{{vm.user.nick}}</span>
       </a>
 
       <ul class="user-menu">
+        <li ng-click="vm.passwordEdit()" class="user-menu__item">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <span>密码修改</span>
+        </li>
+        <li ng-click="vm.userEdit()" class="user-menu__item">
+          <i class="fa fa-cog" aria-hidden="true"></i>
+          <span>设置基本信息</span>
+        </li>
         <li ng-click="vm.logout()" class="user-menu__item">
           <i class="fa fa-sign-out" aria-hidden="true"></i>
-          <span>Logout</span>
+          <span>退出</span>
         </li>
       </ul>
 
@@ -22,14 +30,10 @@
 </header>
 
 <aside class="sidebar home__sidebar--fixed">
-  <nav-menu></nav-menu>
+  <nav-menu></nav-menu> 
 </aside>
 
-<div class="main home__main">
-
-  <div class="main__inner">
-    <ui-view></ui-view>
-  </div>
-
+<div ng-cloak class="main home__main">
+  <ui-view></ui-view>
 </div>
 

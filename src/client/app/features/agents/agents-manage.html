@@ -1,0 +1,65 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">区域运营商管理</li>
+    </ol>
+
+    <div class="main-header__right">
+      <button class="btn btn-outline--primary badge-pill" ng-click="vm.add()">新增区域运营商</button>
+    </div>
+  </div>
+
+  <div class="main-body">
+
+    <!-- search -->
+    <ul class="main-search main-section">
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label">区域运营商名称：</label>
+          <input class="form__control main-search__input"
+                 ng-model="vm.search.agentName"
+                 placeholder="请输入运营商名称"
+                 type="text" name="agentName" id="agentName"/>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <span class="btn btn-outline--primary" ng-click="vm.searchAction()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+      </li>
+    </ul>
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table">
+        <tr>
+          <th>名称</th>
+          <th>手机号</th>
+          <th>类型</th>
+          <th>管辖社区列表</th>
+          <th>操作</th>
+        </tr>
+        <tr ng-repeat="regionAgent in vm.regionAgents">
+          <td>{{regionAgent.agentName}}</td>
+          <td>{{regionAgent.userBase.phone}}</td>
+          <td>{{regionAgent.type.name}}</td>
+          <td><span ng-repeat="community in regionAgent.communities | orderBy:'name'" class="d-block">{{community.name}}</span></td>
+          <td>
+            <a href class="main-action__edit" ng-click="vm.edit(regionAgent)">编辑</a>
+            <a href class="main-action__delete" ng-click="vm.del(regionAgent)">删除</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- pagination -->
+    <pagination class="main-section"
+                items-per-page="vm.itemsPerPage"
+                total-items="vm.totalItems"
+                ng-model="vm.currentPage"
+                ng-change="vm.refresh()">
+    </pagination>
+
+  </div>
+
+</div>

@@ -7,7 +7,9 @@ bower_components/
 *.swp
 
 # other
-.tmp
+.tmp/
+dist/
+*.zip
 
 # ide
 *.idea

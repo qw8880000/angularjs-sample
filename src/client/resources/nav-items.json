@@ -1,84 +1,201 @@
 [
   {
-    "name": "Dashboard",
+    "name": "首页",
     "sref": "home.dashboard",
-    "icon": "fa fa-th-large"
+    "icon": "fa fa-home",
+    "roles": [1, 2]
   },
   {
-    "name": "Components",
-    "sref": "home.components",
-    "icon": "fa fa-gavel",
+    "name": "商家",
+    "sref": "home.shops",
+    "icon": "fa fa-shopping-basket",
+    "roles": [1],
     "subItems": [
       {
-        "name": "Breadcrumbs",
-        "sref": "home.components.breadcrumbs",
-        "icon": null
-      },
-      {
-        "name": "Buttons",
-        "sref": "home.components.buttons",
-        "icon": null
-      },
-      {
-        "name": "Cards",
-        "sref": "home.components.cards",
-        "icon": null
-      },
-      {
-        "name": "Forms",
-        "sref": "home.components.forms",
-        "icon": null
-      },
-      {
-        "name": "Tables",
-        "sref": "home.components.tables",
-        "icon": null
-      },
-      {
-        "name": "Paginations",
-        "sref": "home.components.paginations",
+        "name": "商家管理",
+        "sref": "home.shops.manage",
         "icon": null
       }
     ]
   },
   {
-    "name": "Angular.js demo",
-    "sref": "home.angular",
-    "icon": "fa fa-tachometer",
+    "name": "钱包",
+    "sref": "home.wallet",
+    "icon": "fa fa-shopping-bag",
+    "roles": [1],
     "subItems": [
       {
-        "name": "Repeaters",
-        "sref": "home.angular.repeaters",
+        "name": "钱包管理",
+        "sref": "home.wallet.manage",
+        "icon": null
+      }
+    ]
+  },
+  {
+    "name": "商品",
+    "sref": "home.goods",
+    "icon": "fa fa-cubes",
+    "roles": [1],
+    "subItems": [
+      {
+        "name": "商品管理",
+        "sref": "home.goods.manage",
         "icon": null
       },
       {
-        "name": "Custom filters",
-        "sref": "home.angular.customFilters",
+        "name": "商品推荐",
+        "sref": "home.goods.recommend",
         "icon": null
       },
       {
-        "name": "Animations",
-        "sref": "home.angular.animations",
+        "name": "设置社区可见",
+        "sref": "home.goods.visibility",
+        "icon": null
+      }
+    ]
+  },
+  {
+    "name": "订单",
+    "sref": "home.orders",
+    "icon": "fa fa-list-alt",
+    "roles": [1],
+    "subItems": [
+      {
+        "name": "订单管理",
+        "sref": "home.orders.manage",
+        "icon": null
+      }
+    ]
+  },
+  {
+    "name": "区域运营商",
+    "sref": "home.agents",
+    "icon": "fa fa-map-marker",
+    "roles": [2],
+    "subItems": [
+      {
+        "name": "区域运营商管理",
+        "sref": "home.agents.manage",
+        "icon": null
+      }
+    ]
+  },
+  {
+    "name": "资金",
+    "sref": "home.funds",
+    "icon": "fa fa-money",
+    "roles": [2],
+    "subItems": [
+      {
+        "name": "退款管理",
+        "sref": "home.funds.refunds-manage",
         "icon": null
       },
       {
-        "name": "Toastrs",
-        "sref": "home.angular.toastrs",
+        "name": "提现管理",
+        "sref": "home.funds.drawings-manage",
         "icon": null
       },
       {
-        "name": "Modals",
-        "sref": "home.angular.modals",
+        "name": "流水管理",
+        "sref": "home.funds.funds-manage",
+        "icon": null
+      }
+    ]
+  },
+  {
+    "name": "app配置",
+    "sref": "home.settings",
+    "icon": "fa fa-cog",
+    "roles": [1, 2],
+    "subItems": [
+      {
+        "name": "首页商品分类",
+        "sref": "home.settings.goods-category-manage",
+        "icon": null,
+        "roles": [1]
+      },
+      {
+        "name": "生活页广告",
+        "sref": "home.settings.ads-life-manage",
+        "icon": null,
+        "roles": [1]
+      },
+      {
+        "name": "商品广告",
+        "sref": "home.settings.ads-goods-manage",
+        "icon": null,
+        "roles": [1]
+      },
+      {
+        "name": "APP版本配置",
+        "sref": "home.settings.app-version-manage",
+        "icon": null,
+        "roles": [2]
+      },
+      {
+        "name": "启动页广告",
+        "sref": "home.settings.ads-startup-manage",
+        "icon": null,
+        "roles": [2]
+      }
+    ]
+  },
+  {
+    "name": "数据分析",
+    "sref": "home.dataAnalysis",
+    "icon": "fa fa-line-chart",
+    "roles": [1],
+    "subItems": [
+      {
+        "name": "商品浏览量",
+        "sref": "home.dataAnalysis.xxx",
         "icon": null
       },
       {
-        "name": "Croppers",
-        "sref": "home.angular.croppers",
+        "name": "消费分析",
+        "sref": "home.dataAnalysis.xxx",
         "icon": null
       },
       {
-        "name": "Datepickers",
-        "sref": "home.angular.datepickers",
+        "name": "评价管理",
+        "sref": "home.dataAnalysis.xxx",
+        "icon": null
+      }
+    ]
+  },
+  {
+    "name": "基础数据",
+    "sref": "home.data",
+    "icon": "fa fa-pie-chart",
+    "roles": [1],
+    "subItems": [
+      {
+        "name": "业主数据",
+        "sref": "home.data.xxx",
+        "icon": null
+      },
+      {
+        "name": "物业数据",
+        "sref": "home.data.xxx",
+        "icon": null
+      }
+    ]
+  },
+  {
+    "name": "权限",
+    "sref": "home.authority",
+    "icon": "fa fa-sign-in",
+    "roles": [1],
+    "subItems": [
+      {
+        "name": "区域管理",
+        "sref": "home.authority.xxx",
+        "icon": null
+      },
+      {
+        "name": "全局权限",
+        "sref": "home.authority.xxx",
         "icon": null
       }
     ]

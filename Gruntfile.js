@@ -92,11 +92,11 @@ module.exports = function(grunt) {
     // ---------------------------------- 
     express: {
       options: {
+        debug: 6000,
       },
       dev: {
         options: {
           script: '<%= pathConfig.server %>/app.js',
-          debug: true
         }
       },
       dist: {
@@ -372,13 +372,10 @@ module.exports = function(grunt) {
         ],
         patterns: {
           // js: [
-            // [/(img\/[\/\w-]+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+            // [/(img\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
           // ],
           // resources: [
-            // [/(img\/[\/\w-\.\d]+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
-          // ],
-          // css: [
-            // [/(img\/\w+.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+            // [/(img\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
           // ],
         }
       }
@@ -443,6 +440,16 @@ module.exports = function(grunt) {
       },
     },
 
+    // ----------------------------------
+    //
+    // ----------------------------------
+    zip: {
+      dist: {
+        src: ['dist/**/*'],
+        dest: 'web-agent.zip'
+      }
+    }
+
   };
 
   grunt.util._.extend(config, pluginsConfig);
@@ -501,7 +508,7 @@ module.exports = function(grunt) {
     'watch'
   ]);
 
-  grunt.registerTask('dist', [
+  grunt.registerTask('build', [
     'prepare',
     'unitTest',
 
@@ -511,9 +518,8 @@ module.exports = function(grunt) {
     'image:dist',
     'replacesReferences',
 
-    // start server
-    'express:dist',
-    'grunt-keepalive'
+    // zip
+    'zip',
   ]);
   
   grunt.registerTask('distServer', [

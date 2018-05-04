@@ -1,8 +1,8 @@
-# angularjs-sample
+# Introduction (介绍)
 
-Angular.js 1.x sample.
+运营商管理后台
 
-# Technologies
+# Technologies （技术）
 
 前端：
 * javascript前端框架: [Angular.js]
@@ -27,7 +27,7 @@ Angular.js 1.x sample.
 * [karma](https://karma-runner.github.io/2.0/index.html) + [jasmine](https://jasmine.github.io/) : 单元测试(unit test)
 * [Protractor](http://www.protractortest.org/#/) : 端到端测试(end-to-end test)
 
-# AngularJs Architecture
+# AngularJs Architecture （AngulsrJs 架构）
 
 ```
     app.module.js
@@ -54,15 +54,15 @@ Angular.js 1.x sample.
 angualr.js框架总体上分为三个部分：app功能模块，app通用模块，跨app通用模块。
 
 * `app.module.js`: 存放app启动逻辑和模块依赖。
-* `blocks/`：跨app的通用模块。如 blocks.exception,blocks.logger。
+* `blocks/`：跨app的通用模块。如 blocks.exception, blocks.logger。
 * `core/` `widgets`：此app的通用的模块。
 * `features/`：app的功能模块。
 
-# CSS Architecture
+# CSS Architecture （css 架构）
 
 * 命名规范使用 [BEM].
-* css 预处理器使用 Less.
-* 字体单位使用 [REM], 其他元素使用px. 
+* css 预处理器使用 Sass.
+* 字体单位使用 [REM].
 
 # Sass Directory Structure
 
@@ -72,7 +72,7 @@ angualr.js框架总体上分为三个部分：app功能模块，app通用模块�
 
 // todo
 
-# How to use
+# How to use （如何使用）
 
 1. 克隆本代码仓库
 1. 安装sass(安装[Ruby], 运行`gem update --system && gem install compass`)
@@ -80,7 +80,7 @@ angualr.js框架总体上分为三个部分：app功能模块，app通用模块�
 1. `bower install`
 1. 普通开发使用`grunt`命令；发布使用`grunt dist`
 
-# Automation
+# Automation （自动化构建）
 
 1. 自动注入Bower文件：[grunt-wiredep]
 1. javascript 代码检查 ：[grunt-eslint]
@@ -94,7 +94,7 @@ angualr.js框架总体上分为三个部分：app功能模块，app通用模块�
 1. javascript 压缩：[grunt-contrib-uglify]
 1. 组合concat/cssmin/uglify，为它们自动生成配置，并在最后替换index.html里的对应代码块为优化后的css/js文件：[grunt-usemin]
 
-# More
+# More （更多）
 
 * 管理后台模板：[admin template themes | WrapBootstrap](https://wrapbootstrap.com/tag/admin-template)
 * [Coreui-angularjs](https://github.com/mrholek/CoreUI-AngularJS)

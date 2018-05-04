@@ -1,28 +1,39 @@
 <div class="login">
-  <div class="login__inner">
+  <!-- body -->
+  <div class="login__body">
 
-    <h2>Login</h2>
+    <div class="login__form">
 
-    <form novalidate class="login__form">
-      <div class="form mb-3">
-        <span class="form__prepend"><i class="fa fa-user-o" aria-hidden="true"></i></span>
-        <input type="text" name="username" placeholder="test"
-        ng-model="vm.username"
-        class="form__control"/>
-      </div>
+      <h2 class="login__title">运营商后台管理系统</h2>
 
-      <div class="form mb-4">
-        <span class="form__prepend"><i class="fa fa-lock" aria-hidden="true"></i></span>
-        <input type="password" name="password" placeholder="123456" 
-        ng-model="vm.password"
-        class="form__control"/>
-      </div>
+      <form novalidate>
+        <div class="form mb-3">
+          <span class="form__prepend"><i class="fa fa-user" aria-hidden="true"></i></span>
+          <input type="text" name="username" placeholder="手机号"
+          ng-model="vm.username"
+          class="form__control"/>
+        </div>
 
-      <div class="login__control">
-        <button type="submit" class="btn btn--primary" ng-click="vm.submit()">登陆</button>
-        <a ui-sref="home" class="link"> 忘记密码？</a>
-      </div>
-    </form>
+        <div class="form mb-4">
+          <span class="form__prepend"><i class="fa fa-lock" aria-hidden="true"></i></span>
+          <input type="password" name="password" placeholder="密码" 
+          ng-model="vm.password"
+          class="form__control"/>
+        </div>
+
+        <div class="login__control">
+          <button type="submit" class="btn btn--primary" ng-click="vm.submit()">登陆</button>
+          <a class="link" ng-click="vm.passwordForget()"> 忘记密码？</a>
+        </div>
+      </form>
+
+    </div>
 
   </div>
+
+  <!-- footer -->
+  <div class="login__footer">
+    <div class="login__copyright"> {{vm.uiConfig.copyright}} </div>
+  </div>
+
 </div>

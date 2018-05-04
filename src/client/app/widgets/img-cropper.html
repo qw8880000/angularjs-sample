@@ -1,0 +1,16 @@
+<div class="img-cropper">
+  <div class="img-cropper-inner">
+    <div class="img-cropper__image-container">
+      <img id="img-cropper-image" class="img-cropper__image">
+    </div>
+
+    <div class="img-cropper__preview-container" ng-if="vm.showPreview">
+      <div id="img-cropper-preview" class="img-cropper__preview"></div>
+    </div>
+  </div>
+
+  <div>
+    <input type="file" ccw-file-input ng-model="vm.files" ng-change="vm.filesSelected()"/>
+  </div>
+
+</div>

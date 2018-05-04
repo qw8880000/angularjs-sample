@@ -1,0 +1,90 @@
+<div class="modal-dialog main-modal-dialog">
+  <div class="modal main-modal">
+    <div class="modal__header main-modal__header">
+      <h3 class="modal__title main-modal__title" id="modal-title">编辑</h3>
+    </div>
+    <div class="modal__body" id="modal-body">
+
+      <div class="modal-advertisement">
+
+        <div ng-style="vm.previewStyle" class="modal-advertisement-img-container">
+          <img id="modal-advertisement-img" ng-src="{{vm.advertisement.imgUrl}}" class="modal-advertisement-img"/>
+        </div>
+
+        <form name="adsForm" novalidate>
+          <ul class="main-list">
+            <li class="main-list__item">
+              <span class="main-list__item-left"><span class="text-red">*</span>图片：</span>
+              <div class="main-list__item-right">
+                <button class="btn btn-outline--primary" type="button" ng-click="vm.selectPic()">选择图片</button>
+              </div>
+              <div ng-show="adsForm.$submitted" class="main-list__error">
+                <span ng-show="vm.advertisement.imgUrl === null">必选</span>
+              </div>
+            </li>
+            <li class="main-list__item">
+              <label class="main-list__item-left" for="sort"><span class="text-red">*</span>排序：</label>
+              <input class="form-input main-list__item-middle"
+                     type="number"
+                     name="sort" id="sort"
+                     ng-model="vm.advertisement.sort"
+                     placeholder="0-127"
+                     min="0" max="127"
+                     required>
+              <div ng-show="adsForm.$submitted || adsForm.sort.$touched" class="main-list__error">
+                <span ng-show="adsForm.sort.$error.required">不能为空</span>
+                <span ng-show="adsForm.sort.$error.number">数字</span>
+                <span ng-show="adsForm.sort.$error.min || adsForm.sort.$error.max">0-127</span>
+              </div>
+            </li>
+            <li class="main-list__item">
+              <label class="main-list__item-left" for="name"><span class="text-red">*</span>广告主题：</label>
+              <input class="form-input main-list__item-middle"
+                     type="text"
+                     name="name" id="name"
+                     ng-model="vm.advertisement.name"
+                     placeholder="请输入广告主题"
+                     required>
+              <div ng-show="adsForm.$submitted || adsForm.name.$touched" class="main-list__error">
+                <span ng-show="adsForm.name.$error.required">不能为空</span>
+              </div>
+            </li>
+            <li class="main-list__item">
+              <label class="main-list__item-left" for="link"><span class="text-red">*</span>链接地址：</label>
+              <input class="form-input main-list__item-middle"
+                     type="url"
+                     name="link" id="link"
+                     ng-model="vm.advertisement.link"
+                     placeholder="请输入链接地址"
+                     required>
+              <div ng-show="adsForm.$submitted || adsForm.link.$touched" class="main-list__error">
+                <span ng-show="adsForm.link.$error.required">不能为空</span>
+                <span ng-show="adsForm.link.$error.url">格式不正确</span>
+              </div>
+            </li>
+            <li class="main-list__item" ng-if="vm.isGoodsAd()">
+              <span class="main-list__item-left"><span class="text-red">*</span>商品：</span>
+              <div class="main-list__item-right">
+                <button class="btn btn-outline--primary" type="button" ng-click="vm.selectGood()">选择商品</button>
+              </div>
+              <span class="ml-2">{{vm.advertisement.goodsName}}</span>
+              <div ng-show="adsForm.$submitted" class="main-list__error">
+                <span ng-show="vm.advertisement.goodsId === null">必选</span>
+              </div>
+            </li>
+          </ul>
+        </form>
+
+      </div>
+
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--secondary" type="submit" ng-click="vm.ok(adsForm)">确定</button>
+      <button class="btn btn--warning" type="button" ng-click="vm.cancel()">取消</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" ng-click="vm.close()">
+</div>
+

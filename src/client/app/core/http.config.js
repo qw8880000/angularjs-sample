@@ -10,10 +10,11 @@
     var headersCommon = $httpProvider.defaults.headers.common;
 
     //
-    // set http request headers
+    // Set http request headers
+    // 1. appname 启动时必须默认为'agent_web'，否则登陆请求会失败，登陆后有可能发生变化
     //
-    headersCommon.appname = 'agent_web';
     headersCommon.Accept = 'application/json, text/plain, */*; image/jpeg/png; version=1';
+    headersCommon.appname = 'agent_web';  // 1
 
     //
     // https://docs.angularjs.org/api/ng/service/$http#interceptors

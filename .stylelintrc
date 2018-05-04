@@ -14,6 +14,7 @@
     "selector-list-comma-newline-after": "always-multi-line",
     "at-rule-empty-line-before": null,
     "comment-empty-line-before": null,
-    "number-leading-zero": "never"
+    "number-leading-zero": "never",
+    "no-missing-end-of-source-newline": null
   }
 }

@@ -1,0 +1,25 @@
+.wallet {
+  display: flex;
+  align-items: center;
+}
+
+.wallet__icon {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.wallet__amount {
+  display: block;
+  font-size: $h3-font-size;
+  color: theme-color('orange');
+}
+
+.wallet-fundinfo {
+  display: block;
+  font-size: $h5-font-size;
+  padding: $padding-sm;
+  color: theme-color('orange');
+  background-color: $gray-300;
+}
+

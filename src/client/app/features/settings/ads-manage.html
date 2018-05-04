@@ -1,0 +1,55 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">app配置</li>
+      <li class="breadcrumb__item breadcrumb__item--active">{{vm.adsType.name}}</li>
+    </ol>
+    <div class="main-header__right">
+      <button class="btn btn-outline--primary badge-pill" ng-click="vm.add()">新增广告</button>
+    </div>
+
+  </div>
+
+  <div class="main-body">
+
+    <div class="main-section">
+      <div uib-carousel active="0" interval="3000" no-wrap="false" no-transition="true"
+           class="carousel ads-slideshow" ng-style="vm.carouselStyle"
+           template-url="app/layout/slideshow/carousel.html">
+        <div uib-slide ng-repeat="ad in vm.ads track by ad.id" index="ad.id"
+             class="carousel-item"
+             template-url="app/layout/slideshow/slide.html">
+          <img ng-src="{{ad.picUrl}}" ng-style="vm.carouselImageStyle">
+        </div>
+      </div>
+    </div>
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table">
+        <tr>
+          <th>排序</th>
+          <th>广告主题</th>
+          <th>点击图片跳转的地址</th>
+          <th ng-if="vm.isGoodsAd()"> 关联商品 </th>
+          <th>操作</th>
+        </tr>
+        <tr ng-repeat="ad in vm.ads">
+          <td>{{ad.sn}}</td>
+          <td>{{ad.name}}</td>
+          <td><a ng-href="{{ad.linkUrl}}" class="link" target="_blank">{{ad.linkUrl}}</a></td>
+          <td ng-if="vm.isGoodsAd()">
+            <span class="d-block">{{ad.goodsName}}</span>
+            <span class="d-block">（{{ad.goodsId}}）</span>
+          </td>
+          <td>
+            <a href="" ng-click="vm.edit(ad)" class="main-action__edit">编辑</a>
+            <a href="" ng-click="vm.del(ad)" class="main-action__delete">删除</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+</div>

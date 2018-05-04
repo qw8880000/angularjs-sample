@@ -1,0 +1,111 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title" ng-if="vm.isEdit()">
+      <li class="breadcrumb__item">app版本配置</li>
+      <li class="breadcrumb__item">编辑</li>
+      <li class="breadcrumb__item breadcrumb__item--active">{{vm.appVersionId}}</li>
+    </ol>
+    <ol class="breadcrumb h5 main-header__title" ng-if="!vm.isEdit()">
+      <li class="breadcrumb__item">app版本配置</li>
+      <li class="breadcrumb__item breadcrumb__item--active">新增app版本</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <form name="appForm" novalidate>
+      <ul class="main-list">
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>手机系统：</label>
+          <div class="main-list__item-middle">
+            <app-platforms-select class="main-list__item-middle"
+                                  disabled="vm.isEdit()"
+                                  initial-id="vm.appVersion.platform.id"
+                                  ng-model="vm.appPlatform" required="true" name="appPlatform">
+            </app-platforms-select>
+          </div>
+          <div ng-show="appForm.$submitted || appForm.appPlatform.$touched" class="main-list__error">
+            <span ng-show="appForm.appPlatform.$error.required">必选</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>应用名称：</label>
+          <app-types-select class="main-list__item-middle"
+                            disabled="vm.isEdit()"
+                            initial-appid="vm.appVersion.app.appId"
+                            ng-model="vm.appType" required="true" name="appType">
+          </app-types-select>
+          <div ng-show="appForm.$submitted || appForm.appType.$touched" class="main-list__error">
+            <span ng-show="appForm.appType.$error.required">必选</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>版本内容：</label>
+          <textarea class="form-input main-list__item-middle"
+                    ng-model="vm.appVersion.notes"
+                    name="content"
+                    required
+                    placeholder="输入版本内容">
+          </textarea>
+          <div ng-show="appForm.$submitted || appForm.content.$touched" class="main-list__error">
+            <span ng-show="appForm.content.$error.required">必填</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left">是否强制升级：</label>
+          <div class="main-list__item-middle">
+            <input type="radio" name="forceUpdate" id="forceUpdateNo" ng-value="false" ng-model="vm.appVersion.forceUpdate">
+            <label for="forceUpdateNo" class="mr-3">否</label>
+            <input type="radio" name="forceUpdate" id="forceUpdateYes" ng-value="true" ng-model="vm.appVersion.forceUpdate">
+            <label for="forceUpdateYes">是</label>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>版本号：</label>
+          <input class="form-input main-list__item-middle"
+                 type="text"
+                 name="appVersionCode"
+                 ng-model="vm.appVersion.versionCode"
+                 ng-disabled="vm.isEdit()"
+                 required
+                 placeholder="请输入版本号">
+          <div ng-show="appForm.$submitted || appForm.appVersionCode.$touched" class="main-list__error">
+            <span ng-show="appForm.appVersionCode.$error.required">必填</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>版本名称：</label>
+          <input class="form-input main-list__item-middle"
+                 type="text"
+                 name="appVersionName"
+                 ng-model="vm.appVersion.versionName"
+                 required
+                 placeholder="请输入版本名称">
+          <div ng-show="appForm.$submitted || appForm.appVersionName.$touched" class="main-list__error">
+            <span ng-show="appForm.appVersionName.$error.required">必填</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>版本链接：</label>
+          <input class="form-input main-list__item-middle"
+                 type="url"
+                 name="appVersionUrl"
+                 ng-model="vm.appVersion.url"
+                 required
+                 placeholder="请输入版本链接">
+          <div ng-show="appForm.$submitted || appForm.appVersionUrl.$touched" class="main-list__error">
+            <span ng-show="appForm.appVersionUrl.$error.required">必填</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <div class="main-list__item-middle main-list--offset">
+            <button class="btn btn--secondary col-6" type="submit" ng-click="vm.submitAppForm(appForm)">保存</button>
+            <button class="btn btn--gray col-6" type="button" ng-click="vm.cancel()">取消</button>
+          </div>
+        </li>
+      </ul>
+    </form>
+
+
+  </div>
+
+</div>

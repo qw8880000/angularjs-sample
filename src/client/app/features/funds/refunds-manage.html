@@ -1,0 +1,72 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">资金</li>
+      <li class="breadcrumb__item breadcrumb__item--active">退款管理</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+
+    <!--horizontal navigation-->
+    <div class="main-section">
+      <nav-tabs nav-items="vm.refundStates"
+                nav-item-name-by="name"
+                ng-change="vm.searchAction()"
+                ng-model="vm.search.refundState">
+      </nav-tabs>
+    </div>
+
+    <!-- search -->
+    <!--<ul class="main-search main-section">-->
+      <!--<li class="main-search__item">-->
+        <!--<div class="form">-->
+          <!--<label class="form__label" for="sn">申请单编号：</label>-->
+          <!--<input class="form__control main-search__input"-->
+                 <!--ng-model="vm.search.payMethod"-->
+                 <!--placeholder="请输入申请单编号"-->
+                 <!--type="text" name="sn" id="sn"/>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li class="main-search__item">-->
+        <!--<span class="btn btn-outline&#45;&#45;primary" ng-click="vm.searchAction()">-->
+          <!--<i class="fa fa-search" aria-hidden="true"></i>-->
+        <!--</span>-->
+      <!--</li>-->
+    <!--</ul>-->
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table">
+        <tr>
+          <th>申请单编号</th>
+          <th>退款金额</th>
+          <th>申请时间</th>
+          <th>退款说明</th>
+          <th>退款描述</th>
+          <th>操作</th>
+        </tr>
+        <tr ng-repeat="refund in vm.refunds">
+          <td>{{refund.serialNumber}}</td>
+          <td>{{refund.amount/100 | currency: '￥'}}</td>
+          <td>{{refund.createTime  | date:"yyyy/MM/dd HH:mm"}}</td>
+          <td>{{refund.reason.name}}</td>
+          <td>{{refund.description}}</td>
+          <td>
+            <span ng-if="!vm.isRefunding()">--</span>
+            <a class="main-action__edit" ng-if="vm.isRefunding()" ng-click="vm.confirm(refund)" href="">确认退款</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- pagination -->
+    <pagination class="main-section"
+                items-per-page="vm.itemsPerPage"
+                total-items="vm.totalItems"
+                ng-model="vm.currentPage"
+                ng-change="vm.refresh()">
+    </pagination>
+
+  </div>
+</div>

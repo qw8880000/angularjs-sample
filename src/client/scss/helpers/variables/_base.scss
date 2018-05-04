@@ -25,21 +25,29 @@ $teal:                 #20c997;
 $cyan:                 #17a2b8;
 
 $big-stone:            #1c3043;
+$mirage:               #1c1c38;
+$persian-green:        #04b696;
 
 $cl-primary:           $blue;
-$cl-secondary:         $gray-500;
+$cl-secondary:         $persian-green;
 $cl-success:           $green;
 $cl-info:              $cyan;
 $cl-warning:           $yellow;
 $cl-danger:            $red;
 $cl-light:             $gray-200;
 $cl-dark:              $gray-800;
+$cl-ok:                $persian-green;
+$cl-error:             $red;
+$cl-cancel:            $gray-500;
 
 $theme-colors: (
   "primary":   $cl-primary,
   "secondary": $cl-secondary,
   "light":     $cl-light,
   "dark":      $cl-dark,
+  "ok":        $cl-ok,
+  "error":     $cl-error,
+  "cancel":    $cl-cancel,
   "blue":      $blue,
   "gray":      $gray-500,
   "green":     $green,
@@ -52,6 +60,9 @@ $theme-colors: (
 // Customize the light and dark text colors for use in our YIQ color contrast function.
 $yiq-text-dark: $gray-900;
 $yiq-text-light: $white;
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval:      8% !default;
 
 //
 // typography
@@ -101,3 +112,18 @@ $border-radius-sm:            .2rem !default;
 
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
+$border: $border-width solid $border-color;
+
+//
+// padding
+//
+$padding-sm: .5rem;
+$padding-base: 1rem;
+$padding-lg: 2rem;
+
+//
+// margin
+//
+$margin-sm: .5rem;
+$margin-base: 1rem;
+$margin-lg: 2rem;

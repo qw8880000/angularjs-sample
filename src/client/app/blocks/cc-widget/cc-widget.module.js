@@ -5,5 +5,6 @@
     .module('ccWidget', [
       'ccwAccordion',
       'ccwModal',
+      'ccwFileInput',
     ]);
 }());

@@ -5,6 +5,8 @@
   align-items: center;
   line-height: $header-height;
   text-decoration-line: none;
+  width: $header-author-width;
+  padding: 0 $padding-base;
 }
 
 .author__avatar {
@@ -14,7 +16,7 @@
 }
 
 .author__name {
-  @include link-color();
+  color: $white;
 }
 
 /* user-menu
@@ -24,7 +26,7 @@
   position: absolute;
   top: $header-height;
   right: 0;
-  width: 180px;
+  width: $header-author-width;
   border: 1px solid $border-color;
   background-color: $white;
 }
@@ -32,8 +34,12 @@
 .user-menu__item {
   display: block;
   border-bottom: 1px solid $border-color;
-  padding: .5rem;
+  padding: $padding-sm $padding-base;
   cursor: pointer;
+
+  &:hover {
+    color: theme-color('secondary');
+  }
 }
 
 /* header
@@ -55,20 +61,18 @@
 .header__brand {
   width: $sidebar-width;
   height: $header-height;
-  background-image: url("/img/AngularJS.png");
+  background-image: url("/img/logo.png");
   background-repeat: no-repeat;
   background-position: 50%;
-  background-color: $sidebar-bg-color;
 }
 
 .header__author {
   // make element in flex box taking most of free space.
   margin-left: auto;
-  padding: 0 10px;
   position: relative;
 
   &:hover {
-    background-color: $gray-200;
+    background-color: darken($header-bg-color, 4%);
 
     .user-menu {
       display: block;

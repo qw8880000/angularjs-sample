@@ -10,10 +10,13 @@
       'ngResource',
       'ngAnimate',
       'ngCookies',
+      'ngSanitize',
+      'ngLocale',
       'ui.router',
       'toastr',
       'swxSessionStorage',
       'ui.bootstrap',
+      'angular-loading-bar',
 
       /*
        * Our reusable cross app code modules
@@ -25,6 +28,7 @@
        *  app common area
        */
       'app.core',
+      'app.utils',
       'app.widgets',
 
       /*
@@ -32,20 +36,17 @@
        */
       'app.login',
       'app.home',
-      'app.animations',
-      'app.breadcrumbs',
-      'app.buttons',
-      'app.cards',
-      'app.customFilters',
       'app.dashboard',
-      'app.forms',
-      'app.repeaters',
-      'app.toastrs',
-      'app.modals',
-      'app.tables',
-      'app.paginations',
-      'app.croppers',
-      'app.datepickers',
+      'app.shops',
+      'app.wallet',
+      'app.orders',
+      'app.goods',
+      'app.settings',
+      'app.user',
+      'app.passwordForget',
+      'app.appVersion',
+      'app.agents',
+      'app.funds',
     ]);
 
 }());

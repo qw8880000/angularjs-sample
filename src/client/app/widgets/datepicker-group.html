@@ -1,0 +1,46 @@
+<div class="datepicker-group">
+  <span class="datepicker-group__title">{{vm.title}}</span>
+
+  <div class="form">
+    <input type="text"
+           class="form__control main-search__input"
+           name="dateStart" id="dateStart"
+           uib-datepicker-popup="yyyy-MM-dd"
+           ng-model="vm.dateStart"
+           is-open="vm.popup.dateStart"
+           close-text="关闭"
+           clear-text="清除"
+           current-text="今天"
+           datepicker-popup-template-url="app/layout/datepicker-popup/popup.html"
+           datepicker-template-url="app/layout/datepicker/datepicker.html">
+    <span class="form__postpend" ng-click="vm.openPopupDateStart()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+  </div>
+
+  <span class="datepicker-group__divider">-</span>
+
+  <div class="form mr-2">
+    <input type="text"
+           class="form__control main-search__input"
+           name="dateEnd" id="dateEnd"
+           uib-datepicker-popup="yyyy-MM-dd"
+           ng-model="vm.dateEnd"
+           is-open="vm.popup.dateEnd"
+           close-text="关闭"
+           clear-text="清除"
+           current-text="今天"
+           datepicker-popup-template-url="app/layout/datepicker-popup/popup.html"
+           datepicker-template-url="app/layout/datepicker/datepicker.html">
+    <span class="form__postpend" ng-click="vm.openPopupDateEnd()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+  </div>
+
+  <div class="form" ng-if="vm.showInterval">
+    <label class="form__label" for="dateInterval"></label>
+    <select class="form__control main-search__input"
+            ng-model="vm.dateInterval"
+            ng-change="vm.change()"
+            ng-options="item as item.name for item in vm.dateIntervals"
+            id="dateInterval" name="dateInterval">
+      <option value="" selected>--请选择--</option>
+    </select>
+  </div>
+</div>

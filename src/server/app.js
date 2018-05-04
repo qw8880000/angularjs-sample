@@ -3,6 +3,7 @@
 
 var express = require('express'), 
   app = express(),
+  proxy = require('express-http-proxy'),
   path = require('path'),
   favicon = require('serve-favicon'),
   logger = require('morgan'),
@@ -16,6 +17,15 @@ if (env === 'development') {
     port: 35729
   }));
 }
+
+// proxy
+app.use('/api', proxy('192.168.161.222:9100', {
+  proxyReqPathResolver: function(req) {
+    var proxyPath = '/api' + req.url;
+    console.log('proxy to:' + '192.168.161.222:9100' + proxyPath);
+    return proxyPath;
+  }
+}));
 
 app.set('port', process.env.PORT || 3002);
 app.set('bind-address', process.env.BIND_ADDRESS || 'localhost');

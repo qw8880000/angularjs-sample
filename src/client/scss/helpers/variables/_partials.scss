@@ -7,26 +7,42 @@ $body-font-color:       $gray-900;
 //
 // header
 //
-$header-height:         60px;
-$header-bg-color:       $white;
-
-//
-// sidebar
-//
-$sidebar-width:         220px;
-$sidebar-bg-color:      $big-stone;
+$header-height:         70px;
+$header-bg-color:       $persian-green;
+$header-author-width:   160px;
 
 //
 // Main
 //
-$main-bg-color:         $gray-200;
+$main-bg-color:         $white;
+$main-good-pic-width: 80px;
+
+$main-list-item-left-width: 10rem;
+$main-list-item-middle-width: 20rem;
+$main-list-item-margin: $margin-base;
+
+//
+// sidebar
+//
+$sidebar-width:         200px;
+$sidebar-bg-color:      $mirage;
 
 //
 // Nav
 //
 $nav-font-color:        $gray-300;
-$nav-item-color:        lighten($big-stone, 8%);
-$nav-item-active-color: darken($big-stone, 8%);
+$nav-item-color:        lighten($sidebar-bg-color, 8%);
+$nav-item-active-color: darken($sidebar-bg-color, 8%);
 $nav-item-hover-color:  $cyan;
 $nav-vline-color:       $teal;
+
+$nav-link-padding-x:  1.4rem;
+$nav-link-padding-y:  .8rem;
+
+//
+// loading bar
+//
+$loading-bar-color: $indigo;
+$loading-bar-height: 3px;
+$loading-bar-spinner-icon-width:  2rem;
 

@@ -1,0 +1,41 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">app配置</li>
+      <li class="breadcrumb__item breadcrumb__item--active">首页商品分类</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <!--horizontal navigation-->
+    <div class="main-section">
+      <nav-tabs nav-items="vm.communities"
+                nav-item-name-by="name"
+                order-by="id"
+                ng-model="vm.currentCommunity"
+                ng-change="vm.navChanged()">
+      </nav-tabs>
+    </div>
+
+    <div class="mb-5">
+      <div class="alert alert--cyan">温馨提示：点击图片进行编辑</div>
+    </div>
+
+    <ul class="category-list main-section">
+      <li class="category-list__item">
+        <div class="category-icon badge-pill" ng-click="vm.addCategory()">
+          <img class="category-icon__img" src="img/category_add_icon.png"/>
+        </div>
+      </li>
+      <li class="category-list__item" ng-repeat="category in vm.categoriesShowed | orderBy: '+sort'">
+        <div class="category-icon badge-pill" ng-click="vm.editCategory(category)">
+          <img class="category-icon__img" ng-src="{{category.goodsClass.icon}}"/>
+          <span class="category-icon__delete" ng-click="vm.deleteCategory(category, $event)"><i class="fa fa-close"></i></span>
+        </div>
+        <span>{{category.goodsClass.name}}</span>
+      </li>
+    </ul>
+
+  </div>
+
+</div>

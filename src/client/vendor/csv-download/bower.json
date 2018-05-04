@@ -1,0 +1,34 @@
+{
+  "name": "csv-download",
+  "version": "1.0.1",
+  "homepage": "https://github.com/pcimino/csv-download",
+  "authors": [
+    "Paul L. Cimino <p.cimino@translunardesigns.com>"
+  ],
+  "description": "Angular directive to generate CSV Downloads from JSON",
+  "main": "csv-download.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "Angular",
+    "CSV",
+    "JSON",
+    "directive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".idea",
+    "src",
+    "gulpfile.js",
+    "gulp",
+    "demo",
+    "node-server.js",
+    "package.json"
+  ]
+}

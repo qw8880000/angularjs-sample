@@ -1,0 +1,31 @@
+.img-cropper {
+  display: inline-block;
+}
+
+.img-cropper-inner {
+  display: block;
+  margin-bottom: $margin-base;
+}
+
+.img-cropper__image-container {
+  display: block;
+  min-width: 200px;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.img-cropper__image {
+  max-width: 100%;
+}
+
+.img-cropper__preview-container {
+  display: block;
+  width: 300px;
+  margin-top: $margin-base;
+  overflow: hidden;
+}
+
+.img-cropper__preview {
+  width: 100%;
+  height: 100%;
+}

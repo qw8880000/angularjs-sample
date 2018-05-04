@@ -5,29 +5,15 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  @if $enable-shadows {
-    @include box-shadow-br($black);
-  }
 
   th {
     text-align: left;
     vertical-align: center;
-    background-color: $orange;
   }
 
   td {
     text-align: left;
     vertical-align: center;
-  }
-
-  tr {
-    &:nth-child(even) {
-      background-color: $gray-300;
-    }
-
-    &:nth-child(odd) {
-      background-color: $white;
-    }
   }
 }
 

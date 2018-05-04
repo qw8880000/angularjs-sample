@@ -1,0 +1,112 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">订单</li>
+      <li class="breadcrumb__item">订单管理</li>
+      <li class="breadcrumb__item breadcrumb__item--active">查看订单 {{vm.id}}</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <div class="main-section">
+      <div class="main-subheader">
+        <span class="main-subheader__title">订单状态</span>
+      </div>
+      <div class="main-list__item-middle main-list--offset">
+        <p ng-if="vm.order.orderState.id==10">商品已拍下，等待买家付款</p>
+        <p ng-if="vm.order.orderState.id==20">买家已付款，等待卖家发货</p>
+        <p ng-if="vm.order.orderState.id==30">商家已发货，等待买家确认</p>
+        <p ng-if="vm.order.orderState.id==40">交易已完成</p>
+        <p ng-if="vm.order.orderState.id==0">交易已取消</p>
+      </div>
+    </div>
+
+    <div class="main-section">
+      <div class="main-subheader">
+        <span class="main-subheader__title">订单信息</span>
+      </div>
+      <ul class="main-list">
+        <li class="main-list__item">
+          <span class="main-list__item-left">订单编号：</span>
+          <span class="main-list__item-middle">{{vm.order.orderSn}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">买家姓名：</span>
+          <span class="main-list__item-middle">{{vm.order.address.trueName}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">下单时间：</span>
+          <span class="main-list__item-middle">{{vm.order.addTime | date:"yyyy-MM-dd HH:mm":"GMT+08:00"}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">联系电话：</span>
+          <span class="main-list__item-middle">{{vm.order.address.mobPhone}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">配送方式：</span>
+          <span class="main-list__item-middle">{{vm.order.deliveryMethods.name}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">收货地址：</span>
+          <span class="main-list__item-middle">{{vm.order.address.address}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">订单金额：</span>
+          <span class="main-list__item-middle">{{vm.order.orderAmount | currency:'￥'}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">分润费率：</span>
+          <span class="main-list__item-middle">{{vm.order.profitSharingRate}} %</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table orders-table">
+        <thead>
+        <tr>
+          <th>商品名称</th>
+          <th>数量</th>
+          <th>价格(元)</th>
+          <th>订单金额</th>
+          <th>交易状态</th>
+          <th>配送方式</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td colspan="6" class="orders-info">
+            订单编号：{{vm.order.orderSn}}
+            下单时间：{{vm.order.addTime | date: "yyyy-MM-dd HH:mm":"GMT+08:00"}}
+          </td>
+        </tr>
+
+        <tr ng-repeat="good in vm.order.orderGoodses">
+          <!--商品信息-->
+          <td class="main-good">
+            <a href="" class="main-good__pic" ng-click="vm.viewGood(good)"><img ng-src="{{good.goods.goodsCover}}"/></a>
+            <span class="main-good__info">
+                <a href="" class="link" ng-click="vm.viewGood(good)">{{good.goods.goodsName}}</a>
+                <span class="d-block">平台货号：{{good.goods.platformSerial}}</span>
+                <span class="d-block">{{good.goods.store.storeName}}</span>
+              </span>
+          </td>
+          <td>{{good.number}}</td>
+          <td>{{good.goods.goodsPrice | currency:'￥'}}</td>
+          <!--订单信息-->
+          <td ng-if="$first">
+            <span class="d-block">{{vm.order.orderAmount | currency:'￥'}}</span>
+          </td>
+          <td ng-if="$first">
+            <span class="d-block">{{vm.order.orderState.name}}</span>
+          </td>
+          <td ng-if="$first">{{vm.order.deliveryMethods.name}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>

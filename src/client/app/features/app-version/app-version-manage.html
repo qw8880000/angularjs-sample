@@ -1,0 +1,77 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">app版本配置</li>
+    </ol>
+
+    <div class="main-header__right">
+      <button class="btn btn-outline--primary badge-pill" ng-click="vm.add()">新增app版本</button>
+    </div>
+  </div>
+
+  <div class="main-body">
+
+    <!-- search -->
+    <ul class="main-search main-section">
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label">手机系统：</label>
+          <div class="main-search__input">
+            <app-platforms-select ng-model="vm.search.platform"></app-platforms-select>
+          </div>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label">应用类型：</label>
+          <div class="main-search__input">
+            <app-types-select ng-model="vm.search.appType"></app-types-select>
+          </div>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <span class="btn btn-outline--primary" ng-click="vm.searchAction()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+      </li>
+    </ul>
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table">
+        <tr>
+          <th>手机系统</th>
+          <th>应用名称</th>
+          <th>版本名称</th>
+          <th>版本号</th>
+          <th>强制升级</th>
+          <th>最近更新时间</th>
+          <th>操作</th>
+        </tr>
+        <tr ng-repeat="appVersion in vm.appVersions">
+          <td>{{appVersion.platform.name}}</td>
+          <td>{{appVersion.app.name}}</td>
+          <td>{{appVersion.versionName}}</td>
+          <td>{{appVersion.versionCode}}</td>
+          <td>{{vm.isForceUpdate(appVersion.forceUpdate)}}</td>
+          <td>{{appVersion.updateTime | date:'yyyy-MM-dd HH:mm':'GMT+08:00'}}</td>
+          <td>
+            <a href class="main-action__open" ng-click="vm.view(appVersion)">查看</a>
+            <a href class="main-action__edit" ng-click="vm.edit(appVersion)">编辑</a>
+            <a href class="main-action__delete" ng-click="vm.del(appVersion)">删除</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- pagination -->
+    <pagination class="main-section"
+                items-per-page="vm.itemsPerPage"
+                total-items="vm.totalItems"
+                ng-model="vm.currentPage"
+                ng-change="vm.refresh()">
+    </pagination>
+
+  </div>
+
+</div>

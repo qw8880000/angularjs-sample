@@ -2,12 +2,13 @@
 <html ng-app="app">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>angular.js sample</title>
+<title>运营商管理后台</title>
 
 <link rel="stylesheet" href="icons/font-awesome/css/font-awesome.min.css" type="text/css">
 
 <!-- build:css css/styles.min.css -->
 <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" type="text/css"/>
+  <link rel="stylesheet" href="bower_components/angular-loading-bar/src/loading-bar.css" type="text/css"/>
 <link rel="stylesheet" href="vendor/cropper/dist/cropper.css" type="text/css"/>
 <link rel="stylesheet" href="css/app.css" type="text/css">
 <!-- endbuild -->
@@ -30,12 +31,16 @@
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
 <!-- endbower -->
 
 <!-- vendor -->
 <script src="vendor/ui-bootstrap/ui-bootstrap-2.5.0.js"></script>
 <script src="vendor/cropper/dist/cropper.js"></script>
 <script src="vendor/angular-swx-session-storage/session-storage.service.js"></script>
+<script src="vendor/ng-locale/angular-locale_zh-cn.js"></script>
+<script src="vendor/qiniu/dist/qiniu.min.js"></script>
 <!-- endvendor -->
 
 <!-- endbuild -->
@@ -49,59 +54,89 @@
 <script src="app/blocks/cc-widget/accordion/ccw-accordion.directive.js" type="text/javascript"></script>
 <script src="app/blocks/cc-widget/modal/ccw-modal.module.js" type="text/javascript"></script>
 <script src="app/blocks/cc-widget/modal/ccw-modal.service.js" type="text/javascript"></script>
-<script src="app/blocks/cc-widget/modal/ccw-modal-content.directive.js" type="text/javascript"></script>
 <script src="app/blocks/cc-widget/modal/modal-stack.service.js" type="text/javascript"></script>
 <script src="app/blocks/cc-widget/modal/stack-map.service.js" type="text/javascript"></script>
+<script src="app/blocks/cc-widget/file-input/ccw-file-input.module.js" type="text/javascript"></script>
+<script src="app/blocks/cc-widget/file-input/ccw-file-input.directive.js" type="text/javascript"></script>
 <script src="app/blocks/logger/logger.module.js" type="text/javascript"></script>
 <script src="app/blocks/logger/logger.service.js" type="text/javascript"></script>
 
 <script src="app/core/core.module.js" type="text/javascript"></script>
-<script src="app/core/authentication.service.js" type="text/javascript"></script>
-<script src="app/core/checkmask.filter.js" type="text/javascript"></script>
 <script src="app/core/core.run.js" type="text/javascript"></script>
+<script src="app/core/core.constant.js" type="text/javascript"></script>
+<script src="app/core/authentication.service.js" type="text/javascript"></script>
+<script src="app/core/appinfo.service.js" type="text/javascript"></script>
+<script src="app/core/account.service.js" type="text/javascript"></script>
 <script src="app/core/data.service.js" type="text/javascript"></script>
-<script src="app/core/route.config.js" type="text/javascript"></script>
-<script src="app/core/route.service.js" type="text/javascript"></script>
-<script src="app/core/toastr.config.js" type="text/javascript"></script>
+<script src="app/core/dictionary.service.js" type="text/javascript"></script>
 <script src="app/core/http.config.js" type="text/javascript"></script>
 <script src="app/core/http-interceptor.service.js" type="text/javascript"></script>
-<script src="app/core/http-interceptor.service.js" type="text/javascript"></script>
+<script src="app/core/http-exception.service.js" type="text/javascript"></script>
+<script src="app/core/route.config.js" type="text/javascript"></script>
+<script src="app/core/route.service.js" type="text/javascript"></script>
+<script src="app/core/loading-bar.config.js" type="text/javascript"></script>
+
+<script src="app/utils/utils.module.js" type="text/javascript"></script>
+<script src="app/utils/md5.service.js" type="text/javascript"></script>
+<script src="app/utils/datetime.service.js" type="text/javascript"></script>
+<script src="app/utils/qiniu.service.js" type="text/javascript"></script>
+<script src="app/utils/img-upload.service.js" type="text/javascript"></script>
 
 <script src="app/widgets/widgets.module.js" type="text/javascript"></script>
+<script src="app/widgets/dialog.service.js" type="text/javascript"></script>
 <script src="app/widgets/nav-menu.component.js" type="text/javascript"></script>
+<script src="app/widgets/datepicker-group.component.js" type="text/javascript"></script>
+<script src="app/widgets/pagination.component.js" type="text/javascript"></script>
+<script src="app/widgets/nav-tabs.component.js" type="text/javascript"></script>
+<script src="app/widgets/img-cropper.component.js" type="text/javascript"></script>
+<script src="app/widgets/modals/ads-edit-modal.service.js" type="text/javascript"></script>
+<script src="app/widgets/modals/goods-category-modal.service.js" type="text/javascript"></script>
+<script src="app/widgets/modals/goods-select-modal.service.js" type="text/javascript"></script>
+<script src="app/widgets/modals/img-cropper-modal.service.js" type="text/javascript"></script>
+<script src="app/widgets/modals/community-select-modal.service.js" type="text/javascript"></script>
+<script src="app/widgets/selects/goods-categories-select.component.js" type="text/javascript"></script>
+<script src="app/widgets/selects/app-platforms-select.component.js" type="text/javascript"></script>
+<script src="app/widgets/selects/app-types-select.component.js" type="text/javascript"></script>
 
-<script src="app/features/animations/animations.module.js" type="text/javascript"></script>
-<script src="app/features/animations/animations.controller.js" type="text/javascript"></script>
-<script src="app/features/breadcrumbs/breadcrumbs.module.js" type="text/javascript"></script>
-<script src="app/features/breadcrumbs/breadcrumbs.controller.js" type="text/javascript"></script>
-<script src="app/features/buttons/buttons.module.js" type="text/javascript"></script>
-<script src="app/features/buttons/buttons.controller.js" type="text/javascript"></script>
-<script src="app/features/cards/cards.module.js" type="text/javascript"></script>
-<script src="app/features/cards/cards.controller.js" type="text/javascript"></script>
-<script src="app/features/custom-filters/custom-filters.module.js" type="text/javascript"></script>
-<script src="app/features/custom-filters/custom-filters.controller.js" type="text/javascript"></script>
-<script src="app/features/dashboard/dashboard.module.js" type="text/javascript"></script>
-<script src="app/features/dashboard/dashboard.controller.js" type="text/javascript"></script>
-<script src="app/features/forms/forms.module.js" type="text/javascript"></script>
-<script src="app/features/forms/forms.controller.js" type="text/javascript"></script>
-<script src="app/features/home/home.module.js" type="text/javascript"></script>
-<script src="app/features/home/home.controller.js" type="text/javascript"></script>
 <script src="app/features/login/login.module.js" type="text/javascript"></script>
 <script src="app/features/login/login.controller.js" type="text/javascript"></script>
-<script src="app/features/repeaters/repeaters.module.js" type="text/javascript"></script>
-<script src="app/features/repeaters/repeaters.controller.js" type="text/javascript"></script>
-<script src="app/features/toastrs/toastrs.module.js" type="text/javascript"></script>
-<script src="app/features/toastrs/toastrs.controller.js" type="text/javascript"></script>
-<script src="app/features/modals/modals.module.js" type="text/javascript"></script>
-<script src="app/features/modals/modals.controller.js" type="text/javascript"></script>
-<script src="app/features/modals/modal.controller.js" type="text/javascript"></script>
-<script src="app/features/tables/tables.module.js" type="text/javascript"></script>
-<script src="app/features/paginations/paginations.module.js" type="text/javascript"></script>
-<script src="app/features/paginations/paginations.controller.js" type="text/javascript"></script>
-<script src="app/features/croppers/croppers.module.js" type="text/javascript"></script>
-<script src="app/features/croppers/croppers.controller.js" type="text/javascript"></script>
-<script src="app/features/datepickers/datepickers.module.js" type="text/javascript"></script>
-<script src="app/features/datepickers/datepickers.controller.js" type="text/javascript"></script>
+<script src="app/features/home/home.module.js" type="text/javascript"></script>
+<script src="app/features/home/home.controller.js" type="text/javascript"></script>
+<script src="app/features/dashboard/dashboard.module.js" type="text/javascript"></script>
+<script src="app/features/dashboard/dashboard.controller.js" type="text/javascript"></script>
+<script src="app/features/shops/shops.module.js" type="text/javascript"></script>
+<script src="app/features/shops/shops-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/shops/shops-edit.controller.js" type="text/javascript"></script>
+<script src="app/features/wallet/wallet.module.js" type="text/javascript"></script>
+<script src="app/features/wallet/wallet-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/wallet/wallet-view.controller.js" type="text/javascript"></script>
+<script src="app/features/orders/orders.module.js" type="text/javascript"></script>
+<script src="app/features/orders/orders-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/orders/orders-view.controller.js" type="text/javascript"></script>
+<script src="app/features/goods/goods.module.js" type="text/javascript"></script>
+<script src="app/features/goods/goods-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/goods/goods-view.controller.js" type="text/javascript"></script>
+<script src="app/features/goods/goods-recommend.controller.js" type="text/javascript"></script>
+<script src="app/features/goods/goods-visibility.controller.js" type="text/javascript"></script>
+<script src="app/features/settings/settings.module.js" type="text/javascript"></script>
+<script src="app/features/settings/ads-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/settings/goods-category-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/user/user.module.js" type="text/javascript"></script>
+<script src="app/features/user/user-edit.controller.js" type="text/javascript"></script>
+<script src="app/features/user/password-edit.controller.js" type="text/javascript"></script>
+<script src="app/features/password-forget/password-forget.module.js" type="text/javascript"></script><script src="app/features/user/password-edit.controller.js" type="text/javascript"></script>
+<script src="app/features/password-forget/password-forget.controller.js" type="text/javascript"></script>
+<script src="app/features/app-version/app-version.module.js" type="text/javascript"></script>
+<script src="app/features/app-version/app-version-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/app-version/app-version-edit.controller.js" type="text/javascript"></script>
+<script src="app/features/app-version/app-version-view.controller.js" type="text/javascript"></script>
+<script src="app/features/agents/agents.module.js" type="text/javascript"></script>
+<script src="app/features/agents/agents-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/agents/agents-edit.controller.js" type="text/javascript"></script>
+<script src="app/features/funds/funds.module.js" type="text/javascript"></script>
+<script src="app/features/funds/refunds-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/funds/funds-manage.controller.js" type="text/javascript"></script>
+<script src="app/features/funds/drawings-manage.controller.js" type="text/javascript"></script>
 <!-- endbuild -->
 
 </html>

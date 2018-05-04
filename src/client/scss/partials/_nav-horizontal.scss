@@ -1,0 +1,35 @@
+//
+// navigation horizontal
+//
+.nav-h {
+  display: inline-block;
+  border-bottom: $border-width solid $border-color;
+  padding: $padding-sm 0;
+}
+
+.nav-h__item {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: $padding-base;
+  padding-right: $padding-base;
+
+  &:not(:last-child)::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: $padding-base;
+    content: "|";
+  }
+}
+
+.nav-h__content {
+  padding-left: $padding-base;
+  padding-right: $padding-base;
+}
+
+.nav-h__content--active {
+  color: color-yiq(theme-color('secondary'));
+  background-color: theme-color('secondary');
+  border-radius: $badge-pill-border-radius;
+}

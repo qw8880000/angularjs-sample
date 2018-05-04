@@ -1,0 +1,13 @@
+<ul class="pagination main-section"
+    uib-pagination
+    template-url="app/layout/pagination/pagination.html"
+    items-per-page="vm.itemsPerPage"
+    total-items="vm.totalItems"
+    max-size="5"
+    ng-model="vm.currentPage"
+    ng-change="vm.selectPage(vm.currentPage)"
+    boundary-link-numbers="true"
+    force-ellipses="true"
+    previous-text="上一页"
+    next-text="下一页">
+</ul>

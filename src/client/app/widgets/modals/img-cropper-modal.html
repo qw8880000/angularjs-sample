@@ -1,0 +1,20 @@
+<div class="modal-dialog main-modal-dialog">
+  <div class="modal main-modal">
+    <div class="modal__header main-modal__header">
+      <h3 class="modal__title main-modal__title" id="modal-title">编辑</h3>
+    </div>
+    <div class="modal__body" id="modal-body">
+
+      <img-cropper ng-model="vm.croppedResult" show-preview="false" aspect-ratio="vm.aspectRatio"></img-cropper>
+
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--secondary" type="button" ng-click="vm.ok()">确定</button>
+      <button class="btn btn--warning" type="button" ng-click="vm.cancel()">取消</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" ng-click="vm.close()">
+</div>
+

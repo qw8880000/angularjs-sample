@@ -24,19 +24,27 @@
 // datepicker popup
 //
 .datepicker-popup {
+  background-color: $white;
 }
 
 .datepicker-popup__button-bar {
   display: flex;
+  padding: 0 4px;
 }
 
 .datepicker-popup__current {
+  font-size: $font-size-sm;
+  padding: $font-size-sm/4 $font-size-sm;
 }
 
 .datepicker-popup__clear {
+  font-size: $font-size-sm;
+  padding: $font-size-sm/4 $font-size-sm;
 }
 
 .datepicker-popup__close {
+  font-size: $font-size-sm;
+  padding: $font-size-sm/4 $font-size-sm;
   margin-left: auto;
 }
 

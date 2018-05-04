@@ -1,0 +1,62 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">用户信息编辑</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <form name="userForm" novalidate>
+      <ul class="main-list main-section">
+        <li class="main-list__item">
+          <span class="main-list__item-left">头像：</span>
+          <div class="main-list__item-middle main-list__item-middle--space-between">
+            <img class="user-avatar d-block mb-2" ng-src="{{vm.user.headUrl}}">
+            <button class="btn btn-outline--primary" type="button" ng-click="vm.userAvatarSelect()">选择图片</button>
+          </div>
+
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">性别：</span>
+          <div class="main-list__item-middle">
+            <input type="radio" name="gender" id="genderFemale" ng-value="0" ng-model="vm.user.gender">
+            <label for="genderFemale" class="mr-3">女性</label>
+            <input type="radio" name="gender" id="genderMan" ng-value="1" ng-model="vm.user.gender">
+            <label for="genderMan">男性</label>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left"><span class="text-red">*</span>昵称：</span>
+          <input class="form-input main-list__item-middle"
+                 type="text"
+                 name="userName"
+                 ng-model="vm.user.nick"
+                 placeholder="请输入昵称"
+                 required>
+          <div ng-show="userForm.$submitted || userForm.userName.$touched" class="main-list__error">
+            <span ng-show="userForm.userName.$error.required">不能为空</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">E-mail：</span>
+          <input class="form-input main-list__item-middle"
+                 type="text"
+                 ng-model="vm.user.email"
+                 placeholder="请输入邮箱">
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">手机号：</span>
+          <input class="form-input main-list__item-middle"
+                 type="text"
+                 ng-model="vm.user.phone"
+                 disabled>
+        </li>
+        <li class="main-list__item">
+          <div class="main-list__item-middle main-list--offset">
+            <button class="btn btn--secondary col-12" type="submit" ng-click="vm.setUserInfo(userForm)">保存</button>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>

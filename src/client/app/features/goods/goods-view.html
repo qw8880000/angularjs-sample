@@ -1,0 +1,103 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">商品</li>
+      <li class="breadcrumb__item">商品管理</li>
+      <li class="breadcrumb__item breadcrumb__item--active">查看商品 {{vm.id}}</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <div class="main-section">
+      <div class="main-subheader">
+        <span class="main-subheader__title">审核信息</span>
+      </div>
+      <ul class="main-list">
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品状态：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsState.name}}</span>
+        </li>
+        <li class="main-list__item" ng-if="vm.good.goodsState.id == vm.GOODSSTATE.REJECTED">
+          <span class="main-list__item-left">原因：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsVerifyRemark}}</span>
+        </li>
+        <li class="main-list__item" ng-if="vm.good.goodsState.id == vm.GOODSSTATE.FORBIDDEN">
+          <span class="main-list__item-left">备注：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsStateRemark}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-section">
+      <div class="main-subheader">
+        <span class="main-subheader__title">商品基本信息</span>
+      </div>
+      <ul class="main-list">
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品名称：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsName}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品简介：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsSlogan}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品类别：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsClass.name}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品价格：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsPrice | currency:'￥'}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品指导价格：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsManuPrice | currency:'￥'}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品库存：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsStorage}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">配送方式：</span>
+          <span class="main-list__item-middle mr-3" ng-repeat="delivery in vm.good.deliveryTypes track by $index">{{delivery.name}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">最近更新时间：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsEditTime | date:"yyyy-MM-dd HH:mm":"GMT+08:00"}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商家货号：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsSerial}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">平台货号：</span>
+          <span class="main-list__item-middle">{{vm.good.platformSerial}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商家名称：</span>
+          <span class="main-list__item-middle">{{vm.good.store.storeName}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品创建时间：</span>
+          <span class="main-list__item-middle">{{vm.good.goodsAddTime | date:"yyyy-MM-dd HH:mm":"GMT+08:00"}}</span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品封面：</span>
+          <span class="main-list__item-middle"><img class="main-good-pic" ng-src="{{vm.good.goodsCover}}"/></span>
+        </li>
+        <li class="main-list__item">
+          <span class="main-list__item-left">商品图片：</span>
+          <span class="main-list__item-middle" ng-repeat="image in vm.good.goodsImages"><img class="main-good-pic" ng-src="{{image}}"/></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-section">
+      <div class="main-subheader">
+        <span class="main-subheader__title">商品详情</span>
+      </div>
+      <span ng-bind-html="vm.goodDescription"></span>
+    </div>
+
+  </div>
+</div>

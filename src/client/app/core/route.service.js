@@ -8,16 +8,18 @@
   /* @ngInject */
   function routeService($transitions,
     $log,
+    $state,
     authenticationService) {
 
     var service = {
-      onRouteSwitch: onRouteSwitch,
+      init: init,
+      logout: logout,
     };
     return service;
 
     ////////////////
 
-    function onRouteSwitch() {
+    function init() {
       // 监听路由切换,进行访问权限鉴定
       $transitions.onBefore({}, function (transition) {
         var stateService = transition.router.stateService;
@@ -31,6 +33,11 @@
         }
 
       });
+    }
+
+    function logout(isTokenExpired) {
+      $state.go('login', {isTokenExpired: !!isTokenExpired});
+      authenticationService.logout();
     }
   }
 }());

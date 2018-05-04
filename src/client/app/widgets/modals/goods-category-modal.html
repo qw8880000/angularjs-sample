@@ -1,0 +1,44 @@
+<div class="modal-dialog main-modal-dialog">
+  <div class="modal main-modal">
+    <div class="modal__header main-modal__header">
+      <h3 class="modal__title main-modal__title" id="modal-title">编辑</h3>
+    </div>
+    <div class="modal__body" id="modal-body">
+
+      <div class="gcsd">
+
+        <div class="gcsd-left">
+          <div class="category-icon badge-pill">
+            <img class="category-icon__img" ng-src="{{vm.currentCategory.icon}}"/>
+          </div>
+          <div class="form">
+            <label class="form__label" for="index">排序：</label>
+            <input class="form__control gcsd-input"
+                   ng-model="vm.sort"
+                   type="number" name="index" id="index"/>
+          </div>
+        </div>
+
+        <div class="gcsd-right" ng-if="vm.type === 'add'">
+          <ul class="gcsd-category-list">
+            <li ng-repeat="category in vm.categories"
+                ng-click="vm.select(category)"
+                ng-class="vm.currentCategory.id === category.id ? 'gcsd-category-list__item--active' : ''"
+                class="gcsd-category-list__item">
+              <span>{{category.name}}</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--secondary" type="button" ng-click="vm.ok()">确定</button>
+      <button class="btn btn--warning" type="button" ng-click="vm.cancel()">取消</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" ng-click="vm.close()">
+</div>

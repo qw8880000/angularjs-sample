@@ -1,0 +1,125 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">商品</li>
+      <li class="breadcrumb__item breadcrumb__item--active">商品管理</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+
+    <!--horizontal navigation-->
+    <div class="main-section">
+      <nav-tabs nav-items="vm.goodsStates"
+                nav-item-name-by="name"
+                order-by="priority"
+                ng-model="vm.search.goodsState"
+                ng-change="vm.searchAction()">
+      </nav-tabs>
+    </div>
+
+    <!-- search -->
+    <ul class="main-search main-section">
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="platformSerial">平台货号：</label>
+          <input class="form__control main-search__input"
+                 ng-model="vm.search.platformSerial"
+                 placeholder="请输入平台货号"
+                 type="text" name="platformSerial" id="platformSerial"/>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="goodsName">商品名称：</label>
+          <input class="form__control main-search__input"
+                 ng-model="vm.search.goodsName"
+                 placeholder="请输入商品名称"
+                 type="text" name="goodsName" id="goodsName"/>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label" for="storeName">商家名称：</label>
+          <input class="form__control main-search__input"
+                 ng-model="vm.search.storeName"
+                 placeholder="请输入商家名称"
+                 type="text" name="storeName" id="storeName"/>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <div class="form">
+          <label class="form__label">商品分类：</label>
+          <div class="main-search__input">
+            <goods-categories-select ng-model="vm.search.goodsCategory"></goods-categories-select>
+          </div>
+        </div>
+      </li>
+      <li class="main-search__item">
+        <span class="btn btn-outline--primary" ng-click="vm.searchAction()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+      </li>
+<!--      <li class="main-search__item" ng-if="vm.search.goodsState == vm.GOODSSTATE.CHECKING">
+        <button class="btn btn-outline&#45;&#45;primary">批量审核</button>
+      </li>-->
+    </ul>
+
+    <!-- data table -->
+    <div class="main-section">
+      <table class="table main-table">
+        <tr>
+          <th>商品名称</th>
+          <th>商家</th>
+          <th>分类</th>
+          <th>价格</th>
+          <th>库存(件)</th>
+          <th>商品状态</th>
+          <th>操作</th>
+        </tr>
+        <tr ng-repeat="good in vm.goods">
+          <td>
+            <div class="main-good">
+              <a href="" class="main-good__pic" ng-click="vm.viewGood(good)"><img ng-src="{{good.goodsCover}}"/></a>
+              <span class="main-good__info">
+                <a href="" class="link" ng-click="vm.viewGood(good)">{{good.goodsName}}</a>
+                <span class="d-block">平台货号：{{good.platformSerial}}</span>
+              </span>
+            </div>
+          </td>
+          <td>{{good.store.storeName}}</td>
+          <td>{{vm.getCategoryInfo(good)}}</td>
+          <td>{{good.goodsPrice | currency:'￥'}}</td>
+          <td>{{good.goodsStorage}}</td>
+          <td>{{good.goodsState.name}}</td>
+          <td>
+            <span ng-if="good.goodsState.id == vm.GOODSSTATE.CHECKING">
+              <a href class="main-action__edit" ng-click="vm.goodCheckingPass(good)">通过</a>
+              <a href class="main-action__delete" ng-click="vm.goodCheckingReject(good)">不通过</a>
+            </span>
+            <span ng-if="good.goodsState.id == vm.GOODSSTATE.SELLING">
+              <a href class="main-action__edit" ng-click="vm.goodPullOff(good)">下架</a>
+              <a href class="main-action__delete" ng-click="vm.goodForbid(good)">禁售</a>
+            </span>
+            <span ng-if="good.goodsState.id == vm.GOODSSTATE.PULLEDOFF">
+              <a href class="main-action__edit" ng-click="vm.goodPullOn(good)">上架</a>
+            </span>
+            <span ng-if="good.goodsState.id == vm.GOODSSTATE.REJECTED"> -- </span>
+            <span ng-if="good.goodsState.id == vm.GOODSSTATE.FORBIDDEN"> -- </span>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- pagination -->
+    <pagination class="main-section"
+                items-per-page="vm.itemsPerPage"
+                total-items="vm.totalItems"
+                ng-model="vm.currentPage"
+                ng-change="vm.refresh()">
+    </pagination>
+
+  </div>
+
+</div>

@@ -1,0 +1,7 @@
+<select class="form-input"
+        ng-model="vm.appType"
+        ng-options="item as item.name for item in vm.appTypes"
+        ng-disabled="!!vm.disabled"
+        ng-required="vm.required" name="{{vm.name}}">
+  <option value="" selected>--请选择--</option>
+</select>

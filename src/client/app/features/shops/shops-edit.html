@@ -1,0 +1,388 @@
+<div class="main-inner">
+  <div class="main-header">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">商家</li>
+      <li class="breadcrumb__item">商家管理</li>
+      <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">编辑 {{::vm.shop.storeName}}</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <!--horizontal navigation-->
+    <div class="main-section">
+      <nav-tabs nav-items="vm.tabs"
+                nav-item-name-by="name"
+                ng-model="vm.currentTab">
+      </nav-tabs>
+    </div>
+
+    <!--基础信息-->
+    <div ng-if="vm.currentTab.id === 1">
+      <form name="shopForm" novalidate>
+        <!-- 商家及联系人信息 -->
+        <div class="main-subheader">
+          <span class="main-subheader__title">商家及联系人信息</span>
+        </div>
+        <ul class="main-list">
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="shopName"><span class="text-red">*</span>商家名称：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="shopName" id="shopName"
+                   ng-model="vm.shop.storeName"
+                   placeholder="请输入商家名称"
+                   required>
+            <div ng-show="shopForm.$submitted || shopForm.shopName.$touched" class="main-list__error">
+              <span ng-show="shopForm.shopName.$error.required">不能为空</span>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="shopOwner"><span class="text-red">*</span>店主名称：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="shopOwner" id="shopOwner"
+                   ng-model="vm.shop.seller.name"
+                   placeholder="请输入店主名称"
+                   required>
+            <div ng-show="shopForm.$submitted || shopForm.shopOwner.$touched" class="main-list__error">
+              <span ng-show="shopForm.shopOwner.$error.required">不能为空</span>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="shopOwnerPhone"><span class="text-red">*</span>店主手机号：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="shopOwnerPhone" id="shopOwnerPhone"
+                   ng-model="vm.shop.seller.userBase.phone"
+                   disabled>
+          </li>
+          <li class="main-list__item">
+            <span class="main-list__item-left">开店时间：</span>
+            <span class="main-list__item-middle">{{vm.shop.storeTime | date:'yyyy-MM-dd HH:mm':'GMT+08:00'}}</span>
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="profitSharingRate">分润费率：</label>
+            <input class="form-input main-list__item-middle"
+                   type="number"
+                   name="profitSharingRate" id="profitSharingRate"
+                   placeholder="取值范围 0-100"
+                   ng-max='100' ng-min='0.00' ng-step='0.01'
+                   ng-model="vm.shop.profitSharingRate">
+            <strong>%</strong>
+            <div ng-show="shopForm.$submitted || shopForm.profitSharingRate.$touched" class="main-list__error">
+              <span ng-show="shopForm.profitSharingRate.$error.max">0-100</span>
+              <span ng-show="shopForm.profitSharingRate.$error.min">0-100</span>
+              <span ng-show="shopForm.profitSharingRate.$error.number">必须为数字</span>
+              <span ng-show="shopForm.profitSharingRate.$error.step">2位小数</span>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <span class="main-list__item-left"><span class="text-red">*</span>服务社区：</span>
+            <div class="main-list__item-middle">
+              <span class="community" ng-repeat="community in vm.shop.communities">
+                {{community.name}}
+                <i class="main-action__delete" ng-click="vm.delectCommunity(community)">×</i>
+              </span>
+              <button type="button" class="btn btn-outline--primary" ng-click="vm.communitySelect()">打开可选社区列表</button>
+            </div>
+
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="shopAddress">店铺地址：</label>
+            <textarea class="form-input main-list__item-middle"
+                      id="shopAddress" name="shopAddress"
+                      placeholder="请输入店铺地址"
+                      ng-model="vm.shop.storeAddress"></textarea>
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="shopPhone"><span class="text-red">*</span>店铺电话：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="shopPhone" id="shopPhone"
+                   ng-model="vm.shop.storePhone"
+                   placeholder="请输入店铺电话"
+                   required>
+            <div ng-show="shopForm.$submitted || shopForm.shopPhone.$touched" class="main-list__error">
+              <span ng-show="shopForm.shopPhone.$error.required">不能为空</span>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="shopEmail">电子邮箱：</label>
+            <input class="form-input main-list__item-middle"
+                   type="email"
+                   name="shopEmail" id="shopEmail"
+                   ng-model="vm.shop.storeEmail"
+                   placeholder="请输入电子邮箱">
+            <div ng-show="shopForm.$submitted || shopForm.shopEmail.$touched" class="main-list__error">
+              <span ng-show="shopForm.shopEmail.$error.email">格式不正确</span>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <span class="main-list__item-left">商家图片：</span>
+            <div class="main-list__item-middle main-list__item-middle--space-between">
+              <img class="col-6" ng-src="{{vm.storeAvatar}}">
+              <button class="btn btn-outline--primary" type="button" ng-click="vm.storeAvatarSelect()">选择图片</button>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <div class="main-list__item-middle main-list--offset">
+              <button class="btn btn--secondary col-12" type="submit" ng-click="vm.submitShopForm(shopForm)">保存</button>
+            </div>
+          </li>
+        </ul>
+      </form>
+    </div>
+
+    <!--其他信息-->
+    <div ng-if="vm.currentTab.id === 2">
+      <form name="shopFormExtend" novalidate>
+        <!-- 身份证信息 -->
+        <div class="main-subheader">
+          <span class="main-subheader__title">身份证信息</span>
+        </div>
+
+        <ul class="main-list">
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="identityCardName">身份证姓名：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="identityCardName" id="identityCardName"
+                   ng-model="vm.shopExtend.identity.identityCardName"
+                   placeholder="请输入身份证姓名">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="identityCard">身份证号码：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="identityCard" id="identityCard"
+                   ng-model="vm.shopExtend.identity.identityCard"
+                   placeholder="请输入身份证号码">
+          </li>
+          <li class="main-list__item">
+            <span class="main-list__item-left">身份证照片：</span>
+            <div class="main-list__item-middle main-list__item-middle--space-between">
+              <img class="col-6" ng-src="{{vm.identityCardPicUrl}}">
+              <button class="btn btn-outline--primary" type="button" ng-click="vm.identityCardPicSelect()">选择图片</button>
+            </div>
+          </li>
+        </ul>
+
+        <!-- 营业执照信息 -->
+        <div class="main-subheader">
+          <span class="main-subheader__title">营业执照信息</span>
+        </div>
+        <ul class="main-list">
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="businessLicenceNumber">营业执照号：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="businessLicenceNumber" id="businessLicenceNumber"
+                   ng-model="vm.shopExtend.businessLicence.businessLicenceNumber"
+                   placeholder="请输入营业执照号">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="businessName">营业执照名称：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="businessName" id="businessName"
+                   ng-model="vm.shopExtend.businessLicence.businessName"
+                   placeholder="请输入营业执照名称">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="businessCreditCode">统一社会信用代码：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="businessCreditCode" id="businessCreditCode"
+                   ng-model="vm.shopExtend.businessLicence.businessCreditCode"
+                   placeholder="请输入统一社会信用代码">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="businessLegalPerson">法定代表人：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="businessLegalPerson" id="businessLegalPerson"
+                   ng-model="vm.shopExtend.businessLicence.businessLegalPerson"
+                   placeholder="请输入法定代表人">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="businessLicenceAddress">营业执照所在地：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="businessLicenceAddress" id="businessLicenceAddress"
+                   ng-model="vm.shopExtend.businessLicence.businessLicenceAddress"
+                   placeholder="请输入营业执照所在地">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="businessSphere">法定经营范围：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="businessSphere" id="businessSphere"
+                   ng-model="vm.shopExtend.businessLicence.businessSphere"
+                   placeholder="请输入法定经营范围">
+          </li>
+          <li class="main-list__item">
+            <span class="main-list__item-left">营业执照有效期：</span>
+            <div class="main-list__item-middle">
+              <datepicker-group
+                  dtp-title=""
+                  dtp-show-interval="false"
+                  dtp-date-start="vm.businessLicenceStart"
+                  dtp-date-end="vm.businessLicenceEnd"></datepicker-group>
+            </div>
+
+          </li>
+          <li class="main-list__item">
+            <span class="main-list__item-left">营业执照：</span>
+            <div class="main-list__item-middle main-list__item-middle--space-between">
+              <img class="col-6" ng-src="{{vm.businessLicenceNumberElectronic}}">
+              <button class="btn btn-outline--primary" type="button" ng-click="vm.businessLicenceNumberElectronicSelect()">选择图片</button>
+            </div>
+          </li>
+        </ul>
+
+        <!-- 组织机构代码证 -->
+        <div class="main-subheader">
+          <span class="main-subheader__title">组织机构代码证</span>
+        </div>
+        <ul class="main-list">
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="organizationCode">组织机构代码：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="organizationCode" id="organizationCode"
+                   ng-model="vm.shopExtend.organization.organizationCode"
+                   placeholder="请输入组织机构代码">
+          </li>
+          <li class="main-list__item">
+            <span class="main-list__item-left">组织机构代码证：</span>
+            <div class="main-list__item-middle main-list__item-middle--space-between">
+              <img class="col-6" ng-src="{{vm.organizationCodeElectronic}}">
+              <button class="btn btn-outline--primary" type="button" ng-click="vm.organizationCodeElectronicSelect()">选择图片</button>
+            </div>
+          </li>
+        </ul>
+
+        <!-- 一般纳税人证明 -->
+        <div class="main-subheader">
+          <span class="main-subheader__title">一般纳税人证明</span>
+        </div>
+        <ul class="main-list">
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="generalTaxpayer">一般纳税人证明：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="generalTaxpayer" id="generalTaxpayer"
+                   ng-model="vm.shopExtend.generalTaxpayer.generalTaxpayer"
+                   placeholder="请输入一般纳税人证明">
+          </li>
+        </ul>
+
+        <!-- 开户银行信息 -->
+        <div class="main-subheader">
+          <span class="main-subheader__title">开户银行信息</span>
+        </div>
+        <ul class="main-list">
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="bankAccountName"><span class="text-red">*</span>银行户名：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="bankAccountName" id="bankAccountName"
+                   ng-model="vm.shopExtend.bank.bankAccountName"
+                   placeholder="请输入银行户名"
+                   required>
+            <div ng-show="shopFormExtend.$submitted || shopFormExtend.bankAccountName.$touched" class="main-list__error">
+              <span ng-show="shopFormExtend.bankAccountName.$error.required">不能为空</span>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="bankName"><span class="text-red">*</span>银行名称：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="bankName" id="bankName"
+                   ng-model="vm.shopExtend.bank.bankName"
+                   placeholder="请输入银行名称"
+                   required>
+            <div ng-show="shopFormExtend.$submitted || shopFormExtend.bankName.$touched" class="main-list__error">
+              <span ng-show="shopFormExtend.bankName.$error.required">不能为空</span>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="bankAccountNumber"><span
+                class="text-red">*</span>银行账号：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="bankAccountNumber" id="bankAccountNumber"
+                   ng-model="vm.shopExtend.bank.bankAccountNumber"
+                   placeholder="请输入银行账号"
+                   required>
+            <div ng-show="shopFormExtend.$submitted || shopFormExtend.bankAccountNumber.$touched"
+                 class="main-list__error">
+              <span ng-show="shopFormExtend.bankAccountNumber.$error.required">不能为空</span>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="bankSubsidiaryName">支行名称：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="bankSubsidiaryName" id="bankSubsidiaryName"
+                   ng-model="vm.shopExtend.bank.bankSubsidiaryName"
+                   placeholder="请输入支行名称">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="bankCode">支行银行号：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="bankCode" id="bankCode"
+                   ng-model="vm.shopExtend.bank.bankCode"
+                   placeholder="请输入支行银行号">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="bankAddress">支行所在地：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="bankAddress" id="bankAddress"
+                   ng-model="vm.shopExtend.bank.bankAddress"
+                   placeholder="请输入支行所在地">
+          </li>
+        </ul>
+
+        <!-- 税务登记证 -->
+        <div class="main-subheader">
+          <span class="main-subheader__title">税务登记证</span>
+        </div>
+        <ul class="main-list">
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="taxpayerId">税务登记证号：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="taxpayerId" id="taxpayerId"
+                   ng-model="vm.shopExtend.taxRegistration.taxpayerId"
+                   placeholder="请输入税务登记证号">
+          </li>
+          <li class="main-list__item">
+            <label class="main-list__item-left" for="taxRegistrationCertificate">纳税人识别号：</label>
+            <input class="form-input main-list__item-middle"
+                   type="text"
+                   name="taxRegistrationCertificate" id="taxRegistrationCertificate"
+                   ng-model="vm.shopExtend.taxRegistration.taxRegistrationCertificate"
+                   placeholder="请输入纳税人识别号">
+          </li>
+          <li class="main-list__item">
+            <span class="main-list__item-left">税务登记证：</span>
+            <div class="main-list__item-middle main-list__item-middle--space-between">
+              <img class="col-6" ng-src="{{vm.taxRegistrationCertificateElectronic}}">
+              <button class="btn btn-outline--primary" type="button" ng-click="vm.taxRegistrationCertificateElectronicSelect()">选择图片</button>
+            </div>
+          </li>
+          <li class="main-list__item">
+            <div class="main-list__item-middle main-list--offset">
+              <button class="btn btn--secondary col-12" type="submit" ng-click="vm.submitShopExtendForm(shopFormExtend)">保存</button>
+            </div>
+          </li>
+        </ul>
+      </form>
+
+    </div>
+  </div>
+
+</div>

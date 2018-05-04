@@ -61,6 +61,10 @@ $spacers: (
 .font-weight-normal { font-weight: $font-weight-normal; }
 .font-weight-bold { font-weight: $font-weight-bold; }
 
+.font-size-base { font-size: $font-size-base; }
+.font-size-lg { font-size: $font-size-lg; }
+.font-size-sm { font-size: $font-size-sm; }
+
 /* Border
    ================================== */
 @each $theme, $value in $theme-colors {

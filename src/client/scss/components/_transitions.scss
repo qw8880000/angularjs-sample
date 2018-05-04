@@ -1,20 +1,24 @@
-/* The starting CSS styles for the enter animation */
-.fade.ng-enter {
-  transition: .5s linear all;
-  opacity: 0;
+.collapse {
+  display: none;
+
+  &.in { display: block; }
+  // [converter] extracted tr&.in to tr.collapse.in
+  // [converter] extracted tbody&.in to tbody.collapse.in
 }
 
-/* The finishing CSS styles for the enter animation */
-.fade.ng-enter.ng-enter-active {
-  opacity: 1;
-}
+tr.collapse.in { display: table-row; }
 
-/* now the element will fade out before it is removed from the DOM */
-.fade.ng-leave {
-  transition: .5s linear all;
-  opacity: 1;
-}
+tbody.collapse.in { display: table-row-group; }
 
-.fade.ng-leave.ng-leave-active {
-  opacity: 0;
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height .35s ease;
+  transition-property: height, visibility;
+  transition-duration: .35s;
+  transition-timing-function: ease;
+  //@include transition-property(height, visibility);
+  //@include transition-duration(.35s);
+  //@include transition-timing-function(ease);
 }

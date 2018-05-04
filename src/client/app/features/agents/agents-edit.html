@@ -1,0 +1,67 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title" ng-if="vm.isEdit()">
+      <li class="breadcrumb__item">区域运营商管理</li>
+      <li class="breadcrumb__item">编辑</li>
+      <li class="breadcrumb__item breadcrumb__item--active">{{vm.agentId}}</li>
+    </ol>
+    <ol class="breadcrumb h5 main-header__title" ng-if="!vm.isEdit()">
+      <li class="breadcrumb__item">区域运营商管理</li>
+      <li class="breadcrumb__item breadcrumb__item--active">新增区域运营商</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <form name="myForm" novalidate>
+      <ul class="main-list">
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>区域运营商名称：</label>
+          <input class="form-input main-list__item-middle"
+                 type="text"
+                 name="name"
+                 ng-model="vm.agent.name"
+                 required
+                 placeholder="区域运营商名称">
+          <div ng-show="myForm.$submitted || myForm.name.$touched" class="main-list__error">
+            <span ng-show="myForm.name.$error.required">必填</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>区域运营商手机号：</label>
+          <input class="form-input main-list__item-middle"
+                 type="text"
+                 name="phone"
+                 ng-model="vm.agent.phone"
+                 required
+                 placeholder="区域运营商名称">
+          <div ng-show="myForm.$submitted || myForm.phone.$touched" class="main-list__error">
+            <span ng-show="myForm.phone.$error.required">必填</span>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left"><span class="text-red">*</span>管辖社区列表：</label>
+          <div class="main-list__item-middle">
+              <span class="community" ng-repeat="community in vm.agent.communities">
+                {{community.name}}
+                <i class="main-action__delete" ng-click="vm.delectCommunity(community)">×</i>
+              </span>
+            <button type="button" class="btn btn-outline--primary" ng-click="vm.communitySelect()">打开可选社区列表</button>
+          </div>
+          <div ng-show="myForm.$submitted" class="main-list__error">
+            <span ng-show="vm.agent.communities.length === 0">必填</span>
+          </div>
+        </li>
+
+        <li class="main-list__item">
+          <div class="main-list__item-middle main-list--offset">
+            <button class="btn btn--secondary col-6" type="submit" ng-click="vm.submitForm(myForm)">保存</button>
+            <button class="btn btn--gray col-6" type="button" ng-click="vm.cancel()">取消</button>
+          </div>
+        </li>
+      </ul>
+    </form>
+
+
+  </div>
+
+</div>

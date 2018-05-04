@@ -14,10 +14,10 @@
 
 .home__main {
   position: relative;
-  padding-top: $header-height + 10px;
-  padding-left: $sidebar-width + 10px;
-  padding-right: 10px;
-  min-height: 100%;
+  padding-top: $header-height;
+  padding-left: $sidebar-width;
+  height: 100%;
+  //background-color: $home-bg-color;
   box-sizing: border-box;
 }
 

@@ -1,0 +1,46 @@
+<div class="main-inner">
+  <div class="main-header main-section">
+    <ol class="breadcrumb h5 main-header__title">
+      <li class="breadcrumb__item">钱包</li>
+      <li class="breadcrumb__item">钱包管理</li>
+      <li class="breadcrumb__item breadcrumb__item--active">查看 {{vm.id}}</li>
+    </ol>
+  </div>
+
+  <div class="main-body">
+    <ul class="main-list main-section">
+      <li class="main-list__item">
+        <span class="main-list__item-left">流水单号：</span>
+        <span class="main-list__item-middle">{{vm.fund.serialNumber}}</span>
+      </li>
+      <li class="main-list__item">
+        <span class="main-list__item-left">分润率：</span>
+        <span class="main-list__item-middle">{{vm.fund.detail.profitSharingRate}} %</span>
+      </li>
+      <li class="main-list__item">
+        <span class="main-list__item-left">分润金额：</span>
+        <span class="main-list__item-middle">{{vm.fund.amount/100   | currency: '￥'}}</span>
+      </li>
+      <li class="main-list__item">
+        <span class="main-list__item-left">订单金额：</span>
+        <span class="main-list__item-middle">{{vm.fund.detail.orderAmount   | currency: '￥'}}</span>
+      </li>
+      <li class="main-list__item">
+        <span class="main-list__item-left">创建时间：</span>
+        <span class="main-list__item-middle">{{vm.fund.createTime  | date:"yyyy/MM/dd HH:mm"}}</span>
+      </li>
+      <li class="main-list__item">
+        <span class="main-list__item-left">商家：</span>
+        <span class="main-list__item-middle">{{vm.fund.sponsor}}</span>
+      </li>
+      <li class="main-list__item">
+        <span class="main-list__item-left">接收方：</span>
+        <span class="main-list__item-middle">{{vm.fund.accept}}</span>
+      </li>
+      <li class="main-list__item">
+        <span class="main-list__item-left">订单号：</span>
+        <span class="main-list__item-middle"><a href class="link" ng-click="vm.viewOrder(vm.fund)">{{vm.fund.detail.orderSn}}</a></span>
+      </li>
+    </ul>
+  </div>
+</div>

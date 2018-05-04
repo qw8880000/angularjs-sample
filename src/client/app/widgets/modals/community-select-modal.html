@@ -1,0 +1,48 @@
+<div class="modal-dialog main-modal-dialog">
+  <div class="modal main-modal">
+    <div class="modal__header main-modal__header">
+      <h3 class="modal__title main-modal__title" id="modal-title">选择服务社区</h3>
+    </div>
+    <div class="modal__body" id="modal-body">
+
+      <ul class="main-list">
+        <li class="main-list__item">
+          <label class="main-list__item-left">城市：</label>
+          <div class="main-list__item-middle">
+            <select class="form-input col-6"
+                    ng-model="vm.currentCity"
+                    ng-change="vm.cityChanged()"
+                    ng-options="item as item for item in vm.cities">
+              <option value="" selected>--请选择--</option>
+            </select>
+          </div>
+        </li>
+        <li class="main-list__item">
+          <label class="main-list__item-left">社区：</label>
+          <div class="main-list__item-middle">
+            <div ng-if="vm.currentCity !== null">
+              <div ng-repeat="community in vm.communities">
+                <input class="" type="checkbox"
+                       ng-change="vm.communitySelected(community)"
+                       ng-model="community.selected">
+                <span>{{community.name}}</span>
+              </div>
+              <div ng-if="vm.communities.length === 0">无符合条件的选项</div>
+            </div>
+            <div ng-if="vm.currentCity === null">
+              <span class="font-size-sm">请先选择城市.</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--secondary" type="button" ng-click="vm.ok()">确定</button>
+      <button class="btn btn--warning" type="button" ng-click="vm.cancel()">取消</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" ng-click="vm.close()">
+</div>

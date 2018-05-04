@@ -1,0 +1,19 @@
+.orders-info {
+  background-color: $gray-300;
+}
+
+//
+// table
+//
+.orders-table {
+  // margin between tbody
+  tbody::before {
+    content: '';
+    display: block;
+    height: $margin-base;
+  }
+
+  td.orders-info {
+    text-align: left;
+  }
+}
